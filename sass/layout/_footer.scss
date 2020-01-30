@@ -1,0 +1,114 @@
+.footer {
+    background-color: var(--grey-dark-1);
+    color: var(--grey-light-2);
+    padding: 7rem 0rem 3rem 0rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+
+    &-container {
+        max-width: 120rem;
+        margin: auto;
+    }
+
+    &__logo {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    &__heading {
+        font-size: 2rem;
+        padding: 1rem 1rem 0.5rem 0;
+        border-bottom: 0.5px var(--grey-light-2) solid;
+
+        &__caption {
+            color: #77787B;
+        }
+
+    }
+
+    &__links {
+        margin-top: 12rem;
+
+        font-weight: 600;
+        color: inherit !important;
+
+
+    }
+
+    &__grid {
+        display: flex;
+        justify-content: space-around;
+    }
+
+
+
+    &__menu {
+        display: flex;
+        flex-direction: column;
+        padding: 0rem .5rem;
+        // text-decoration: none;
+        list-style: none;
+
+
+        li:not(:first-child) {
+            margin-top: 1rem;
+        }
+    }
+
+    &__form {
+        display: flex;
+        width: 100%;
+        flex: 1 1 100%;
+        flex-wrap: no-wrap;
+    }
+
+    &__input-box {
+        font-size: 1.6rem;
+        padding: 1rem;
+        font-family: inherit;
+        width: 30rem;
+    }
+
+    &__btn {
+        margin-left: 5px;
+        padding: 1rem;
+        color: #ffffff;
+        font-weight: 500;
+        // font-size: 1.4rem;
+        background-color: #C8543B;
+        border: none;
+        cursor: pointer;
+        // padding: 1rem;
+    }
+
+    .contact {
+        display: flex;
+        flex-direction: row;
+
+        &__no {
+            display: flex;
+            flex-direction: column;
+            margin-left: 1rem;
+        }
+    }
+
+    .lnr-phone-handset {
+        color: #ffffff;
+        font-size: 40px;
+        /* To get crisp results, use sizes that are
+        a multiple of 20; because Linearicons was
+        designed on a 20 by 20 grid. */
+    }
+
+    &__devs {
+        margin-top: 7rem;
+        font-size: 1rem;
+        text-align: center;
+        color: #77787B;
+        letter-spacing: 1.5;
+
+        &-name {
+            color: rgb(182, 185, 192);
+        }
+    }
+}

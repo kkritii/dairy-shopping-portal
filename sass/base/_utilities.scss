@@ -1,0 +1,42 @@
+.display-none {
+    display: none;
+}
+
+.u-margin {
+    &-top {
+        &-mid {
+            margin-top: 4rem;
+        }
+
+        &-small {
+            margin-top: 1.75rem;
+
+        }
+    }
+}
+
+.dot {
+    font-size: 7rem;
+    margin-top: -3.5rem;
+    margin-left: 2rem;
+}
+
+.flex-inline {
+    display: flex;
+    justify-content: space-between;
+}
+
+.text--black {
+    color: #333 !important;
+}
+
+.abs-position {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.rel-position {
+    position: relative;
+}
