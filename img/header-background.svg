@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440px" height="845px" viewBox="0 0 1440 845" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 8</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="1440" height="845"></rect>
+        <linearGradient x1="0%" y1="1.72254642e-14%" x2="100%" y2="100%" id="linearGradient-3">
+            <stop stop-color="#1BCEDF" offset="0%"></stop>
+            <stop stop-color="#3CC7B1" offset="53.0374907%"></stop>
+            <stop stop-color="#4DC399" offset="79.8153418%"></stop>
+            <stop stop-color="#5AC088" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="04---Contact" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Hero">
+            <g id="Content">
+                <g id="Group-8">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Mask"></g>
+                    <g mask="url(#mask-2)">
+                        <g transform="translate(-54.000000, -53.000000)">
+                            <path d="M24.6591391,913.306367 C35.1843814,913.306367 401.016917,668.55536 751.315646,733.117441 C1101.61438,797.679522 1105.26451,437.892794 1620.654,884.994668 C1964.24699,1183.06258 1962.43921,896.654663 1615.23065,25.7709053 L0,0 C9.42259788,608.870911 17.6423109,913.306367 24.6591391,913.306367 Z" id="Path-7" fill="url(#linearGradient-3)"></path>
+                            <path d="M715.429088,799.060322 C617.931692,640.953551 680.89914,509.09027 904.331432,403.470479 C1239.47987,245.040791 1281.26503,94.2790723 1205.22987,42.7478223 C1129.19471,-8.78342775 1684.08924,49.2634473 1722.8119,251.564229 C1761.53456,453.86501 1664.85487,631.755635 1314.06581,715.407979 C1080.20643,771.176208 880.660859,799.060322 715.429088,799.060322 Z" id="Path-8" fill="#FFFFFF" opacity="0.1"></path>
+                            <path d="M6,849.249374 C216.615169,478.185966 503.049512,379.413158 865.303028,552.93095 C1408.6833,813.20764 1577.74514,859.765604 1408.6833,922.042272 C1295.97541,963.560051 830.146919,1005.07628 11.1978367,1046.59097 L6,849.249374 Z" id="Path-2" fill="#FFFFFF" opacity="0.1"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
