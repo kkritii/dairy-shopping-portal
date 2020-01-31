@@ -1,0 +1,18 @@
+.heading__primary {
+    display: block;
+    // position: absolute;
+    max-width: 44%;
+
+    // top: 30%;
+    // // left: 1rem;
+    // top: 18%;
+    // left: 1rem;
+    &--main {
+        font-size: 6rem;
+        font-weight: 600;
+    }
+
+    &--sub {
+        font-size: 1.45rem;
+    }
+}

@@ -1,0 +1,98 @@
+//style for signin.html
+.form {
+    // background-color: #e0e5ec;
+    // box-shadow: var(--shadow-neumorphism);
+    height: 600px;
+    // text-align: center;
+    // padding: 20rem 0rem;
+    border-radius: 15px;
+
+    &--left {
+        width: 40%;
+    }
+
+    &--right {
+        width: 35%;
+    }
+
+    &__img--left {
+        width: 100%;
+    }
+
+    &__heading {
+        display: block;
+        font-weight: 100;
+        font-size: 4rem;
+
+        &--main {
+            font-weight: 100;
+            font-size: 5rem;
+        }
+
+        &--sub {
+            font-weight: 100;
+            font-size: 1.5rem;
+        }
+    }
+
+    .input {
+        // background-color: #e0e5ec;
+        // box-shadow: var(--shadow-neumorphism);
+        //
+        background-color: #e0e5ec;
+
+        &__name,
+        &__password {
+            width: 100%;
+            padding: 1.5rem 2rem;
+            border: none;
+            // border: 1px solid var(--grey-light-4);
+            outline: none;
+            font-size: 2rem;
+            font-family: inherit;
+            border-radius: 0.5rem;
+        }
+    }
+
+    .remember-me {
+        display: flex;
+        justify-content: space-between;
+        color: var(--grey-dark-2);
+        font-size: 1.2rem;
+        // font-family: inherit;
+    }
+
+    &__button {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.flipper {
+    position: relative;
+    transition: 0.6s;
+    transform-style: preserve-3d;
+}
+
+.front,
+.back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    backface-visibility: hidden;
+}
+
+.front {
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.flip {
+    transform: rotateY(180deg);
+    // text-decoration: none;
+}

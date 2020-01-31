@@ -1,0 +1,38 @@
+.notification {
+    // height: 5rem;
+    padding: 1.5rem;
+    background-color: #F4C150;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 2;
+    font-size: 1.5rem;
+    width: 100%;
+    display: flex;
+    position: relative;
+
+    &--text {
+        margin-left: 3rem;
+        font-weight: 600;
+    }
+
+    &--close-btn {
+        justify-content: flex-end;
+        position: absolute;
+        top: 50%;
+        right: 1rem;
+        transform: translatey(-50%);
+        // align-self: flex-start;
+    }
+
+    .lnr-cross {
+
+        cursor: pointer;
+        font-size: 2rem;
+
+        &:hover {
+            font-size: 2.5rem;
+        }
+    }
+
+}

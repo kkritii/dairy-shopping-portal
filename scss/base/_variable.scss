@@ -1,0 +1,56 @@
+:root {
+	// --color-background-light: #e0e5ec;
+	--color-background-light: #f8fafb;
+
+	--color-grey-light: #f7f7f7;
+	--color-primary: #eb2f64;
+	--color-primary-light: #ff3366;
+	--color-primary-dark: #ba265d;
+
+	--color-secondary-light: #cbf0ffda;
+	--color-secondary-mid: #b0e9ffd2;
+	--color-secondary-dark: #94e1fdd2;
+
+	--color-features-bg: #e0e5ec;
+
+	--color-primary: #eb2f64;
+	--color-primary-light: #ff3366;
+	--color-primary-dark: #ba265d;
+
+	--grey-light-1: #faf9f9;
+	--grey-light-2: #f4f2f2;
+	--grey-light-3: #f0eeee;
+	--grey-light-4: #ccc;
+
+	--grey-dark-1: #333;
+	--grey-dark-2: #777;
+	--grey-dark-3: #999;
+
+	--shadow-dark: 0 5px 2rem rgba(0, 0, 0, 0.3);
+	--shadow-light: 0 1px 1rem rgba(0, 0, 0, 0.1);
+
+	--shadow-neumorphism: 9px 9px 20px rgba(163, 177, 198, 0.6),
+		-9px -9px 20px rgba(255, 255, 255, 0.7);
+	// --shadow-neumorphism: 9px 9px 16px rgba(163, 177, 198, 0.6),
+	// -9px -9px 16px rgba(255, 255, 255, 0.5);
+}
+
+// xs (for phones - screens less than 768px wide)
+
+// sm (for tablets - screens equal to or greater than 768px wide)
+
+// md (for small laptops - screens equal to or greater than 992px wide)
+
+// lg (for laptops and desktops - screens equal to or greater than 1200px wide)
+$color-primary: #55c57a;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #28b485;
+
+$color-secondary-light: #ffb900;
+$color-secondary-dark: #ff7730;
+
+$color-tertiary-light: #2998ff;
+$color-tertiary-dark: #5643fa;
+
+$color-fourth-light: #fbff0a;
+$color-fourth-dark: #fbfd5b;

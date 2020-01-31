@@ -1,4 +1,4 @@
-# dairy-shopping-portal-v2
+# dairy-shpping-portal
 5th semester Project
 
 ## Project Members

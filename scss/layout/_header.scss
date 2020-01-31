@@ -1,0 +1,25 @@
+.header-background {
+    max-height: 75vh;
+
+    width: 100%;
+
+    background-image: linear-gradient(to bottom right,
+            var(--color-secondary-mid),
+            var(--color-secondary-light),
+            var(--color-secondary-mid),
+            var(--color-secondary-light),
+            var(--color-secondary-dark)),
+        url("../img/bg-img.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.heading-container {
+    // max-width: 120rem;
+    // margin: 0 auto;
+    height: 67vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}

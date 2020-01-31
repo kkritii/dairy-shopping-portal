@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<!-- <link
+			href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap"
+			rel="stylesheet"
+		/> -->
+		<link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet"/>
+		<link rel="stylesheet" href="../css/main.min.css" />
+		<link rel="stylesheet" href="../css/icon-font.css" />
+
+		<title>Dathe Dairy</title>
+	</head>
+	<body>
+		<div id="header-background" class="header-background">
+		<!-- Top notification -->
+			<section id="notification-bar" >
+				<div class="notification">
+					<div>
+						<i class="notification--emoji">
+							&#128293; &#128293; &#128293; 
+						</i>
+						<span class="notification--text">
+							Buy products more than 2000Rs
+							to get free Delivery.
+						</span>
+					</div>
+				<span class="notification--close-btn"	onclick="myFunction()" id="close">
+					<i class="lnr lnr-cross"> </i>
+				</span>
+			</div>
+			</section>
+		<!-- end of top notifiacation -->
+
+		<!-- Top navigation -->
+			<section class="section-nav">
+				<div class="logo">
+					LOGO
+				</div>
+				<nav class="nav">
+					<ul class="nav__list">
+						<li class="nav__list-items">
+							<a href="main" class="nav__links">
+								<svg class="nav__icon">
+									<use
+										xlink:href="../img/sprite.svg#icon-home"
+									></use>
+								</svg>
+								<span class="icon--text">Home</span>
+							</a>
+						</li>
+						<li class="nav__list-items">
+							<a href="products" class="nav__links">
+								<svg class="nav__icon">
+									<use
+										xlink:href="../img/sprite.svg#icon-shopping-bag"
+									></use>
+								</svg>
+								<span class="icon--text">Products</span>
+							</a>
+						</li>
+
+						<li class="nav__list-items">
+							<a href="signin" class="nav__links nav--4"
+								>SIGN IN</a
+							>
+						</li>
+					</ul>
+				</nav>
+			</section>
+		<!-- End of section nav -->
+
+		<!-- Contents are loaded using jquery -->
+			<main class="main-container" id="content"></main>
+		<!-- End of main container -->'
+
+		<!-- Footer -->
+			<footer class="footer">
+				<div class="main-container">
+					<div class="footer__logo">
+						LOGO
+					</div>
+					<div class="footer__grid u-mgn-tp-mid">
+						<div class="footer__card--1">
+							<span class="footer__heading">NAVIGATE</span>
+							<ul class="footer__menu">
+								<li class=" u-mgn-tp-sm ">
+									<a
+										href="main"
+										class="nav__links footer__links"
+										>Home
+									</a>
+								</li>
+								<li>
+									<a
+										href="products"
+										class="nav__links footer__links"
+										>Products
+									</a>
+								</li>
+								<li>
+									<a
+										href="supports"
+										class="nav__links footer__links"
+										>Supports
+									</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="footer__card--2">
+							<span class="footer__heading">STAY CONNECTED</span>
+							<div class=" u-mgn-tp-sm footer__heading__caption ">
+								Join to receive different occcasional offers
+								notices.
+							</div>
+							<form action="" class="footer__form u-mgn-tp-sm">
+								<input
+									type="email"
+									placeholder="Email Address"
+									class="footer__input-box"
+								/>
+								<button class="footer__btn">
+									SUBSCRIBE
+								</button>
+							</form>
+						</div>
+
+						<div class="footer__card--3">
+							<span class="footer__heading">CONTACTS</span>
+							<div class="contact u-mgn-tp-sm">
+								<span class="lnr lnr-phone-handset"> </span>
+								<div class="contact__no">
+									<div class="contact__no--1">
+										+977 9860010110
+									</div>
+									<div class="contact__no--2">
+										01 6610000
+									</div>
+								</div>
+							</div>
+							<div class="u-mgn-tp-sm">
+								<span>
+									<h2 class="footer__heading">
+										Dathepathe-Dairy-Store
+									</h2>
+								</span>
+							</div>
+							<div class="footer__address u-mgn-tp-sm">
+								<span class="lnr lnr-location"> </span>
+								<span>Kamalbinayak-9,Bhaktapur,Nepal</span>
+								<br />
+								<span class="lnr lnr-envelope"> </span>
+								<span>dathe.dairy@gmail.com</span>
+							</div>
+						</div>
+					</div>
+					<div class="footer__devs">
+						Developed with &#10084; by
+						<a class="footer__devs-name">Arun Prajapati</a>,
+						<a class="footer__devs-name">Ayush Raja Bijukchhe </a>,
+						<a class="footer__devs-name">Babin Datheputhe</a>,
+						<a class="footer__devs-name">Kriti Prajapati</a>.
+					</div>
+				</div>
+			</footer>
+		<!-- End of footer -->
+		</div>
+
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/jscript.js"></script>
+		<script src="../js/notification.js"></script>
+	</body>
+</html>
