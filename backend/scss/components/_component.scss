@@ -155,7 +155,7 @@
 		width: 3px;
 		transition: transform 0.2s ease,
 			width 0.3s cubic-bezier(1, 0, 0, 1) 0.1s, background-color 0.1s;
-		background-color: var(--color-primary);
+		background-color: var(--bg-color-body);
 		transform: scaleY(0);
 	}
 
@@ -166,7 +166,7 @@
 	}
 
 	&__item:active::before {
-		background-color: var(--color-primary-light);
+		// background-color: var(--color-primary-light);
 	}
 
 	&__links:link,
@@ -178,6 +178,7 @@
 		padding: 1.5rem 3rem;
 		display: flex;
 		align-items: center;
+		// background-color: var(--bg-color-nav-items);
 	}
 
 	&__icon {

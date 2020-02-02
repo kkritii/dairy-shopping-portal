@@ -11,12 +11,12 @@
 
 .header {
 	height: 6rem;
-	background-color: var(--grey-light-1);
+	// background-color: var(--grey-light-1);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin-bottom: 1px;
-	background-color: var(--grey-light-3);
+	// margin-bottom: 1px;
+	background-color: var(--bg-color-sidebar);
 }
 
 .content {
@@ -30,19 +30,19 @@
 }
 
 .sidebar {
-	background-color: var(--grey-dark-1);
+	background-color: var(--bg-color-sidebar);
 	flex: 0 0 18%; //grow srink width //grow as much as you can
 }
 
 .hotel-view {
-	background-color: #fff;
+	background-color: var(--bg-color-body);
 	// background-color: orangered;
 	flex: 1;
 	// height: 85vh;
-	background-color: var(--grey-light-1);
+	// background-color: var(--grey-light-1);
 
-
-	height: 94vh;
+	overflow: auto;
+	height: 93.5vh;
 }
 
 .footer {
