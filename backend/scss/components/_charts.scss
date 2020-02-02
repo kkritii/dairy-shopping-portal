@@ -1,0 +1,15 @@
+.canvas {
+    max-width: 45%;
+    min-width: 40rem;
+    min-height: 40rem;
+    padding: 4.5rem;
+    background-color: var(--bg-color-card);
+    border-radius: 10px;
+}
+
+.myChart {
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 35rem;
+    min-height: 35rem;
+}

@@ -292,7 +292,7 @@ body {
   border-radius: 10px;
 }
 
-#myChart {
+.myChart {
   max-width: 100%;
   min-width: 100%;
   max-height: 35rem;

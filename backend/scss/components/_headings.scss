@@ -1,0 +1,18 @@
+.heading {
+    display: block;
+    color: var(--font-color-sub);
+    padding: 3rem 0rem;
+    font-weight: 800;
+
+    &__primary {
+        &--main {
+            font-size: 3rem;
+        }
+
+        &--sub {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--font-color-sub-sub);
+        }
+    }
+}
