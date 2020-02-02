@@ -39,3 +39,12 @@ body {
     line-height: 1.6;
     // background-color: #333;
 }
+
+.container {
+    scroll-snap-type: y mandatory;
+    // overflow-y: scroll;
+}
+
+.container section {
+    scroll-snap-align: start;
+}

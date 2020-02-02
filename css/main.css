@@ -1,3 +1,19 @@
+[data-scroll] {
+  transition: all 1s;
+}
+
+[data-scroll="in"] {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+[data-scroll="out"] {
+  opacity: 0;
+  -webkit-transform: translateY(200px);
+          transform: translateY(200px);
+}
+
 .display-none {
   display: none;
 }
@@ -74,6 +90,15 @@ body {
   position: relative;
   color: var(--font-color-main);
   line-height: 1.6;
+}
+
+.container {
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+}
+
+.container section {
+  scroll-snap-align: start;
 }
 
 .section-nav {
@@ -461,6 +486,86 @@ body {
   color: var(--font-color-sub);
 }
 
+.card {
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  margin-top: 3.5rem;
+  transition: all 0.2s;
+}
+
+.card:hover {
+  cursor: pointer;
+  margin-top: 3rem;
+}
+
+.card:hover .view__details {
+  margin-top: -2px;
+  z-index: 2;
+}
+
+.card__product {
+  max-width: 120rem;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.card__stats {
+  display: block;
+  background-color: #f4f6f8;
+  padding: 2rem;
+}
+
+.card__img {
+  height: 30rem;
+  width: 30rem;
+  position: relative;
+  z-index: 1;
+}
+
+.card .row-1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card .row-2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.view__details {
+  transition: all 0.2s ease-in;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 3rem;
+  font-weight: 500;
+  color: #fff;
+  z-index: 0;
+}
+
+.product__name {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+
+.product__price {
+  font-size: 2.35rem;
+  color: #48cfad;
+}
+
+.product__size {
+  font-size: 2rem;
+}
+
+.product__size--label {
+  color: #48cfad;
+}
+
 .container-signup {
   min-height: 100vh;
   width: 100%;
@@ -471,6 +576,7 @@ body {
 }
 
 .container-signup .col-1 {
+  min-width: 40rem;
   margin-left: 3rem;
 }
 

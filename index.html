@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.min.css">
 	<link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/icon-font.css" />
+	<link rel="stylesheet" href="../css/icon-font.css" />
+	<script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
+
 
     <title>Dathe Dairy</title>
 </head>
@@ -46,7 +48,7 @@
                         </a>
                     </li>
                     <li class="nav__list-items">
-                        <a href="products" class="nav__links">
+                        <a href="./src/products.html" class="nav__links">
                             <svg class="nav__icon">
                                 <use
                                     xlink:href="../img/sprite.svg#icon-shopping-bag"
@@ -87,14 +89,14 @@
 		  </div>
 		</section>
 		
-		<section class="rate" id="rate">
+		<section class="rate" id="rate" data-scroll>
 			<div class="col-1">
 				<img src="./img/drawkit-server-woman-colour.svg" alt="women using laptop" class="col-1-img">
 			</div>
 			<div class="col-2">
 				<div class="heading__secondary">
-					<span class="heading__secondary--main">Check Rates<span class="dot">.</span></span>	
-					<span class="heading__secondary--sub-sub">Calculate Delivery Cost to your local address.</span>	
+					<span class="heading__secondary--main" >Check Rates<span class="dot">.</span></span>	
+					<span class="heading__secondary--sub-sub" >Calculate Delivery Cost to your local address.</span>	
 				</div>
 				<form action="" class="rate__form">
 					<div class="u-margin-top-small">
@@ -111,7 +113,7 @@
 			</div>
 		</section>
 
-		<section class="contact-us">
+		<section class="contact-us" data-scroll>
 			<div class="col-1">
 				<span class="heading__secondary--main">Drop us a line<span class="dot">.</span></span>
 				<form action="" class="contact__form">
@@ -232,8 +234,16 @@
 				</div>
 		</footer>
         
-    </div>
+	</div>
+	
+	<script>
+		ScrollOut({
+			threshold: 0.2,
+			once: true
+		});
+	</script>
+	<!-- <script src="./js/notification.js"></!-->
+	
 
-    <script src="./js/notification.js"></script>
 </body>
 </html>

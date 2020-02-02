@@ -1,0 +1,86 @@
+.card {
+    box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+    margin-top: 3.5rem;
+    transition: all 0.2s;
+
+    &:hover {
+        cursor: pointer;
+        margin-top: 3rem;
+
+        & .view__details {
+            margin-top: -2px;
+
+            z-index: 2;
+
+        }
+    }
+
+    &__product {
+        @include margin-to-center;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    &__stats {
+        display: block;
+        background-color: #f4f6f8;
+        padding: 2rem;
+    }
+
+    &__img {
+        height: 30rem;
+        width: 30rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    .row-1 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .row-2 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.image_overlay {}
+
+.view__details {
+    transition: all 0.2s ease-in;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+    font-weight: 500;
+    color: #fff;
+    z-index: 0;
+}
+
+.product {
+    &__name {
+        font-size: 2.5rem;
+        text-transform: uppercase;
+    }
+
+    &__price {
+        font-size: 2.35rem;
+        color: #48cfad;
+    }
+
+    &__size {
+        font-size: 2rem;
+
+        &--label {
+            color: #48cfad;
+        }
+    }
+
+    &__cart {}
+}
