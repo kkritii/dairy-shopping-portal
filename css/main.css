@@ -603,6 +603,7 @@ body {
   margin: auto;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: space-around;
 }
 
