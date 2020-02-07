@@ -3,3 +3,4 @@ backend/
 node_modules/
 docs/
 package-lock.json
+.vscode
