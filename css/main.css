@@ -92,15 +92,6 @@ body {
   line-height: 1.6;
 }
 
-.container {
-  -ms-scroll-snap-type: y mandatory;
-      scroll-snap-type: y mandatory;
-}
-
-.container section {
-  scroll-snap-align: start;
-}
-
 .section-nav {
   display: flex;
   justify-content: space-between;
@@ -487,7 +478,6 @@ body {
 }
 
 .card {
-  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
   margin-top: 3.5rem;
   transition: all 0.2s;
 }
@@ -703,7 +693,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 14rem 0;
+  padding: 0rem 0 5rem 0;
   max-width: 120rem;
   margin: auto;
 }
@@ -716,6 +706,75 @@ body {
 
 .contact-us .col-2-img {
   height: 55rem;
+}
+
+.section-feature {
+  max-width: 120rem;
+  margin: auto;
+  min-height: 30vh;
+  padding: 15rem 0;
+}
+
+.section-feature .row-1 {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.section-feature .row-1 .col-2 {
+  min-width: 50rem;
+  max-width: 50%;
+}
+
+.section-feature .row-2 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.section-feature .row-2 .card {
+  height: 35rem;
+  width: 35rem;
+  min-width: 20rem;
+  box-shadow: 0;
+  padding: 1.75rem;
+  -webkit-perspective: 150rem;
+          perspective: 150rem;
+  -moz-perspective: 150rem;
+}
+
+.section-feature .row-2 .card__title {
+  display: flex;
+  align-items: center;
+}
+
+.section-feature .row-2 .card__title__no {
+  color: var(--font-color-sub-sub);
+  font-size: 4rem;
+  -webkit-writing-mode: tb-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: tb-rl;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  border-left: 1px solid var(--font-color-sub-sub);
+  padding: 0;
+}
+
+.section-feature .row-2 .card__title__text {
+  font-size: 1.75rem;
+  margin-left: 1rem;
+}
+
+.section-feature .row-2 .card__img {
+  height: 20rem;
+  padding: 1.5rem;
+}
+
+.section-feature .row-2 .card__discription {
+  font-size: 1.3rem;
+  color: var(--font-color-sub);
+  text-align: center;
 }
 
 .footer {
