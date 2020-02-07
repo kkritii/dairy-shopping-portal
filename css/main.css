@@ -53,6 +53,10 @@
   position: relative;
 }
 
+.u-bg-color-grey {
+  background-color: #fafafa;
+}
+
 :root {
   --shadow-dark: 0 5px 2rem rgba(0, 0, 0, 0.3);
   --shadow-dark-2: 0 1px 1rem rgba(0, 0, 0, 0.1);
@@ -241,11 +245,12 @@ body {
   display: block;
   color: #172551;
   height: 10%;
+  font-weight: 900;
 }
 
 .heading__secondary--main {
-  font-size: 4rem;
-  font-weight: 600;
+  font-size: 6rem;
+  font-weight: 900;
   display: flex;
   align-items: center;
 }
@@ -253,14 +258,14 @@ body {
 .heading__secondary--sub {
   display: block;
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .heading__secondary--sub-sub {
   display: block;
-  font-size: 1.75rem;
+  font-size: 2.25rem;
   letter-spacing: 1.7;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--font-color-sub-sub);
 }
 
@@ -597,95 +602,81 @@ body {
   align-self: flex-end;
 }
 
-.rate,
-.contact {
+.rate {
   display: flex;
   max-width: 120rem;
   margin: auto;
-  display: flex;
-  align-items: center;
   flex-wrap: wrap;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 5rem 0 10rem;
 }
 
-.rate .col-1-img,
-.contact .col-1-img {
-  height: 60rem;
+.rate .col-1-img {
+  height: 70rem;
 }
 
-.rate .col-2,
-.contact .col-2 {
+.rate .col-2 {
   -ms-grid-row-align: center;
       align-self: center;
-  -ms-grid-column-align: center;
-      justify-self: center;
-  width: 40%;
+  justify-content: space-between;
+  width: 50rem;
   height: 90%;
 }
 
-.rate__form,
-.contact__form {
+.rate__form {
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
 
-.rate__form__label,
-.contact__form__label {
+.rate__form__label {
   display: block;
   font-size: 1.35rem;
 }
 
-.rate__form__input,
-.contact__form__input {
+.rate__form__input {
   font-size: 1.75rem;
   font-family: inherit;
   color: var(--font-color-sub);
-  padding: 1.25rem 2rem 1.25rem 0;
-  border-radius: 2px;
+  padding: 1.55rem 2rem 1.55rem 0;
   border: none;
   border-bottom: 1.45px solid #99A8BD;
   outline: none;
   width: 90%;
+  background-color: #fafafa;
 }
 
-.rate__form__input:focus,
-.contact__form__input:focus {
+.rate__form__input:focus {
   outline: none;
   box-shadow: 0 1rem 2rem var(--shadow-dark-2);
   border-bottom: 1.5px solid var(--color-go);
 }
 
-.rate__form__input:focus:invalid,
-.contact__form__input:focus:invalid {
+.rate__form__input:focus:invalid {
   border-bottom: 1.5px solid var(--color-warning);
 }
 
-.rate__form__input::-webkit-input-placeholder,
-.contact__form__input::-webkit-input-placeholder {
+.rate__form__input::-webkit-input-placeholder {
   color: var(--font-color-sub);
+  letter-spacing: 1px;
 }
 
-.rate__form__input:placeholder-shown + .rate__form__label,
-.contact__form__input:placeholder-shown + .rate__form__label, .rate__form__input:placeholder-shown +
-.contact__form__label,
-.contact__form__input:placeholder-shown +
-.contact__form__label {
+.rate__form__input:placeholder-shown + .rate__form__label {
   opacity: 0;
   visibility: hidden;
 }
 
-.rate__form__textarea,
-.contact__form__textarea {
+.rate__form__textarea {
   font-size: 1.75rem;
   font-family: inherit;
   color: var(--font-color-sub);
   padding: 1rem;
 }
 
-.rate__form-btn,
-.contact__form-btn {
+.rate__form-btn {
   background-color: #ED7562;
   color: #fff;
   padding: 1.5rem 8rem;
@@ -722,7 +713,12 @@ body {
 .section-feature {
   max-width: 120rem;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   min-height: 30vh;
+  min-height: 100vh;
   padding: 15rem 0;
 }
 
@@ -745,11 +741,14 @@ body {
 }
 
 .section-feature .row-2 .card {
-  height: 35rem;
+  height: 45rem;
   width: 35rem;
   min-width: 20rem;
   box-shadow: 0;
-  padding: 1.75rem;
+  padding: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   -webkit-perspective: 150rem;
           perspective: 150rem;
   -moz-perspective: 150rem;
@@ -762,7 +761,8 @@ body {
 
 .section-feature .row-2 .card__title__no {
   color: var(--font-color-sub-sub);
-  font-size: 4rem;
+  font-size: 6rem;
+  font-weight: 600;
   -webkit-writing-mode: tb-rl;
       -ms-writing-mode: tb-rl;
           writing-mode: tb-rl;
@@ -773,17 +773,17 @@ body {
 }
 
 .section-feature .row-2 .card__title__text {
-  font-size: 1.75rem;
+  font-size: 2rem;
   margin-left: 1rem;
 }
 
 .section-feature .row-2 .card__img {
-  height: 20rem;
+  height: 25rem;
   padding: 1.5rem;
 }
 
 .section-feature .row-2 .card__discription {
-  font-size: 1.3rem;
+  font-size: 2rem;
   color: var(--font-color-sub);
   text-align: center;
 }

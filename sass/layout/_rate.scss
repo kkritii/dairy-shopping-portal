@@ -1,23 +1,27 @@
 .rate,
-.contact {
+    {
     display: flex;
     @include margin-to-center;
-    display: flex;
-    align-items: center;
+    // display: flex;
+    // align-items: center;
     flex-wrap: wrap;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    //   background-color: #eeeeee;
+    padding: 5rem 0 10rem;
 
     .col-1 {
         &-img {
-            height: 60rem;
+            height: 70rem;
             // font-size: 30rem;
         }
     }
 
     .col-2 {
         align-self: center;
-        justify-self: center;
-        width: 40%;
+        justify-content: space-between;
+        width: 50rem;
         height: 90%;
         // min-height: 100%;
     }
@@ -37,12 +41,13 @@
             font-size: 1.75rem;
             font-family: inherit;
             color: var(--font-color-sub);
-            padding: 1.25rem 2rem 1.25rem 0;
-            border-radius: 2px;
+            padding: 1.55rem 2rem 1.55rem 0;
+            // border-rdius: 2px;
             border: none;
             border-bottom: 1.45px solid #99A8BD;
             outline: none;
             width: 90%;
+            background-color: #fafafa;
 
             &:focus {
                 outline: none;
@@ -56,6 +61,8 @@
 
             &::-webkit-input-placeholder {
                 color: var(--font-color-sub);
+                letter-spacing: 1px;
+                // background-color: #eeeeee;
             }
         }
 

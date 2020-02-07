@@ -1,8 +1,12 @@
 .section-feature {
     @include margin-to-center;
     // max-height: 120vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     min-height: 30vh; //remove this after 
-
+    min-height: 100vh;
     padding: 15rem 0;
 
     .row-1 {
@@ -30,12 +34,14 @@
         flex-wrap: wrap;
 
         .card {
-            height: 35rem;
+            height: 45rem;
             width: 35rem;
             min-width: 20rem;
             box-shadow: 0;
-            padding: 1.75rem;
-
+            padding: 3.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             // border: 1px solid black;
             // width: auto;
             perspective: 150rem;
@@ -49,7 +55,8 @@
 
                 &__no {
                     color: var(--font-color-sub-sub);
-                    font-size: 4rem;
+                    font-size: 6rem;
+                    font-weight: 600;
                     writing-mode: tb-rl;
                     transform: rotate(180deg);
                     // text-orientation: use-glyph-orientation;
@@ -58,19 +65,19 @@
                 }
 
                 &__text {
-                    font-size: 1.75rem;
+                    font-size: 2rem;
                     margin-left: 1rem;
                 }
             }
 
             &__img {
-                height: 20rem;
+                height: 25rem;
                 padding: 1.5rem;
                 // width: 20rem;
             }
 
             &__discription {
-                font-size: 1.3rem;
+                font-size: 2rem;
                 color: var(--font-color-sub);
                 text-align: center;
             }
