@@ -2,9 +2,21 @@
     background-image: url("../../img/header-background.svg");
     // background-color: #FCEFEF;
     background-size: cover;
-    background-position: center bottom;
-    height: 90vh;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
     position: relative;
 
     // width: 120%;
+}
+
+.heading__svg {
+    display: flex;
+
+    &--home {}
+
+    &--cycle {
+        display: flex;
+        align-self: flex-end;
+    }
 }

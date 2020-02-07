@@ -218,12 +218,14 @@ body {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   width: 100%;
+  display: flex;
+  max-width: 120rem;
+  margin: auto;
 }
 
 .heading__primary {
   display: block;
   color: #fefefe;
-  text-align: center;
 }
 
 .heading__primary--main {
@@ -232,7 +234,6 @@ body {
 }
 
 .heading__primary--sub {
-  text-align: center;
   font-size: 1.45rem;
 }
 
@@ -581,9 +582,19 @@ body {
 .header {
   background-image: url("../../img/header-background.svg");
   background-size: cover;
-  background-position: center bottom;
-  height: 90vh;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
   position: relative;
+}
+
+.heading__svg {
+  display: flex;
+}
+
+.heading__svg--cycle {
+  display: flex;
+  align-self: flex-end;
 }
 
 .rate,
@@ -854,6 +865,8 @@ body {
 .footer .contact {
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
+  margin-top: 1.75rem;
 }
 
 .footer .contact__no {

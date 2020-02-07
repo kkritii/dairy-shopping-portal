@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="container">
-        <section class="header">
+        <header class="header">
           <!-- <div id="notification-bar" >
             <div class="notification">
                 <div>
@@ -76,7 +76,11 @@
                     <span>Order Now</span> 
                     <span class="lnr lnr-chevron-right"></span>
                 </button>
-            </header>
+			</header>
+			<div class="heading__svg">
+				<img src="./img/house.svg" height="400"  alt="" class="heading__svg--home">
+				<img src="./img/cycle-boy.svg" height="150" alt="" class="heading__svg--cycle">
+			</div>
 		  </div>
 		  <div class="arrow-container">
 		  <a class="down-arrow" href="#rate">
@@ -85,32 +89,7 @@
 			<div class="chevron"></div>
 		  </a>
 		  </div>
-		</section>
-		
-		<section class="rate" id="rate" data-scroll>
-			<div class="col-1">
-				<img src="./img/drawkit-server-woman-colour.svg" alt="women using laptop" class="col-1-img">
-			</div>
-			<div class="col-2">
-				<div class="heading__secondary">
-					<span class="heading__secondary--main" >Check Rates<span class="dot">.</span></span>	
-					<span class="heading__secondary--sub-sub" >Calculate Delivery Cost to your local address.</span>	
-				</div>
-				<form action="" class="rate__form">
-					<div class="u-margin-top-small">
-						<span class="heading__secondary--sub">From</span>
-						<input type="text" class="rate__form--source rate__form__input" placeholder="Select the starting location">
-					</div>
-					<div class="u-margin-top-mid">
-
-						<span class="heading__secondary--sub">To</span>
-						<input type="text" class="rate__form--destination rate__form__input" placeholder="Select the destination">
-					</div>
-					<input type="button" class="rate__form-btn btn u-margin-top-mid" value="CHECK RATES" type="submit">
-				</form>
-			</div>
-		</section>
-
+		</header>
 		<section class="section-feature" data-scroll>
 			<div class="row-1">
 				<div class="col-1 col">
@@ -150,6 +129,31 @@
 			</div>
 			
 		</section>
+		<section class="rate" id="rate" data-scroll>
+			<div class="col-1">
+				<img src="./img/drawkit-server-woman-colour.svg" alt="women using laptop" class="col-1-img">
+			</div>
+			<div class="col-2">
+				<div class="heading__secondary">
+					<span class="heading__secondary--main" >Check Rates<span class="dot">.</span></span>	
+					<span class="heading__secondary--sub-sub" >Calculate Delivery Cost to your local address.</span>	
+				</div>
+				<form action="" class="rate__form">
+					<div class="u-margin-top-small">
+						<span class="heading__secondary--sub">From</span>
+						<input type="text" class="rate__form--source rate__form__input" placeholder="Select the starting location">
+					</div>
+					<div class="u-margin-top-mid">
+
+						<span class="heading__secondary--sub">To</span>
+						<input type="text" class="rate__form--destination rate__form__input" placeholder="Select the destination">
+					</div>
+					<input type="button" class="rate__form-btn btn u-margin-top-mid" value="CHECK RATES" type="submit">
+				</form>
+			</div>
+		</section>
+
+	
 		<section class="contact-us" data-scroll>
 			<div class="col-1">
 				<span class="heading__secondary--main">Drop us a line<span class="dot">.</span></span>
@@ -211,6 +215,12 @@
 										>Supports
 									</a>
 								</li>
+								<li>
+									<a href="supports" class="nav__links footer__links">Check Rate</a>
+								</li>
+								<li>
+									<a href="supports" class="nav__links footer__links">Contact Us</a>
+								</li>
 							</ul>
 						</div>
 
@@ -234,7 +244,7 @@
 
 						<div class="footer__card--3">
 							<span class="footer__heading">CONTACTS</span>
-							<div class="contact u-margin-top-small">
+							<div class="contact">
 								<span class="lnr lnr-phone-handset"> </span>
 								<div class="contact__no">
 									<div class="contact__no--1">

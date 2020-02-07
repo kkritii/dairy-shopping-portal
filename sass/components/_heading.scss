@@ -4,12 +4,14 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
+    display: flex;
+    @include margin-to-center;
 }
 
 .heading__primary {
     display: block;
     color: #fefefe;
-    text-align: center;
+    // text-align: center;
 
     &--main {
         font-size: 7rem;
@@ -17,7 +19,7 @@
     }
 
     &--sub {
-        text-align: center;
+        // text-align: center;
         font-size: 1.45rem;
     }
 }

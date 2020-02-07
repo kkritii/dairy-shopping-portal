@@ -1,0 +1,114 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 981.21 887.12">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #74d5de;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #fed892;
+        stroke-linecap: round;
+        stroke-width: 6px;
+      }
+
+      .cls-11, .cls-2 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-3 {
+        fill: #de8e68;
+      }
+
+      .cls-4 {
+        fill: #d37c59;
+      }
+
+      .cls-5 {
+        fill: #ed6e58;
+      }
+
+      .cls-6 {
+        fill: #fed892;
+      }
+
+      .cls-7 {
+        fill: #fff;
+      }
+
+      .cls-8 {
+        fill: #fd8369;
+      }
+
+      .cls-9 {
+        fill: #c7fcff;
+      }
+
+      .cls-10 {
+        fill: #e0e0e1;
+      }
+
+      .cls-11 {
+        font-size: 60px;
+        stroke: #2b3600;
+        stroke-width: 2px;
+        font-family: Vivaldii, Vivaldi;
+      }
+    </style>
+  </defs>
+  <title>Artboard 1</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="vector">
+      <path class="cls-1" d="M3.39,650.12c0-55,23-63,23-97,0-138,46-161,76-161,57,0,50.6,59.89,64,80,30,45,43,78,43,109,0,126-52,201-96,201C65.39,782.12,3.39,714.19,3.39,650.12Z"/>
+      <line class="cls-2" x1="111.39" y1="560.12" x2="111.39" y2="865.12"/>
+      <line class="cls-2" x1="111.39" y1="639.12" x2="158.39" y2="592.12"/>
+      <line class="cls-2" x1="111.39" y1="716.12" x2="69.89" y2="674.62"/>
+      <rect class="cls-3" x="188.39" y="117.12" width="572" height="726"/>
+      <rect class="cls-4" x="171.89" y="806.12" width="605" height="37"/>
+      <rect class="cls-5" x="252.39" y="609.12" width="153" height="234"/>
+      <rect class="cls-6" x="442.39" y="609.12" width="282" height="133"/>
+      <rect class="cls-6" x="147.39" y="419.12" width="649" height="15"/>
+      <rect class="cls-6" x="147.39" y="293.12" width="649" height="15"/>
+      <rect class="cls-6" x="147.39" y="92.12" width="649" height="35"/>
+      <rect class="cls-6" x="221.39" y="158.12" width="107" height="135"/>
+      <rect class="cls-7" x="226.39" y="162.42" width="97" height="130.69"/>
+      <rect class="cls-6" x="417.39" y="158.12" width="107" height="135"/>
+      <rect class="cls-7" x="422.39" y="162.42" width="97" height="130.69"/>
+      <rect class="cls-6" x="613.39" y="158.12" width="107" height="135"/>
+      <rect class="cls-7" x="618.39" y="162.42" width="97" height="130.69"/>
+      <rect class="cls-5" x="134.39" y="540.12" width="680" height="26"/>
+      <polygon class="cls-8" points="814.38 540.12 760.38 434.12 188.38 434.12 134.38 540.12 814.38 540.12"/>
+      <rect class="cls-5" x="188.39" y="434.12" width="18" height="106"/>
+      <rect class="cls-5" x="231.01" y="434.12" width="18" height="106"/>
+      <rect class="cls-5" x="273.62" y="434.12" width="18" height="106"/>
+      <rect class="cls-5" x="316.24" y="434.12" width="18" height="106"/>
+      <rect class="cls-5" x="358.85" y="434.12" width="18" height="106"/>
+      <rect class="cls-5" x="401.47" y="434.12" width="18" height="106"/>
+      <rect class="cls-5" x="444.08" y="434.12" width="18" height="106"/>
+      <rect class="cls-5" x="486.7" y="434.12" width="18" height="106"/>
+      <rect class="cls-5" x="529.31" y="434.12" width="18" height="106"/>
+      <rect class="cls-5" x="571.93" y="434.12" width="18" height="106"/>
+      <rect class="cls-5" x="614.54" y="434.12" width="18" height="106"/>
+      <rect class="cls-5" x="657.16" y="434.12" width="18" height="106"/>
+      <rect class="cls-5" x="699.77" y="434.12" width="18" height="106"/>
+      <rect class="cls-5" x="742.39" y="434.12" width="18" height="106"/>
+      <rect class="cls-7" x="451.39" y="617.12" width="264" height="117"/>
+      <polygon class="cls-9" points="323.38 183.51 226.38 280.51 226.38 293.12 230.38 293.12 323.38 200.12 323.38 183.51"/>
+      <polygon class="cls-9" points="298.38 162.12 226.38 234.12 226.38 270.72 323.38 173.72 323.38 162.12 298.38 162.12"/>
+      <polygon class="cls-9" points="519.38 183.51 422.38 280.51 422.38 293.12 426.38 293.12 519.38 200.12 519.38 183.51"/>
+      <polygon class="cls-9" points="494.38 162.12 422.38 234.12 422.38 270.72 519.38 173.72 519.38 162.12 494.38 162.12"/>
+      <polygon class="cls-9" points="715.38 183.51 618.38 280.51 618.38 293.12 622.38 293.12 715.38 200.12 715.38 183.51"/>
+      <polygon class="cls-9" points="690.38 162.12 618.38 234.12 618.38 270.72 715.38 173.72 715.38 162.12 690.38 162.12"/>
+      <rect class="cls-1" x="260.39" y="617.12" width="137" height="226"/>
+      <rect class="cls-5" x="257.39" y="720.12" width="144" height="6"/>
+      <rect class="cls-8" x="760.39" y="360.12" width="83" height="12"/>
+      <circle class="cls-1" cx="863.89" cy="366.12" r="42.5"/>
+      <circle class="cls-6" cx="863.89" cy="366.12" r="29.76"/>
+      <polygon class="cls-9" points="573.51 617.12 456.51 734.12 534.38 734.12 651.38 617.12 573.51 617.12"/>
+      <polygon class="cls-9" points="566.38 734.12 683.38 617.12 668.51 617.12 551.51 734.12 566.38 734.12"/>
+      <polygon class="cls-9" points="715.38 617.12 699.51 617.12 582.51 734.12 617.38 734.12 715.38 636.12 715.38 617.12"/>
+    </g>
+  </g>
+  <rect class="cls-10" x="147.39" y="6" width="649" height="86.12"/>
+  <text class="cls-11" transform="translate(205.56 67.2)">Datheputhe Dairy Store</text>
+</svg>
