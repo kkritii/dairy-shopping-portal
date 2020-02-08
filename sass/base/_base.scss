@@ -37,14 +37,16 @@ body {
     position: relative;
     color: var(--font-color-main);
     line-height: 1.6;
+    overflow: hidden;
     // background-color: #333;
 }
 
 .container {
-
-    // overflow-y: scroll;
+    overflow: scroll;
+    height: 100vh;
+    scroll-snap-type: y mandatory;
 }
 
-.container section {
-    // scroll-snap-align: start;
+.container>* {
+    scroll-snap-align: start;
 }
