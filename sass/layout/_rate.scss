@@ -1,5 +1,5 @@
 .rate,
-    {
+.contact {
     display: flex;
     @include margin-to-center;
     // display: flex;
@@ -48,6 +48,10 @@
             outline: none;
             width: 90%;
             background-color: #fafafa;
+
+            &__contact {
+                background-color: #fff;
+            }
 
             &:focus {
                 outline: none;

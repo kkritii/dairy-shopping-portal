@@ -3,17 +3,19 @@
     align-items: center;
     justify-content: center;
     padding: 0rem 0 5rem 0;
-    min-height: 100vh;
+    flex-wrap: wrap-reverse;
+    // min-height: 100vh;
     @include margin-to-center;
 
     .col-1 {
-        margin-left: 10rem;
-        min-width: 35%;
+        // margin-left: 10rem;
+        min-width: 45%;
         max-width: 60%;
     }
 
     .col-2 {
         // width: 60%;
+        margin-right: 15rem;
 
         &-img {
             height: 55rem;

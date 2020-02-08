@@ -1,11 +1,13 @@
 .heading-container {
     position: absolute;
-    top: 45%;
+    @include margin-to-center;
+
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
     display: flex;
-    @include margin-to-center;
+    // flex-wrap: wrap;
 }
 
 .heading__primary {

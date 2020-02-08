@@ -81,6 +81,10 @@ body {
   overflow: hidden;
 }
 
+section {
+  width: 100vw;
+}
+
 .container {
   overflow: scroll;
   height: 100vh;
@@ -213,14 +217,14 @@ body {
 
 .heading-container {
   position: absolute;
-  top: 45%;
+  max-width: 120rem;
+  margin: auto;
+  top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   width: 100%;
   display: flex;
-  max-width: 120rem;
-  margin: auto;
 }
 
 .heading__primary {
@@ -598,7 +602,8 @@ body {
   align-self: flex-end;
 }
 
-.rate {
+.rate,
+.contact {
   display: flex;
   max-width: 120rem;
   margin: auto;
@@ -609,11 +614,13 @@ body {
   padding: 5rem 0 10rem;
 }
 
-.rate .col-1-img {
+.rate .col-1-img,
+.contact .col-1-img {
   height: 70rem;
 }
 
-.rate .col-2 {
+.rate .col-2,
+.contact .col-2 {
   -ms-grid-row-align: center;
       align-self: center;
   justify-content: space-between;
@@ -621,19 +628,22 @@ body {
   height: 90%;
 }
 
-.rate__form {
+.rate__form,
+.contact__form {
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
 
-.rate__form__label {
+.rate__form__label,
+.contact__form__label {
   display: block;
   font-size: 1.35rem;
 }
 
-.rate__form__input {
+.rate__form__input,
+.contact__form__input {
   font-size: 1.75rem;
   font-family: inherit;
   color: var(--font-color-sub);
@@ -645,34 +655,48 @@ body {
   background-color: #fafafa;
 }
 
-.rate__form__input:focus {
+.rate__form__input__contact,
+.contact__form__input__contact {
+  background-color: #fff;
+}
+
+.rate__form__input:focus,
+.contact__form__input:focus {
   outline: none;
   box-shadow: 0 1rem 2rem var(--shadow-dark-2);
   border-bottom: 1.5px solid var(--color-go);
 }
 
-.rate__form__input:focus:invalid {
+.rate__form__input:focus:invalid,
+.contact__form__input:focus:invalid {
   border-bottom: 1.5px solid var(--color-warning);
 }
 
-.rate__form__input::-webkit-input-placeholder {
+.rate__form__input::-webkit-input-placeholder,
+.contact__form__input::-webkit-input-placeholder {
   color: var(--font-color-sub);
   letter-spacing: 1px;
 }
 
-.rate__form__input:placeholder-shown + .rate__form__label {
+.rate__form__input:placeholder-shown + .rate__form__label,
+.contact__form__input:placeholder-shown + .rate__form__label, .rate__form__input:placeholder-shown +
+.contact__form__label,
+.contact__form__input:placeholder-shown +
+.contact__form__label {
   opacity: 0;
   visibility: hidden;
 }
 
-.rate__form__textarea {
+.rate__form__textarea,
+.contact__form__textarea {
   font-size: 1.75rem;
   font-family: inherit;
   color: var(--font-color-sub);
   padding: 1rem;
 }
 
-.rate__form-btn {
+.rate__form-btn,
+.contact__form-btn {
   background-color: #ED7562;
   color: #fff;
   padding: 1.5rem 8rem;
@@ -692,15 +716,18 @@ body {
   align-items: center;
   justify-content: center;
   padding: 0rem 0 5rem 0;
-  min-height: 100vh;
+  flex-wrap: wrap-reverse;
   max-width: 120rem;
   margin: auto;
 }
 
 .contact-us .col-1 {
-  margin-left: 10rem;
-  min-width: 35%;
+  min-width: 45%;
   max-width: 60%;
+}
+
+.contact-us .col-2 {
+  margin-right: 15rem;
 }
 
 .contact-us .col-2-img {
@@ -790,6 +817,7 @@ body {
   color: var(--grey-light-2);
   padding: 7rem 0rem 3rem 0rem;
   font-size: 1.4rem;
+  max-height: 60rem;
   font-weight: 500;
 }
 
