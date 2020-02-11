@@ -3,7 +3,7 @@
         color: var(--grey-light-2);
         padding: 7rem 0rem 3rem 0rem;
         font-size: 1.4rem;
-        max-height: 60rem;
+        // max-height: 60rem;
         font-weight: 500;
 
         &-container {
@@ -38,6 +38,7 @@
 
         &__grid {
             display: flex;
+            // flex-wrap: wrap;
             justify-content: space-around;
         }
 
@@ -82,7 +83,7 @@
             // padding: 1rem;
         }
 
-        .contact {
+        .footer__contact {
             display: flex;
             flex-direction: row;
             justify-content: flex-start;

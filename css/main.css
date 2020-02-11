@@ -766,7 +766,7 @@ section {
 
 .section-feature .row-2 .card {
   height: 45rem;
-  width: 35rem;
+  width: 37rem;
   min-width: 20rem;
   box-shadow: 0;
   padding: 3.5rem;
@@ -802,7 +802,7 @@ section {
 }
 
 .section-feature .row-2 .card__img {
-  height: 25rem;
+  height: 20rem;
   padding: 1.5rem;
 }
 
@@ -817,7 +817,6 @@ section {
   color: var(--grey-light-2);
   padding: 7rem 0rem 3rem 0rem;
   font-size: 1.4rem;
-  max-height: 60rem;
   font-weight: 500;
 }
 
@@ -887,14 +886,14 @@ section {
   cursor: pointer;
 }
 
-.footer .contact {
+.footer .footer__contact {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   margin-top: 1.75rem;
 }
 
-.footer .contact__no {
+.footer .footer__contact__no {
   display: flex;
   flex-direction: column;
   margin-left: 1rem;
