@@ -1,0 +1,32 @@
+.canvas {
+    padding: 4.5rem;
+    background-color: var(--bg-color-card);
+    border-radius: 10px;
+    margin-top: 1.25rem;
+    // min-width: 30rem;
+
+    &__line {
+        // max-height: 100rem;
+        min-height: 30rem;
+        max-width: 65rem;
+        min-width: 65rem;
+    }
+
+    &__doughnut {
+        // max-height: 100rem;
+        min-height: 30rem;
+        max-width: 65rem;
+        min-width: 65rem;
+    }
+}
+
+.myChart {
+    max-height: 35rem;
+    flex: 0 0 40%;
+    // min-width: 20rem;
+    // max-width: 60rem;
+    // min-width: 30rem;
+    // smax-height: 35rem;
+    // min-height: 35rem;
+    // max-width: 30rem;
+}
