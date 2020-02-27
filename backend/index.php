@@ -1,5 +1,8 @@
 <?php
-	
+	session_start();
+	$_SESSION['message'] = "";
+	$_SESSION['error'] = false;
+
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +21,8 @@
 	</head>
 	<body>
 		<div class="container">
-
+		<div class="message-box form-box">
+		</div>   
 			<header class="header">
 				
 				<div class="header__logo">
@@ -117,8 +121,7 @@
 				
 				
 				<main class="hotel-view" id="content"></main>
-				<div class="form-box">
-				</div>     
+			  
 
 			</div>
 		</div>

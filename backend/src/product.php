@@ -18,7 +18,18 @@
                               <use xlink:href="./img/SVG1/sprite.svg#icon-shopping-bag"></use>
                          </svg>
                     </i>
-                    <div class="card-data card-data-1">200</div>
+                    <div class="card-data card-data-1">
+                         <?php
+                              require_once("../includes/db_connect.php");
+                              $sql = "SELECT `product_id` FROM product";
+                              if ($result=mysqli_query($conn,$sql))
+                              {
+                                   $rowcount=mysqli_num_rows($result);
+                                   echo $rowcount;
+                                   mysqli_free_result($result);
+                              }
+                         ?>
+                    </div>
                </div>
           </div>
           <div class="card card--1">
@@ -29,7 +40,7 @@
                               <use xlink:href="./img/SVG1/sprite.svg#icon-shopping-basket"></use>
                          </svg>
                     </i>
-                    <div class="card-data card-data-2">2000</div>
+                    <div class="card-data card-data-2">0</div>
                </div>
           </div>
           <div class="card card--1">
@@ -40,7 +51,7 @@
                               <use xlink:href="./img/SVG1/sprite.svg#icon-shopping-bag"></use>
                          </svg>
                     </i>
-                    <div class="card-data card-data-3">Rs.1700</div>
+                    <div class="card-data card-data-3">Rs.0</div>
                </div>
           </div>
      </div>
@@ -61,7 +72,7 @@
                <svg class="icon">
                     <use xlink:href="./img/SVG1/sprite.svg#icon-circle-with-plus"></use>
                </svg>
-               Edit Product
+               Add Product Category
           </button>
           <button id="modalBtn" class="button">
                <svg class="icon">
@@ -81,14 +92,18 @@
                <div class="modal-form">
                   <form  method="POST" id="add-form">
                          <table class="modal_table">
-                              <tr class="table_row table_row-category">
-                                   <td><h2>Category</h2></td>
-                                   <select id="category" class=" input-product-category">
-                                        <option value="yogurt">Yogurt</option>
-                                        <option value="cream">Cream</option>
-                                        <option value="butter">Butter</option>
-                                        <option value="cheese">Cheese</option>
-                                   </select>
+                             <tr class="table_row table_row-category">
+                                   <div>
+                                        <td><h2>Category</h2></td>
+                                   </div>
+                                   <td>
+                                        <select id="category" class="input-product-category">
+                                             <option value="yogurt">Yogurt</option>
+                                             <option value="cream">Cream</option>
+                                             <option value="butter">Butter</option>
+                                             <option value="cheese">Cheese</option>
+                                        </select>
+                                   </td>       
                               </tr>
                               
                               <tr class="table_row">
@@ -96,8 +111,7 @@
                                    <td>
                                         <input type="text" size="20" name="product_name"  class="form_input input-product-name" />
                                    </td>
-                              </tr>
-                            
+                              </tr>  
                               <tr class="table_row">
                                    <td><h2>Price</h2></td>
                                    <td>
@@ -108,6 +122,12 @@
                                    <td><h2>Size</h2></td>
                                    <td>
                                         <input type="number" name="size"  class="form_input input-product-size"/>
+                                   </td>
+                              </tr>
+                              <tr class="table_row">
+                                   <td><h2>Quantity</h2></td>
+                                   <td>
+                                        <input type="text" name="quantity"  class="form_input input-product-quantity"/>
                                    </td>
                               </tr>
                               <tr class="table_row">
@@ -147,77 +167,85 @@
 
      <div class="product-list">
           <table class="product_table">
-  
-         
-               <tr>
-                    <th>S.No</th>
+                <tr>
+                    <th>S.No</th>                     
                     <th>Product Name</th>
-                    <th>Product type</th>
-                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Unit price</th>
                     <th>Size</th>
-                    <th>Quantity</th>
-               </tr>
-               <tr>
-                    <td>1</td>
-                    <td>klasdhflk</td>
-                    <td>hggvh</td>
-                    <td>hjhj</td>
-                    <td>hkgkh</td>
-                    <td>jhgfhj</td>
-               </tr>
-               <tr>
-                    <td>1</td>
-                    <td>klasdhflk</td>
-                    <td>hggvh</td>
-                    <td>hjhj</td>
-                    <td>hkgkh</td>
-                    <td>jhgfhj</td>
-               </tr>
-               <tr>
-                    <td>1</td>
-                    <td>klasdhflk</td>
-                    <td>hggvh</td>
-                    <td>hjhj</td>
-                    <td>hkgkh</td>
-                    <td>jhgfhj</td>
-               </tr>
-               <tr>
-                    <td>1</td>
-                    <td>klasdhflk</td>
-                    <td>hggvh</td>
-                    <td>hjhj</td>
-                    <td>hkgkh</td>
-                    <td>jhgfhj</td>
-               </tr>
+                    <th>Description</th>
+                    <th>Rating</th>
+                    <th>Stock</th>
+                    <th>Quantity sold</th>
+                </tr>
+               <?php
+                    require_once("../includes/db_connect.php");
+                    $i = 1;
+                    $error = false;
+                    $sql = "SELECT `product_name`,`category`,`unit_price`,`size`,`description`,`rating`,`stock`,`quantity_sold` FROM product LIMIT 10";
+                    $result = mysqli_query($conn,$sql);             
+                    if(mysqli_num_rows($result)>0){
+                         while($row = mysqli_fetch_assoc($result)) {
+                              echo "
+                                   <tr>
+                                        <td>".$i++."</td>
+                                        <td>".$row['product_name']."</td>
+                                        <td>".$row['category']."</td>
+                                        <td>".$row['unit_price']."</td>
+                                        <td>".$row['size']."</td>
+                                        <td>".$row['description']."</td>
+                                        <td>".$row['rating']."</td>
+                                        <td>".$row['stock']."</td>
+                                        <td>".$row['quantity_sold']."</td>
+                                    </tr>
+                              ";
+                         }
+                         $message = "Products Loaded successfully";
+                      } else{
+                         $message = "No any product in database";
+                         $error = true;
+                     }
+               ?>
           </table>
      </div>
+     <button class="button-load button">Load More</button></br></br></br></br>
    
 </div>
 </div>
 
-
-
-
 <script>	
-			$(document).ready(function(){
-				$("#add-form").submit(function(event){
-                         event.preventDefault();
-					var product_name = $(".input-product-name").val();
-					var category = $(".input-product-category").val(); 
-					var price = $(".input-product-price").val(); 
-					var size = $(".input-product-size").val(); 
-					var description = $(".input-product-description").val(); 
-					var product_submit = $("#input-product-submit").val(); 
-
-					$(".form-box").load("./includes/add_item.php",{
-						product_name : product_name,
-						category : category,
-						price : price,
-						size : size,
-						description : description,
-						product_submit : product_submit
-					})					
-
-				}) 
-			});
+	$(document).ready(function(){
+		$("#add-form").submit(function(event){
+               event.preventDefault();
+			var product_name = $(".input-product-name").val();
+     		var category = $(".input-product-category").val(); 
+			var price = $(".input-product-price").val(); 
+			var size = $(".input-product-size").val();
+			var quantity = $(".input-product-quantity").val(); 
+			var description = $(".input-product-description").val(); 
+			var product_submit = $("#input-product-submit").val(); 
+			$(".message-box").load("./includes/add_item.php",{
+				product_name : product_name,
+				category : category,
+				price : price,
+				size : size,
+				quantity : quantity,
+				description : description,
+				product_submit : product_submit
+			})
+              				
+		}) 
+          var displayCount = 10;
+          $(".button-load").click(function(){
+               displayCount += 10;
+               $(".product_table").load("./includes/display_items.php",{
+                  item_to_display: displayCount
+               }),
+               $(".message-box").load("./includes/popup_message.php")
+           })
+          //  $(".button-load").click(function(
+          //     
+          //  })
+	});
 </script>
+  <!-- echo "<script>alert('$limit')</script>"; -->
