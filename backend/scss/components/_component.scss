@@ -1,0 +1,196 @@
+.logo {
+     height: 3rem;
+     margin-left: 1.75rem;
+}
+
+.search {
+     flex: 0 0 40%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+
+     &__input {
+          font-family: inherit;
+          font-size: 1.5rem;
+          color: inherits;
+          background-color: var(--grey-light-1);
+          width: 90%;
+          padding: 0.7rem 2rem;
+          border-radius: 50px;
+          margin-right: -2.75rem;
+          border: none;
+          transition: all 0.2s ease;
+
+          &:focus {
+               outline: none;
+               width: 100%;
+               // transition: 0.5s ease;
+               background-color: var(--grey-light-4);
+          }
+
+          &::-webkit-input-placeholder {
+               font-weight: 100;
+               color: var(--grey-light-5);
+          }
+     }
+
+     &__input:focus + &__btn {
+          background-color: var(--grey-light-4);
+     }
+
+     &__btn {
+          border: none;
+          background-color: var(--grey-light-1);
+          cursor: pointer;
+
+          &:focus {
+               outline: none;
+          }
+
+          &:active {
+               transform: translateY(2px);
+          }
+     }
+
+     &__icon {
+          height: 1.75rem;
+          width: 1.75rem;
+          fill: var(--grey-dark-3);
+     }
+}
+
+.user-nav {
+     // background-color: orangered;
+     display: flex;
+     align-self: stretch;
+     align-items: center;
+
+     & > * {
+          padding: 0 1.5rem;
+          cursor: pointer;
+          height: 100%;
+     }
+
+     // &>*:hover {
+     // 	background-color: var(--grey-light-4);
+     // }
+
+     &__icon-box {
+          display: flex;
+          align-items: center;
+          position: relative;
+     }
+
+     &__icon {
+          height: 2.25rem;
+          width: 2.25rem;
+          fill: #ffffff;
+     }
+
+     &__notification {
+          background-color: var(--color-primary);
+          height: 1.75rem;
+          width: 1.75rem;
+          border-radius: 100%;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          color: #fff;
+          position: absolute;
+          top: 20%;
+          left: 55%;
+          font-weight: 700;
+          font-size: 1.1rem;
+     }
+
+     &__user {
+          display: flex;
+          align-items: center;
+     }
+
+     &__user-photo {
+          height: 2.75rem;
+          width: 2.75rem;
+          border-radius: 100%;
+     }
+
+     &__user-name {
+          margin-left: 1rem;
+          font-size: 1.5rem;
+          color: var(--grey-dark-1);
+     }
+}
+
+//Side navigation
+
+.sidebar {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+}
+
+.nav {
+     margin-top: 3.5rem;
+
+     &__item {
+          text-decoration: none;
+          list-style-type: none;
+          position: relative;
+
+          &:not(:last-child) {
+               margin-bottom: 0.5rem;
+          }
+
+          // background-color: red;
+     }
+
+     &__item::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 3px;
+          transition: transform 0.2s ease, width 0.3s cubic-bezier(1, 0, 0, 1) 0.1s, background-color 0.1s;
+          background-color: var(--bg-color-body);
+          transform: scaleY(0);
+     }
+
+     &__item:hover::before,
+     &__item--active::before {
+          transform: scaleY(1);
+          width: 100%;
+     }
+
+     &__item:active::before {
+          // background-color: var(--color-primary-light);
+     }
+
+     &__links:link,
+     &__links:visited {
+          position: relative;
+          z-index: 9;
+          text-decoration: none;
+          display: block;
+          padding: 1.5rem 3rem;
+          display: flex;
+          align-items: center;
+          // background-color: var(--bg-color-nav-items);
+     }
+
+     &__icon {
+          height: 1.75rem;
+          width: 1.75rem;
+          fill: var(--grey-light-2);
+          margin-right: 2rem;
+     }
+
+     &__text {
+          color: #fff;
+          font-size: 1.4rem;
+          text-transform: uppercase;
+          color: var(--grey-light-2);
+     }
+}

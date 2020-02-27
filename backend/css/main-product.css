@@ -1,0 +1,38 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    width: 393.3px;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  li a:hover:not(.active) {
+    background-color: #111;
+  }
+  .product-page{
+      background-color:#e8e5e5;
+      width: auto;
+      padding: 12px;
+      margin-left: 120px;
+  }
+  .submit{
+      background-color: green;
+      /* width: 100px; */
+      padding: 10px;
+  }
+  .reset{
+      background-color: indianred;
+      padding: 10px;
+  }

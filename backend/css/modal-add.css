@@ -1,0 +1,126 @@
+
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+.modal-content{
+    background-color: #f4f4f4;
+    margin: 15rem auto;
+    padding: 16px;
+    /* padding: 10px; */
+    max-width: 40rem;
+    min-width: 37rem;
+    border-radius: 3px;
+    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17);
+   animation-name:modalopen;
+   animation-duration:1s;
+
+}
+.modal-content1{
+    background-color: #f4f4f4;
+    margin: 10% auto;
+    padding: 10px;
+    /* padding: 10px; */
+    width: 30%;
+    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17);
+   animation-name:modalopen;
+   animation-duration:1s;
+
+}
+.closeBtn{
+    color:black ;
+    float: right;
+    font-size: 30px;
+}
+.closeBtn:hover,.closeBtn:focus{
+    color: #0000;
+    text-decoration: none;
+    cursor: pointer;
+}
+@keyframes modalopen{
+    from{opacity:0}
+    to{opacity:1}
+}
+.modal-header{
+    /* background-color: coral; */
+    padding: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    color:black;
+}
+.table_row{
+    margin-top: 10px;
+} 
+.table_row-category{
+    display: flex;
+    flex-direction: row;
+}
+.modal_btn{
+    margin-top: 5px;
+    padding: 10px 13px;
+    /* margin: 0 auto; */
+    display: flex;
+    justify-content: center;
+}
+input[type='submit']{
+    background-color:#009688;
+    color:white;
+    padding: 8px;
+    border:0rem;
+    /* margin-left: 120px; */
+    /* border: 2px solid #ccc; */
+    /* margin:10px; */
+    /* margin: 10px; */
+    /* float:right; */
+}
+input[type='reset']{
+    background-color:#3f51b5;
+    color: white;
+    padding: 8px;
+    border: 0rem;
+    /* float:right; */
+}
+
+
+.order-list{
+    margin-top: 50px;
+    font-size: 10px;
+}
+.form_input{
+    padding:  7.5px 5px;
+    width: 100%;
+    margin-left: 5px;
+}
+.form_btn{
+    width: 80px;
+    height: 40px;
+    padding: 10px 13.5px;
+    border-radius: 3px;
+    margin-right: 10px;
+}
+/* .product-list tr th{
+    padding: 8px;
+    background-color:#00000038;
+    /* margin: 10px; */
+    
+
+/* .product-list tr td{
+    padding:8px;
+    text-align: center;
+    font-size: 15px;
+} */
+/* @media screen and (max-width:1250px){ */
+   .box .box1,.box2,.box3,.box4{
+        /* width:20%; */
+        /* margin-left: 40px; */
+        font-size: 10px;
+         
+    } */
+    

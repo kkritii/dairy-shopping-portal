@@ -1,0 +1,61 @@
+.form {
+     &-box {
+          color: #fff;
+          z-index: 999;
+          position: absolute;
+          top: 10%;
+          right: 0;
+          min-width: 10rem;
+          max-width: 35rem;
+          // text-align: right;
+          background-color: var(--bg-color-sidebar);
+          transition: transform 0.2s ease, width 0.3s cubic-bezier(1, 0, 0, 1) 0.1s, background-color 0.1s;
+          animation-name: moveLeft;
+          animation-duration: 2s;
+          animation-delay: 0s;
+          animation-timing-function: cubic-bezier(1, 0, 0, 1);
+          // padding: 1rem 2rem;
+
+          &-error {
+               display: block;
+               border-left: 1.25rem solid #cc3300;
+               border-top: 1px solid red;
+               border-bottom: 1px solid red;
+
+               border-radius: 5px 0 0 5px;
+          }
+          &-success {
+               border-left: 1.25rem solid #99cc33;
+               border-top: 1px solid #99cc33;
+               border-bottom: 1px solid #99cc33;
+               transition: transform 0.2s ease, width 0.3s cubic-bezier(1, 0, 0, 1) 0.1s, background-color 0.1s;
+               animation-name: moveLeft;
+               animation-duration: 2s;
+               animation-delay: 0s;
+               animation-timing-function: cubic-bezier(1, 0, 0, 1);
+               border-radius: 5px 0 0 5px;
+
+               // background-color: #99cc33;
+          }
+          .popup-code {
+               display: block;
+               font-weight: 600;
+               font-size: 2rem;
+               width: 100%;
+               text-align: left;
+               border-bottom: 0.3px solid #1b2a3a;
+               padding: 1rem;
+          }
+          .popup-message {
+               font-size: 1.4rem;
+               padding: 1rem;
+          }
+     }
+}
+.message-animate {
+     // transition: transform 0.2s ease, width 0.3s cubic-bezier(1, 0, 0, 1) 0.1s, background-color 0.1s;
+     animation-name: moveLeft;
+     animation-duration: 2s;
+     animation-delay: 0s;
+     animation-timing-function: cubic-bezier(1, 0, 0, 1);
+}

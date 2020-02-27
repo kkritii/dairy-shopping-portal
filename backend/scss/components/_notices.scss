@@ -1,0 +1,16 @@
+.notices {
+    display: flex;
+    min-height: 6rem;
+    font-size: 1.7rem;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: 600;
+    text-transform: uppercase;
+    flex-wrap: wrap;
+
+    // background-color: var(--grey-dark-3);
+    // color: ;
+    span {
+        min-width: 20rem;
+    }
+}

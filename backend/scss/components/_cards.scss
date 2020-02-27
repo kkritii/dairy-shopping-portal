@@ -1,0 +1,78 @@
+.cards {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: flex-start;
+     // margin-top: 1rem;
+     font-size: 1.6rem;
+     color: #ffffff;
+     //  min-height: 18rem;
+
+     .card {
+          // flex: 0 0 15rem;
+          flex-wrap: wrap;
+          padding: 1.6rem;
+          // width: 15rem;
+          min-width: 15rem;
+          max-width: 25rem;
+          border-radius: 3px;
+          // width: 30rem;
+          // min-width: 15rem;
+          height: 10rem;
+          // position: relative;
+          margin: 0rem 1rem 3rem 0rem;
+          // min-height: 10rem;
+          background-color: var(--bg-color-card);
+          &_title {
+               padding: 0.3px;
+               border-bottom: 0.3px solid #426388;
+          }
+          &-group {
+               width: 100%;
+               height: 100%;
+               padding: 1.25rem 0.24rem;
+               display: flex;
+               // justify-content: space-between;
+          }
+          &-icon {
+               // position: absolute;
+               // top: 50%;
+               margin-right: 2rem;
+          }
+          &-data {
+               // position: absolute;
+               // top: 40%;
+               // left: 50%;
+               margin-top: -1rem;
+               font-size: 3.2rem;
+               &-1 {
+                    color: rgb(84, 189, 248);
+               }
+               &-2 {
+                    color: rgb(85, 176, 82);
+               }
+               &-3 {
+                    // color: rgb(85, 176, 82);
+                    color: coral;
+                    // color: rbg(229, 124, 37);
+               }
+          }
+          //      &--1 {
+          //           background-color: var(--card-color-1);
+          //      }
+
+          //      &--2 {
+          //           background-color: var(--card-color-2);
+          //      }
+
+          //      &--3 {
+          //           background-color: var(--card-color-3);
+          //      }
+
+          //      &--4 {
+          //           background-color: var(--card-color-4);
+          //      }
+     }
+}
+
+.card {
+}

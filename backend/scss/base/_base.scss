@@ -1,0 +1,50 @@
+//gobal reset
+:root {
+     --bg-color-body: #364f6b;
+     --bg-color-sidebar: #3e5b7b;
+     --bg-color-nav-items: #4c6783;
+     --bg-color-card: #304863;
+
+     --font-color-main: #43dde6;
+     --font-color-sub: #ffffff;
+     --font-color-sub-sub: #d1d3dc;
+
+     --btn-color-main: #fc5185;
+}
+
+*,
+*::after,
+*::before {
+     margin: 0;
+     padding: 0;
+     box-sizing: inherit;
+}
+
+html {
+     font-size: 62.5%;
+     box-sizing: border-box;
+}
+
+body {
+     font-family: "Open Sans", sans-serif;
+     font-weight: 400;
+     line-height: 1.6;
+     overflow: hidden;
+     color: var(--grey-dark-2);
+     min-height: 100vh;
+}
+
+.container {
+     overflow: hidden;
+}
+.icon {
+     height: 1.5rem;
+     width: 1.5rem;
+     fill: #ffffff;
+     margin-right: 0.5rem;
+     &-big {
+          height: 3rem;
+          width: 3rem;
+          fill: #ffffff;
+     }
+}

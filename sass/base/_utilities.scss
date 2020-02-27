@@ -1,0 +1,16 @@
+.u-margin {
+  &-top {
+    &-mid {
+      margin-top: 4rem;
+    }
+
+    &-small {
+      margin-top: 1.75rem;
+    }
+  }
+  &-left {
+    &-small {
+      margin-left: 1.75rem;
+    }
+  }
+}

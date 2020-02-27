@@ -1,0 +1,19 @@
+.add-item {
+     max-width: 100%;
+     //   margin: auto;
+     display: flex;
+     justify-content: space-around;
+     height: 100%;
+     width: 100%;
+     flex-wrap: wrap;
+     padding: 5rem 10rem;
+     &-img {
+          flex: 0 0 50%;
+     }
+
+     .right-group {
+          flex: 1 0 40%;
+          align-self: center;
+          justify-items: center;
+     }
+}

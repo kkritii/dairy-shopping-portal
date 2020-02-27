@@ -1,0 +1,74 @@
+:root {
+  --shadow-dark: 0 5px 2rem rgba(0, 0, 0, 0.3);
+  --shadow-dark-2: 0 1px 1rem rgba(0, 0, 0, 0.1);
+  --grey-dark-1: #333;
+  --grey-dark-2: #777;
+  --grey-dark-3: #999;
+  --grey-light-1: #faf9f9;
+  --grey-light-2: #f4f2f2;
+  --grey-light-3: #f0eeee;
+  --grey-light-4: #ccc;
+
+  --font-color-primary: #3c3b37;
+  --font-color-secondary-main: #73726c;
+  --font-color-secondary-sub: #949baf;
+  --font-color-secondary-sub-sub: #d1d3dc;
+
+  //   --font-color-main: #172551;
+  //   --font-color-sub: #949baf;
+  //   --font-color-sub-sub: #d1d3dc;
+
+  --color-go: #55c57a;
+  --color-warning: #ff7730;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; // 10px
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 1.5px;
+  position: relative;
+  color: var(--font-color-main);
+  line-height: 1.6;
+  overflow: hidden;
+  // background-color: #333;
+}
+
+section {
+  width: 100vw;
+}
+
+.container {
+  overflow: scroll;
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+}
+
+.container > * {
+  scroll-snap-align: start;
+}
+
+ul {
+  list-style-type: none;
+}
+li {
+}
+a {
+  text-decoration: none;
+  color: var(--font-color-primary);
+}
+.red {
+  color: red;
+}

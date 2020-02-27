@@ -1,0 +1,11 @@
+.section-product {
+  max-width: 120rem;
+  margin: auto;
+  .headline {
+    &__main {
+    }
+    &__sub {
+      margin-top: 0.7rem;
+    }
+  }
+}

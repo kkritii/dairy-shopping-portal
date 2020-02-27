@@ -1,0 +1,46 @@
+.heading {
+     display: block;
+     color: var(--font-color-sub);
+     padding: 3rem 0rem;
+     font-weight: 800;
+
+     &__primary {
+          &--main {
+               font-size: 3rem;
+          }
+
+          &--sub {
+               font-size: 1.5rem;
+               font-weight: 400;
+               color: var(--font-color-sub-sub);
+          }
+     }
+     &__secondary {
+          display: block;
+          height: 10%;
+          font-weight: 900;
+
+          &--main {
+               font-size: 1.7rem;
+               font-weight: 900;
+               display: flex;
+               // justify-content: stretch;
+               align-items: center;
+          }
+
+          &--sub {
+               display: block;
+               font-size: 1.5rem;
+               font-weight: 400;
+               color: var(--font-color-secondary-sub);
+          }
+
+          &--sub-sub {
+               display: block;
+               font-size: 1.9rem;
+               letter-spacing: 1.7;
+               font-weight: 400;
+               color: var(--font-color-secondary-sub-sub);
+          }
+     }
+}
