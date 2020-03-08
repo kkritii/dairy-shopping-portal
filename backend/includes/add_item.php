@@ -14,7 +14,7 @@
             if ($result = mysqli_query($conn,$sql_check)) 
             {       
                 if(mysqli_num_rows($result) >= 1){
-                    $message = "Product Already Exist in Database";
+                    $message = "Product Already Exist in Database.Use<button class='button-small button'>Edit product</button> to increase quantity";
                     $error = true;
          
                 }else{

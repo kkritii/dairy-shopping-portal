@@ -16,8 +16,8 @@
 
 <body>
     <div class="container">
-        <!-- <header class="section-header">
-            <div id="notification-bar" >
+       
+        <div id="notification-bar" >
             <div class="notification">
                 <div>
                     <i class="notification--emoji">
@@ -31,10 +31,9 @@
             <span class="notification--close-btn" onclick="myFunction()" id="close">
                 <i class="lnr lnr-cross"> </i>
             </span>
-            </div>
-          </div>
-        </header> -->
+        </div>
 
+        
         <!-- Navigation -->
         <nav class="section-nav">
             <div class="nav-wrapper">

@@ -706,13 +706,24 @@ a {
   color: var(--font-color-secondary-sub);
 }
 
+.notification-bar {
+  padding: 3rem;
+  width: 100%;
+  text-align: center;
+}
+
+.notification-bar .notification--text {
+  font-size: 1.6rem;
+}
+
 .check-rate {
   max-width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   height: 100%;
   width: 100%;
   -ms-flex-wrap: wrap;
@@ -837,12 +848,13 @@ a {
   max-width: 120rem;
   margin: auto auto 6.4rem auto;
   height: auto;
-  background-image: url("../imgs/ct-on-phone-big.jpg");
+  background-image: url("../imgs/bg-img-3.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 40rem;
   position: relative;
+  z-index: -10;
 }
 
 .header .board {

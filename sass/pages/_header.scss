@@ -1,26 +1,23 @@
 .header {
-  max-width: 120rem;
-  margin: auto auto 6.4rem auto;
-  height: auto;
-  background-image: url("../imgs/ct-on-phone-big.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 40rem;
-  position: relative;
-
-  &__img {
-  }
-
-  .board {
-    background-color: #fff;
-    max-width: 44rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.08);
-    border: 1px solid #dcdacb;
-    position: absolute;
-    left: 4.8rem;
-    top: 6.4rem;
-    padding: 2.4rem;
-    line-height: 1.15;
-  }
+     max-width: 120rem;
+     margin: auto auto 6.4rem auto;
+     height: auto;
+     background-image: url("../imgs/bg-img-3.jpg");
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     min-height: 40rem;
+     position: relative;
+     z-index: -10;
+     .board {
+          background-color: #fff;
+          max-width: 44rem;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.08);
+          border: 1px solid #dcdacb;
+          position: absolute;
+          left: 4.8rem;
+          top: 6.4rem;
+          padding: 2.4rem;
+          line-height: 1.15;
+     }
 }

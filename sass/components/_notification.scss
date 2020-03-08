@@ -1,0 +1,14 @@
+.notification-bar {
+     padding: 3rem;
+     width: 100%;
+     text-align: center;
+     .notification {
+          &--emoji {
+          }
+          &--text {
+               font-size: 1.6rem;
+          }
+          &--close-btn {
+          }
+     }
+}
