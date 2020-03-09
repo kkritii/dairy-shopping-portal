@@ -142,9 +142,15 @@ p {
   font-size: 32px;
 }
 .fs2 {
-  font-size: 32px;
+  font-size: 28px;
 }
 .fs3 {
+  font-size: 32px;
+}
+.fs4 {
+  font-size: 24px;
+}
+.fs5 {
   font-size: 20px;
 }
 .name {

@@ -1,16 +1,22 @@
 .u-margin {
-  &-top {
-    &-mid {
-      margin-top: 4rem;
-    }
+     &-top {
+          &-mid {
+               margin-top: 4rem;
+          }
 
-    &-small {
-      margin-top: 1.75rem;
-    }
-  }
-  &-left {
-    &-small {
-      margin-left: 1.75rem;
-    }
-  }
+          &-small {
+               margin-top: 1.75rem;
+          }
+          &-v-small {
+               margin-top: 0.85rem;
+          }
+     }
+     &-left {
+          &-small {
+               margin-left: 0.75rem;
+          }
+     }
+}
+.bold {
+     font-weight: 700;
 }

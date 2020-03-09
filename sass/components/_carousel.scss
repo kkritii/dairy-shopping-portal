@@ -1,0 +1,23 @@
+.carousel {
+     border: 1px solid #dcdacb;
+     padding: 2rem;
+     display: flex;
+     justify-content: center;
+     // text-align: center;
+     .slider-img {
+          height: 16.5rem;
+          border-radius: 3px;
+     }
+}
+.slick-list {
+     padding: 2rem;
+     // border-radius: 15px;
+}
+
+.icon-right {
+     position: absolute;
+     top: 59%;
+     left: 89%;
+     height: 2rem;
+     z-index: 0;
+}
