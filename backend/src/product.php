@@ -1,4 +1,4 @@
-<!--  -->
+
 <link rel="stylesheet" href="./css/modal-add.css" />
 <div class="content-wrapper">
      <div class="row-1">
@@ -90,14 +90,14 @@
                     <hr />
                </div>
                <div class="modal-form">
-                  <form  method="POST" id="add-form">
+                  <form action="./includes/add_product.php" method="POST" id="add-form" enctype="multipart/form-data ">
                          <table class="modal_table">
                              <tr class="table_row table_row-category">
                                    <div>
                                         <td><h2>Category</h2></td>
                                    </div>
                                    <td>
-                                        <select id="category" class="input-product-category">
+                                        <select id="category" name="category" class="input-product-category">
                                              <option value="yogurt">Yogurt</option>
                                              <option value="cream">Cream</option>
                                              <option value="butter">Butter</option>
@@ -133,29 +133,25 @@
                               <tr class="table_row">
                                    <td><h2>Description</h2></td>
                                    <td>
-                                        <textarea name="message" rows="5" cols="20" class="form_input input-product-description"> </textarea>
+                                        <textarea  name="description" rows="5" cols="20" class="form_input input-product-description"> </textarea>
                                    </td>
                               </tr>
                               <tr class="table_row">
                                    <td><h2>Image</h2></td>
                                    <td>
-                                        <input type="file" name="image" />
+                                        <input type="file" name="file" class="file" id="file" value="upload" />
                                    </td>
                               </tr>
-                              <!-- <tr>
-                                   <td><h2>Date</h2></td>
-
-                                   <td>
-                                        <input type="date" size="20" name="date" required class="form_input"/>
-                                   </td>
-                              </tr> -->
-                              
                          </table>
                          <div class="modal_btn">
-                              <input type="submit" class="form_btn" required name="input-product-submit" value="submit" class="input-product-submit" id="input-product-submit">
+                         <input type="submit" class="form_btn" required name="input-product-submit" value="submit" class="input-product-submit" id="input-product-submit">
+                              <!-- <input type="submit" class="form_btn" required name="input-product-submit" value="submit" class="input-product-submit" id="but_upload"> -->
                               <input type="reset" class="form_btn"/>
                          </div>
                     </form>
+                    <div class="preview">
+                              <img src="" id="img" alt="">
+                    </div>
                </div>
           </div>
      </div>
@@ -214,27 +210,56 @@
 </div>
 
 <script>	
+
+
+          // $(document).ready(function(){
+
+          // $("#but_upload").click(function(){
+
+          // var fd = new FormData();
+          // var files = $('#file')[0].files[0];
+          // fd.append('file',files);
+
+          // $.ajax({
+          //      url: 'upload.php',
+          //      type: 'post',
+          //      data: fd,
+          //      contentType: false,
+          //      processData: false,
+          //      success: function(response){
+          //           if(response != 0){
+          //                $("#img").attr("src",response); 
+          //                $(".preview img").show(); // Display image element
+          //           }else{
+          //                alert('file not uploaded');
+          //           }
+          //      },
+          // });
+          // });
+          // });
+
 	$(document).ready(function(){
-		$("#add-form").submit(function(event){
-               event.preventDefault();
-			var product_name = $(".input-product-name").val();
-     		var category = $(".input-product-category").val(); 
-			var price = $(".input-product-price").val(); 
-			var size = $(".input-product-size").val();
-			var quantity = $(".input-product-quantity").val(); 
-			var description = $(".input-product-description").val(); 
-			var product_submit = $("#input-product-submit").val(); 
-			$(".message-box").load("./includes/add_item.php",{
-				product_name : product_name,
-				category : category,
-				price : price,
-				size : size,
-				quantity : quantity,
-				description : description,
-				product_submit : product_submit
-			})
+		// $("#add-form").submit(function(event){
+          //      event.preventDefault();
+		// 	var product_name = $(".input-product-name").val();
+     	// 	var category = $(".input-product-category").val(); 
+		// 	var price = $(".input-product-price").val(); 
+		// 	var size = $(".input-product-size").val();
+		// 	var quantity = $(".input-product-quantity").val(); 
+		// 	var description = $(".input-product-description").val();
+		// 	var product_submit = $("#input-product-submit").val(); 
+		// 	$(".message-box").load("./includes/add_item.php",{
+		// 		product_name : product_name,
+		// 		category : category,
+		// 		price : price,
+		// 		size : size,
+          //           files:files,
+		// 		quantity : quantity,
+		// 		description : description,
+		// 		product_submit : product_submit
+		// 	})
               				
-		}) 
+		// }) 
           var displayCount = 10;
           $(".button-load").click(function(){
                displayCount += 10;
@@ -243,9 +268,6 @@
                }),
                $(".message-box").load("./includes/popup_message.php")
            })
-          //  $(".button-load").click(function(
-          //     
-          //  })
 	});
 </script>
   <!-- echo "<script>alert('$limit')</script>"; -->

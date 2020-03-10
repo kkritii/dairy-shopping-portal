@@ -1,17 +1,18 @@
 .modal-signin {
-  &-container {
-    min-width: 30rem;
-    min-height: 30rem;
-    max-height: 50rem;
-    max-width: 100rem;
-    margin: auto;
-    display: flex;
-    // display: hidden;
-    background-color: #fff;
-    border-radius: 5px;
-    position: relative;
-  }
-  .signin {
-    padding: 5rem;
-  }
+     &-container {
+          min-width: 50rem;
+          min-height: 30rem;
+          max-height: 50rem;
+          max-width: 100rem;
+          margin: auto;
+          display: flex;
+          justify-content: center;
+          // display: hidden;
+          background-color: #fff;
+          border-radius: 5px;
+          position: relative;
+     }
+     .signin {
+          padding: 5rem;
+     }
 }

@@ -54,7 +54,7 @@ section {
      overflow: scroll;
      overflow-x: hidden;
      height: 100vh;
-     scroll-snap-type: y mandatory;
+     // scroll-snap-type: y mandatory;
 }
 
 .container > * {

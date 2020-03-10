@@ -2,11 +2,13 @@
     require_once("./db_connect.php");
     $message = "";
     $error = false;
-
+    $image = $_FILES['files'];
+    echo "<script>alert('.$image.')</script>";
     //Check if data is already in Database
     if(isset($_POST['product_submit'])){
         $product = array($_POST['product_name'],$_POST['category'],$_POST['price'],$_POST['size'],$_POST['description'],$_POST['quantity']);
-        if(empty($product[0]) || empty($product[1]) || empty($product[2]) || empty($product[3]) || empty($product[4])){
+        // echo $product;
+        if(empty($product[0]) || empty($product[1]) || empty($product[2]) || empty($product[3]) || empty($product[4]) || empty($product[5])){
             $message =  "All field must be filled";
             $error = true;
         } else{
@@ -52,8 +54,7 @@
                 </div>";
     }
     $error =false;
-
-    //echo "<span style='color:reds'>".$message."</span>"; 
+  
 ?>
 <script>
     setTimeout(function() {
