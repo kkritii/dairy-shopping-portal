@@ -561,6 +561,7 @@
                     <form action="" class="signin-form">
                         <span class="heading__secondary--main">Login to you Account</span>
                         <!-- <span class="heading__secondary--sub-sub">Join us to get exclusive offers.</span> -->
+                       
                         <div class="form__group">
                             <input type="email" placeholder="" class="form__input u-margin-top-small" required>
                             <label for="email" class="form__label">Email</label>
@@ -578,7 +579,7 @@
                         </div>   
                         <div class="form__group">
                             <span>Dont have an Account?</span>
-                            <a href="">Sign up</a>
+                            <a href="#" id="signup">Sign up</a>
                         </div>                        
                     </form>
                 </div>
@@ -586,6 +587,51 @@
             
         </div>
         <!-- end of modal checkrate -->
+
+        <div class="modal modal-signup" >
+            <div class="modal-signup-container">
+                <div class="modal--close" id="close-signup">
+                    <svg class="nav__icon">
+                        <use xlink:href="./imgs/icons/sprite.svg#icon-cross"></use>
+                    </svg>
+                </div>
+                <div class="signup">
+                    <form action="" class="signup-form">
+                        <span class="heading__secondary--main">SIGN up to you Account</span>
+                        <!-- <span class="heading__secondary--sub-sub">Join us to get exclusive offers.</span> -->
+                        <div class="form__group">
+                            <input type="text" placeholder="" class="form__input u-margin-top-small" required>
+                            <label for="text" class="form__label">Full name</label>
+                        </div>
+                        <div class="form__group">
+                            <input type="email" placeholder="" class="form__input u-margin-top-small" required>
+                            <label for="email" class="form__label">Email</label>
+                        </div>
+                        <div class="form__group">
+                            <input type="email" placeholder="" class="form__input u-margin-top-small" required>
+                            <label for="email" class="form__label">Contact No.</label>
+                        </div>
+                        <div class="form__group">
+                            <input type="email" placeholder="" class="form__input u-margin-top-small" required>
+                            <label for="email" class="form__label">Address</label>
+                        </div>
+                        <div class="form__group">
+                            <input type="password" placeholder="" class="form__input u-margin-top-small" required>
+                            <label for="password" class="form__label">Password</label>
+                        </div>
+                        <div class="form__group">
+                            <input type="submit" placeholder="" class=" form-btn u-margin-top-mid" value="Sign Up">
+                        </div>
+
+                        <div class="form__group">
+                            <span>Already have an Account?</span>
+                            <a href="#" id="temp">Sign in</a>
+                        </div>                        
+                    </form>
+                </div>
+            </div>
+            
+        </div>
 
     </div>
 </body>
@@ -642,6 +688,14 @@
             function () {
                 document.querySelector('.modal-signin').style.display = 'flex';
             })
+            document.getElementById('signup').addEventListener('click',
+            function () {
+                document.querySelector('.modal-signup').style.display = 'flex';
+            })
+            // document.getElementById('temp').addEventListener('click',
+            // function () {
+            //     document.querySelector('.modal-signin').style.display = 'flex';
+            // })
     </script>
 
 

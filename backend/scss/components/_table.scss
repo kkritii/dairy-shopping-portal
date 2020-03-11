@@ -2,6 +2,7 @@
      text-align: left;
      // overflow: hidden;
      width: 100%;
+     // min-width: 80%;
      margin: 0 auto;
      // display: table;
      /* padding: 0 0 8em 0; */
@@ -20,10 +21,15 @@
 }
 .product_table tr td,
 .product_table th {
-     padding: 1.3rem;
+     padding: 0.5rem;
+     text-align: center;
+     // margin-right: 0;
      // background-color: #323c50;
      color: white;
-     font-size: 1.6rem;
+     font-size: 1.3rem;
+}
+.product_table th {
+     padding: 1.3rem;
 }
 
 .product_table th {
@@ -42,4 +48,15 @@
      margin-left: 5rem;
      width: 100%;
      height: 2.5rem;
+}
+.table-img {
+     height: 4rem;
+     width: 4rem;
+     border-radius: 100px;
+}
+.table-icon {
+     &-pencil {
+          fill: #00ab66;
+          margin-right: 2rem;
+     }
 }

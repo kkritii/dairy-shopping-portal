@@ -1,6 +1,6 @@
 <?php
      require_once("../includes/db_connect.php");
-
+     session_start();
      if(isset($_POST['input-product-submit'])){
         $file = $_FILES['file'];
         // print_r($file);
@@ -11,14 +11,17 @@
         $file_store = "../uploads/".basename($_FILES['file']['name']);
         $file_ext = explode('.',$file_name);
         $file_actual_ext = strtolower(end($file_ext));
+
         $allowed_ext = array('jpg','jpeg','png','gif'); 
         if(in_array($file_actual_ext,$allowed_ext)){
             if($file_size < 1000000){
                 move_uploaded_file($file_tmp_name,$file_store);
             } else{
+                $message = "Your file size is too big";
                 echo "Your size is too big"; 
             }
         }else{
+            $message = "Extension not supported";
             echo "You cannot upload file of ".$file_actual_ext ." extension";
         }
 
@@ -50,7 +53,14 @@
                 }   
             }
         }
-        header('loaction: ../index.php');
+        $_SESSION['message'] = $message;
+        $_SESSION['error'] = $error;
+        // header('loaction: ../index.php');
     }    
     
 ?>
+<script>	
+	$(document).ready(function(){
+        $(".message-box").load("./includes/popup_message.php")
+	});
+</script>

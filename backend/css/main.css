@@ -518,9 +518,14 @@ body {
 
 .product_table tr td,
 .product_table th {
-  padding: 1.3rem;
+  padding: 0.5rem;
+  text-align: center;
   color: white;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
+}
+
+.product_table th {
+  padding: 1.3rem;
 }
 
 .product_table th {
@@ -546,6 +551,17 @@ body {
   margin-left: 5rem;
   width: 100%;
   height: 2.5rem;
+}
+
+.table-img {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 100px;
+}
+
+.table-icon-pencil {
+  fill: #00ab66;
+  margin-right: 2rem;
 }
 
 .form-box {

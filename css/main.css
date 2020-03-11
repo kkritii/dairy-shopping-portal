@@ -511,16 +511,19 @@ a {
           align-items: center;
 }
 
-.signin-form .form__group {
+.signin-form .form__group,
+.signup-form .form__group {
   position: relative;
   margin-top: 1.5rem;
 }
 
-.signin-form .form__group--small:last-child {
+.signin-form .form__group--small:last-child,
+.signup-form .form__group--small:last-child {
   margin-left: 1rem;
 }
 
-.signin-form .form__label {
+.signin-form .form__label,
+.signup-form .form__label {
   position: absolute;
   top: 0.95rem;
   left: 2rem;
@@ -530,7 +533,8 @@ a {
   color: var(--font-color-sub);
 }
 
-.signin-form .form__input {
+.signin-form .form__input,
+.signup-form .form__input {
   width: 30rem;
   padding: 2rem 1.75rem;
   border: 0.5px solid #99a8bd;
@@ -539,25 +543,29 @@ a {
   border-radius: 7px;
 }
 
-.signin-form .form__input:focus {
+.signin-form .form__input:focus,
+.signup-form .form__input:focus {
   outline: none;
   -webkit-box-shadow: 0 1rem 2rem var(--shadow-dark-2);
           box-shadow: 0 1rem 2rem var(--shadow-dark-2);
   border: 0.5px solid var(--color-go);
 }
 
-.signin-form .form__input:not(:blank) {
+.signin-form .form__input:not(:blank),
+.signup-form .form__input:not(:blank) {
   outline: none;
   -webkit-box-shadow: 0 1rem 2rem var(--shadow-dark-2);
           box-shadow: 0 1rem 2rem var(--shadow-dark-2);
   border: 0.5px solid var(--color-go);
 }
 
-.signin-form .form__input:focus:invalid {
+.signin-form .form__input:focus:invalid,
+.signup-form .form__input:focus:invalid {
   border: 0.5px solid var(--color-warning);
 }
 
-.signin-form .form__input::-webkit-input-placeholder {
+.signin-form .form__input::-webkit-input-placeholder,
+.signup-form .form__input::-webkit-input-placeholder {
   color: var(--font-color-sub-sub);
 }
 
@@ -937,7 +945,7 @@ a {
   min-width: 50rem;
   min-height: 30rem;
   max-height: 50rem;
-  max-width: 100rem;
+  max-width: 20rem;
   margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -951,6 +959,26 @@ a {
 }
 
 .modal-signin .signin {
+  padding: 5rem;
+}
+
+.modal-signup-container {
+  min-width: 50rem;
+  min-height: 30rem;
+  max-width: 20rem;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #fff;
+  border-radius: 5px;
+  position: relative;
+}
+
+.modal-signup .signup {
   padding: 5rem;
 }
 

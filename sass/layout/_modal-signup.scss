@@ -1,8 +1,8 @@
-.modal-signin {
+.modal-signup {
      &-container {
           min-width: 50rem;
           min-height: 30rem;
-          max-height: 50rem;
+          //   max-height: 50rem;
           max-width: 20rem;
           margin: auto;
           display: flex;
@@ -12,7 +12,7 @@
           border-radius: 5px;
           position: relative;
      }
-     .signin {
+     .signup {
           padding: 5rem;
      }
 }
