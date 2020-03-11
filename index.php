@@ -1,6 +1,23 @@
 <?php
     require_once('./backend/includes/db_connect.php');
-    
+    if(isset($_POST['submit'])){
+        $u = $_POST['email'];
+     $p = $_POST['password'];
+          
+     $sql = "SELECT * FROM `customer` WHERE `email`='$u' AND `password`='$p' AND `is_active` = 1 AND `email_activation` = 1";
+     $result = mysqli_query($conn, $sql);
+     if (mysqli_num_rows($result) > 0) {
+         session_start();
+         $_SESSION['email'] = $u;
+         $row = mysqli_fetch_assoc($result);
+         echo "<script>alert('thanks for signing ');</script>";
+         echo "<script>window.location='index.php';</script>";
+     }else{
+         // echo "error";
+         echo "<script>alert('Email or Password Incorrect!');</script>";
+       echo "<script>window.location='index.php';</script>";
+     }
+     }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -558,20 +575,20 @@
                     </svg>
                 </div>
                 <div class="signin">
-                    <form action="" class="signin-form">
+                    <form action="" class="signin-form" method="POST">
                         <span class="heading__secondary--main">Login to you Account</span>
                         <!-- <span class="heading__secondary--sub-sub">Join us to get exclusive offers.</span> -->
                        
                         <div class="form__group">
-                            <input type="email" placeholder="" class="form__input u-margin-top-small" required>
+                            <input type="email" name="email" placeholder="" class="form__input u-margin-top-small" required>
                             <label for="email" class="form__label">Email</label>
                         </div>
                         <div class="form__group">
-                            <input type="password" placeholder="" class="form__input u-margin-top-small" required>
+                            <input type="password" name="password" placeholder="" class="form__input u-margin-top-small" required>
                             <label for="password" class="form__label">Password</label>
                         </div>
                         <div class="form__group">
-                            <input type="submit" placeholder="" class=" form-btn u-margin-top-mid" value="Login">
+                            <input type="submit" name="submit" placeholder="" class=" form-btn u-margin-top-mid" value="Login">
                         </div>
 
                         <div class="form__group">
