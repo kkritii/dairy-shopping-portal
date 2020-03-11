@@ -1,5 +1,22 @@
 <?php
     require_once('./backend/includes/db_connect.php');
+    if (isset($_POST['add'])) {
+
+        $u = $_POST['fullname'];
+        $e = $_POST['email'];
+        $p = $_POST['password'];
+        $c=$_POST['contact'];
+        $a=$_POST['address'];
+       
+        }
+      
+        $sql = "INSERT INTO `customer` (`fullname`, `email`,`password`,`contact`,`address`)
+      VALUES ('$u', '$e', md5('$p'))";
+      
+   
+   
+   
+   
     if(isset($_POST['submit'])){
         $u = $_POST['email'];
      $p = $_POST['password'];
@@ -613,31 +630,31 @@
                     </svg>
                 </div>
                 <div class="signup">
-                    <form action="" class="signup-form">
+                    <form action="" class="signup-form" method="POST">
                         <span class="heading__secondary--main">SIGN up to you Account</span>
                         <!-- <span class="heading__secondary--sub-sub">Join us to get exclusive offers.</span> -->
                         <div class="form__group">
-                            <input type="text" placeholder="" class="form__input u-margin-top-small" required>
+                            <input type="text" name="fullname" placeholder="" class="form__input u-margin-top-small" required>
                             <label for="text" class="form__label">Full name</label>
                         </div>
                         <div class="form__group">
-                            <input type="email" placeholder="" class="form__input u-margin-top-small" required>
+                            <input type="email" name="email" placeholder="" class="form__input u-margin-top-small" required>
                             <label for="email" class="form__label">Email</label>
                         </div>
                         <div class="form__group">
-                            <input type="email" placeholder="" class="form__input u-margin-top-small" required>
+                            <input type="number" name="contact" placeholder="" class="form__input u-margin-top-small" required>
                             <label for="email" class="form__label">Contact No.</label>
                         </div>
                         <div class="form__group">
-                            <input type="email" placeholder="" class="form__input u-margin-top-small" required>
+                            <input type="email" name="address" placeholder="" class="form__input u-margin-top-small" required>
                             <label for="email" class="form__label">Address</label>
                         </div>
                         <div class="form__group">
-                            <input type="password" placeholder="" class="form__input u-margin-top-small" required>
+                            <input type="password" name="password" placeholder="" class="form__input u-margin-top-small" required>
                             <label for="password" class="form__label">Password</label>
                         </div>
                         <div class="form__group">
-                            <input type="submit" placeholder="" class=" form-btn u-margin-top-mid" value="Sign Up">
+                            <input type="submit" name="submit" placeholder="" class=" form-btn u-margin-top-mid" value="Sign Up">
                         </div>
 
                         <div class="form__group">
