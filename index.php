@@ -1,6 +1,9 @@
+<?php
+    require_once('./backend/includes/db_connect.php');
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./css/main.css">
@@ -173,11 +176,16 @@
                 <h3 class="heading__secondary--sub u-margin-top-small">
                     " Take a taste. Come join us. Life is so endlessly delicious.”
                 </h3>
+                <form action="" class="u-margin-top-small header_form">
+                    <input type="email" placeholder="Enter your Email" class="header_input">
+                    <input type="submit" value="Subscribe" name="submit" class="header_btn form-btn">
+                </form>
             </div>
             <!-- <img src="./imgs/ct-on-phone-big.jpg" alt="" class="header__img"> -->
         </div>
-
-        <div class="section-product">
+        
+        <!-- Section yogurt -->
+        <div class="section-yogurt section-product">
            <div class="container-1">
                 <div class="headline">
                     <h1 class="heading__primary--sub headling__main">The Best dairy product in our collection.</h1>
@@ -188,88 +196,58 @@
                     <label for="tab-1-label">Yogurt</label>
                 </div>
                 <div class="carousel-1 carousel slick-slider slider">
+                    <?php
+                        // require_once('./backend/includes/db_connect.php');
+                        $sql = "SELECT * FROM product WHERE category = 'yogurt'";
+                        $max_sold_query = "SELECT MAX(quantity_sold) as max_sold FROM product WHERE category = 'yogurt'";
+                        $output = mysqli_query($conn, $max_sold_query);
+                        $max = 0;
+                        if (mysqli_num_rows($output) > 0) {
+                            $roww = mysqli_fetch_assoc($output);
+                            $max = $roww['max_sold'];
+                        } 
+                        $result = mysqli_query($conn, $sql);
+                        if (mysqli_num_rows($result) > 0) {
+                            $temp = 0;
+                            while($row = mysqli_fetch_assoc($result)) {
+                    ?>
                     <div class="slick-list">
                         <div class="slick-list-container">
-                            <img class="slider-img" src="./imgs/products/glass_dhau.jpg" alt="" />
+                            <img class="slider-img" src="./backend/uploads/<?=$row['image_source']?>" alt="" />
                             <div class="slider-details">
-                                <span class="slider-details--name">Glass Dhau</span>
+                                <span class="slider-details--name"><?=$row['product_name'];?></span>
                                 <span class="slider-details--discription">Lorem ipsum dolor sit </span>
-                                <span class="slider-details--price">Rs.20</span>
-                            </div>
+                                <?php
+                                    if($row['stock'] == 0){
+                                        ?>
+                                           <span class="u-margin-top-v-small badge-out-of-stock">Out of stock</span>                  
+                                        <?php
+                                    } 
+                                ?>
+                                <?php
+                                    if($row['quantity_sold'] == $max){
+                                        ?>       
+                                           <span class="u-margin-top-v-small badge-popular">Most popular</span>            
+                                        <?php
+                                    } 
+                                ?>
+                                <span class="slider-details--price">Rs.<?=$row['unit_price'];?></span>
+                                </div>
                         </div>
                     </div>
-                    <div class="slick-list">
-                        <div class="slick-list-container">
-                            <img class="slider-img" src="./imgs/products/normal_dhau.jpg" alt="" />
-                            <div class="slider-details">
-                                <span class="slider-details--name">Normal Dhau</span>
-                                <span class="slider-details--discription">Lorem ipsum dolor sit amet123s123asd23</span>
-                                <span class="badge-popular">Most popular</span>
-                                <span class="slider-details--price">Rs.200</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slick-list">
-                        <div class="slick-list-container">
-                            <img class="slider-img" src="./imgs/products/sano_dhau.jpg" alt="" />
-                            <div class="slider-details">
-                                <span class="slider-details--name">Sano Dhau</span>
-                                <span class="slider-details--discription">Lorem ipsum dolor sit</span>
-                                <span class="slider-details--price">Rs.60</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slick-list">
-                        <div class="slick-list-container">
-                            <img class="slider-img" src="./imgs/products/bata_dhau.jpg" alt="" />
-                            <div class="slider-details">
-                                <span class="slider-details--name">Bata Dhau</span>
-                                <span class="slider-details--discription">Lorem ipsum dolor sit amet</span>
-                                <span class="slider-details--price">Rs.200</span>
-                            </div>
-                        </div>
-                    </div>   
-                    
-                    <div class="slick-list">
-                        <div class="slick-list-container">
-                            <img class="slider-img" src="./imgs/products/matka_dhau.jpg" alt="" />
-                            <div class="slider-details">
-                                <span class="slider-details--name">Matka Dhau/span>
-                                <span class="slider-details--discription">Lorem ipsum dolor sit</span>
-                                <span class="slider-details--price">Rs.650</span>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slick-list">
-                        <div class="slick-list-container">
-                            <img class="slider-img" src="./imgs/products/thulo_dhau.jpg" alt="" />
-                            <div class="slider-details">
-                                <span class="slider-details--name">JUJU: Dhau</span>
-                                <span class="slider-details--discription">Lorem ipsum d!</span>
-                                <span class="slider-details--price">Rs.600</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slick-list">
-                        <div class="slick-list-container">
-                            <img class="slider-img" src="./imgs/products/juju_dhau.jpg" alt="" />
-                            <div class="slider-details">
-                                <span class="slider-details--name">King Curd</span>
-                                <span class="slider-details--discription">Lorem ipsum dolor sit </span>
-                                <span class="slider-details--price">Rs.800</span>
-                            </div>
-                        </div>
-                    </div>
-                   
-                     
+                    <?php
+                            }
+                        } else {
+                            echo "0 results";
+                        }
+                    ?>
                 </div>
            </div>
         </div>
-        <!-- end of section product -->
+        <!-- end of section yogurt -->
 
-        <!-- Product section -->
-        <div class="section-product"> 
+        <!--Others Product section -->
+        <div class="section-others section-product"> 
             <div class="headline">
                 <!-- <h1 class="heading__primary--sub headling__main">The Best dairy product in our collection.</h1> -->
                 <h3 class="heading__secondary--sub headline__sub">Our other line of products.</h3>    
@@ -283,136 +261,85 @@
                 <label for="tab-nav-3">Cheese</label><br>
                 <div class="tab-content">
                     <div class="slick-slider slider carousel">
-                            <div class="slick-list">
-                                <div class="slick-list-container">
-                                    <img class="slider-img" src="./imgs/products/red-velvet.jpg" alt="" />
-                                    <div class="slider-details">
-                                        <span class="slider-details--name">RED VELVET</span>
-                                        <span class="slider-details--discription">Cream made of alu.</span>
-                                        <!-- <span class="slider-details--discription">1.4 Pounds</span> -->
-                                        <span class="slider-details--price">Rs.1400</span>
-                                    </div>
+                    <?php
+                        // require_once('./backend/includes/db_connect.php');
+                        $sql = "SELECT * FROM product WHERE category = 'cake'";
+                        $max_sold_query = "SELECT MAX(quantity_sold) as max_sold FROM product WHERE category = 'cake'";
+                        $output = mysqli_query($conn, $max_sold_query);
+                        $max = 0;
+                        if (mysqli_num_rows($output) > 0) {
+                            $roww = mysqli_fetch_assoc($output);
+                            $max = $roww['max_sold'];
+                        } 
+                        $result = mysqli_query($conn, $sql);
+
+                        if (mysqli_num_rows($result) > 0) {
+                    ?>
+
+                    <?php
+                            while($row = mysqli_fetch_assoc($result)) {
+                    ?>
+                    <div class="slick-list">
+                        <div class="slick-list-container">
+                            <img class="slider-img" src="./backend/uploads/<?=$row['image_source']?>" alt="" />
+                            <div class="slider-details">
+                                <span class="slider-details--name"><?=$row['product_name'];?></span>
+                                <span class="slider-details--discription">Lorem ipsum dolor sit </span>
+                                <?php
+                                    if($row['quantity_sold'] == $max){
+                                        ?>       
+                                           <span class="u-margin-top-v-small badge-popular">Most popular</span>            
+                                        <?php
+                                    } 
+                                ?>
+                                <?php
+                                    if($row['stock'] == 0){
+                                        ?>
+                                           <span class="u-margin-top-v-small badge-out-of-stock">Out of stock</span>            
+                                        <?php
+                                    }
+                                ?>
+                                
+                                <span class="slider-details--price">Rs.<?=$row['unit_price'];?></span>
                                 </div>
-                            </div>
-                            <div class="slick-list">
-                                <div class="slick-list-container">
-                                    <img class="slider-img" src="./imgs/products/chocolate-cake.jpg" alt="" />
-                                    <div class="slider-details">
-                                        <span class="slider-details--name">CHOCOLATE CAKE</span>
-                                        <span class="slider-details--discription">Lorem ipsum dolor sit</span>
-                                        <!-- <span class="slider-details--discription">2 Pounds</span> -->
-                                        <span class="slider-details--price">Rs.600</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="slick-list">
-                                <div class="slick-list-container">
-                                    <img class="slider-img" src="./imgs/products/black-forest.jpg" alt="" />
-                                    <div class="slider-details">
-                                        <span class="slider-details--name">BLACK FOREST</span>
-                                        <span class="slider-details--discription">Lorem ipsum dolor sit amet</span>
-                                        <!-- <span class="slider-details--discription">2 Pounds</span> -->
-                                        <span class="slider-details--price">Rs.999</span>
-                                    </div>
-                                </div>
-                            </div>   
-                            
-                            <div class="slick-list">
-                                <div class="slick-list-container">
-                                    <img class="slider-img" src="./imgs/products/raspberry-cake.jpg" alt="" />
-                                    <div class="slider-details">
-                                        <span class="slider-details--name">RASPBERRY CAKE</span>
-                                        <span class="slider-details--discription">Lorem ipsum dolor sit</span>
-                                        <!-- <span class="slider-details--discription">2 Pounds</span> -->
-                                        <span class="slider-details--price">Rs.1499</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="slick-list">
-                                <div class="slick-list-container">
-                                    <img class="slider-img" src="./imgs/products/lemon-cheese.jpg" alt="" />
-                                    <div class="slider-details">
-                                        <span class="slider-details--name">LEMON CHEESECAKE</span>
-                                        <span class="slider-details--discription">Lorem ipsum d!</span>
-                                        <!-- <span class="slider-details--discription">2.2 Pounds</span> -->
-                                        <span class="slider-details--price">Rs.600</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="slick-list">
-                                <div class="slick-list-container">
-                                    <img class="slider-img" src="./imgs/products/juju_dhau.jpg" alt="" />
-                                    <div class="slider-details">
-                                        <span class="slider-details--name">FISH CAKE</span>
-                                        <span class="slider-details--discription">Lorem ipsum dolor sit </span>
-                                        <span class="slider-details--price">Rs.400</span>
-                                    </div>
-                                </div>
-                            </div>
+                        </div>
+                    </div>
+                    <?php
+                            }
+                        } else {
+                            echo "0 results";
+                        }
+                    ?>
                     </div>
 
                     <div class="slick-slider carousel">
-                        <div class="slick-list">
-                            <div class="slick-list-container">
-                                <img class="slider-img" src="./imgs/products/juju_dhau.jpg" alt="" />
-                                <div class="slider-details">
-                                    <span class="slider-details--name">RED VELVET</span>
-                                    <span class="slider-details--discription">Lorem ipsum dolor sit amet123s123asd23</span>
-                                    <span class="slider-details--price">Rs.400</span>
+                    <?php
+                        require_once('./backend/includes/db_connect.php');
+                        $sql = "SELECT * FROM product WHERE category = 'cake'";
+                        $result = mysqli_query($conn, $sql);
+
+                        if (mysqli_num_rows($result) > 0) {
+                    ?>
+
+                    <?php
+                            while($row = mysqli_fetch_assoc($result)) {
+                    ?>
+                    <div class="slick-list">
+                        <div class="slick-list-container">
+                            <img class="slider-img" src="./backend/uploads/<?=$row['image_source']?>" alt="" />
+                            <div class="slider-details">
+                                <span class="slider-details--name"><?=$row['product_name'];?></span>
+                                <span class="slider-details--discription">Lorem ipsum dolor sit </span>
+                                <span class="slider-details--price">Rs.<?=$row['unit_price'];?></span>
                                 </div>
-                            </div>
                         </div>
-                        <div class="slick-list">
-                            <div class="slick-list-container">
-                                <img class="slider-img" src="./imgs/products/juju_dhau.jpg" alt="" />
-                                <div class="slider-details">
-                                    <span class="slider-details--name">JUJU: Dhau</span>
-                                    <span class="slider-details--discription">Lorem ipsum dolor sit</span>
-                                    <span class="slider-details--price">Rs.400</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="slick-list">
-                            <div class="slick-list-container">
-                                <img class="slider-img" src="./imgs/products/juju_dhau.jpg" alt="" />
-                                <div class="slider-details">
-                                    <span class="slider-details--name">JUJU: Dhau</span>
-                                    <span class="slider-details--discription">Lorem ipsum dolor sit amet</span>
-                                    <span class="slider-details--price">Rs.400</span>
-                                </div>
-                            </div>
-                        </div>   
-                        
-                        <div class="slick-list">
-                            <div class="slick-list-container">
-                                <img class="slider-img" src="./imgs/products/juju_dhau.jpg" alt="" />
-                                <div class="slider-details">
-                                    <span class="slider-details--name">JUJU: Dhau</span>
-                                    <span class="slider-details--discription">Lorem ipsum dolor sit</span>
-                                    <span class="slider-details--price">Rs.400</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="slick-list">
-                            <div class="slick-list-container">
-                                <img class="slider-img" src="./imgs/products/juju_dhau.jpg" alt="" />
-                                <div class="slider-details">
-                                    <span class="slider-details--name">JUJU: Dhau</span>
-                                    <span class="slider-details--discription">Lorem ipsum d!</span>
-                                    <span class="slider-details--price">Rs.400</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="slick-list">
-                            <div class="slick-list-container">
-                                <img class="slider-img" src="./imgs/products/juju_dhau.jpg" alt="" />
-                                <div class="slider-details">
-                                    <span class="slider-details--name">JUJU: Dhau</span>
-                                    <span class="slider-details--discription">Lorem ipsum dolor sit </span>
-                                    <span class="slider-details--price">Rs.400</span>
-                                </div>
-                            </div>
-                        </div>
+                    </div>
+                    <?php
+                            }
+                        } else {
+                            echo "0 results";
+                        }
+                    ?>
                     </div>
                     
                 </div>
@@ -420,7 +347,7 @@
             </div> 
             <!-- end of tab -->
         </div>
-        <!-- end of section product -->
+        <!-- end of section others product -->
 
         <!-- footer -->
         <footer class="section-footer">
@@ -468,7 +395,7 @@
                             </form>
                         </li>
                         <li  class="u-margin-top-v-small">
-                            <a href="#" class="nav__links ">
+                            <a href="https://www.facebook.com/profile.php?id=100007125259498" target="_blank" class="nav__links ">
                                 <svg class="footer-icon footer-icon--facebook">
                                     <use xlink:href="./imgs/icons/sprite.svg#icon-facebook-with-circle"></use>
                                 </svg>
@@ -480,7 +407,7 @@
                                 </svg>
                             </a>
 
-                            <a href="#" class="nav__links ">
+                            <a href="https://twitter.com/kpsharmaoli?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank" class="nav__links ">
                                 <svg class="footer-icon footer-icon--twitter">
                                     <use xlink:href="./imgs/icons/sprite.svg#icon-twitter-with-circle"></use>
                                 </svg>
@@ -620,6 +547,7 @@
 
             </div>
         </div>
+        <!-- end of modal checkrate -->
 
         <!-- modal signin -->
         <div class="modal modal-signin" >
@@ -657,6 +585,7 @@
             </div>
             
         </div>
+        <!-- end of modal checkrate -->
 
     </div>
 </body>

@@ -1,12 +1,31 @@
 <?php
      require_once("../includes/db_connect.php");
+
      if(isset($_POST['input-product-submit'])){
-      $filename=$_FILES['file']['name'];
-      $filetmpname=$_FILES['file']['tmp_name'];
-      $folder='';
-      move_uploaded_file($filetmpname,$folder,$filename);
-        $product = array($_POST['product_name'],$_POST['category'],$_POST['price'],$_POST['size'],$_POST['description'],$_POST['quantity']);
-        if(empty($product[0]) || empty($product[1]) || empty($product[2]) || empty($product[3]) || empty($product[4]) || empty($product[5])  || empty($product[6])){
+        $file = $_FILES['file'];
+        // print_r($file);
+        $file_name=$_FILES['file']['name'];
+        $file_size=$_FILES['file']['size'];
+        $file_type = $_FILES['file']['type'];
+        $file_tmp_name = $_FILES['file']['tmp_name'];
+        $file_store = "../uploads/".basename($_FILES['file']['name']);
+        $file_ext = explode('.',$file_name);
+        $file_actual_ext = strtolower(end($file_ext));
+        $allowed_ext = array('jpg','jpeg','png','gif'); 
+        if(in_array($file_actual_ext,$allowed_ext)){
+            if($file_size < 1000000){
+                move_uploaded_file($file_tmp_name,$file_store);
+            } else{
+                echo "Your size is too big"; 
+            }
+        }else{
+            echo "You cannot upload file of ".$file_actual_ext ." extension";
+        }
+
+        
+
+        $product = array($_POST['product_name'],$_POST['category'],$_POST['price'],$_POST['size'],$_POST['description'],$_POST['quantity'],$file_name);
+        if(empty($product[0]) || empty($product[1]) || empty($product[2]) || empty($product[3]) || empty($product[4]) || empty($product[6])){
             $message =  "All field must be filled";
             $error = true;
              echo "arun cahoar";
@@ -31,5 +50,7 @@
                 }   
             }
         }
+        header('loaction: ../index.php');
     }    
+    
 ?>

@@ -8,7 +8,7 @@
      background-size: cover;
      min-height: 40rem;
      position: relative;
-     z-index: -10;
+     z-index: 0;
      .board {
           background-color: #fff;
           max-width: 44rem;
@@ -19,5 +19,35 @@
           top: 6.4rem;
           padding: 2.4rem;
           line-height: 1.15;
+          z-index: 9999;
+     }
+     &_form {
+          // width: 100%;
+          flex: 1 1 100%;
+          display: flex;
+     }
+     &_input {
+          flex: 0 0 70%;
+          outline: none;
+          font-size: 1.45rem;
+          padding: 1.2rem 1rem;
+          font-family: inherit;
+          color: var(--font-color-secondary-sub);
+     }
+     &_btn {
+          outline: none;
+          // flex: 0 0 1;
+
+          width: 5rem !important;
+          height: auto;
+          // max-width: 5% !important;
+          padding: 1rem 1.35rem;
+          color: #fff;
+          font-weight: 700;
+          border: none;
+          border-radius: 0;
+          &:hover {
+               cursor: pointer;
+          }
      }
 }

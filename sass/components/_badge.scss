@@ -1,0 +1,15 @@
+.badge {
+     &-popular {
+          display: inline;
+          //   height: 1.1rem;
+          padding: 0.25rem 0.75rem;
+          background-color: #f4c150;
+     }
+     &-out-of-stock {
+          display: inline;
+          padding: 0.25rem 0.75rem;
+          background-color: rgb(240, 138, 58);
+          font-size: 0.95rem;
+          font-weight: 600;
+     }
+}

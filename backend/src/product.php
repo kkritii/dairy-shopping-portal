@@ -90,7 +90,8 @@
                     <hr />
                </div>
                <div class="modal-form">
-                  <form action="./includes/add_product.php" method="POST" id="add-form" enctype="multipart/form-data ">
+
+                  <form action="./includes/add_product.php" method="POST" enctype="multipart/form-data">
                          <table class="modal_table">
                              <tr class="table_row table_row-category">
                                    <div>
@@ -99,7 +100,7 @@
                                    <td>
                                         <select id="category" name="category" class="input-product-category">
                                              <option value="yogurt">Yogurt</option>
-                                             <option value="cream">Cream</option>
+                                             <option value="cake">Cake</option>
                                              <option value="butter">Butter</option>
                                              <option value="cheese">Cheese</option>
                                         </select>
@@ -115,13 +116,13 @@
                               <tr class="table_row">
                                    <td><h2>Price</h2></td>
                                    <td>
-                                        <input type="number" name="price"  class="form_input input-product-price"/>
+                                        <input type="text" name="price"  class="form_input input-product-price"/>
                                    </td>
                               </tr>
                               <tr class="table_row">
                                    <td><h2>Size</h2></td>
                                    <td>
-                                        <input type="number" name="size"  class="form_input input-product-size"/>
+                                        <input type="text" name="size"  class="form_input input-product-size"/>
                                    </td>
                               </tr>
                               <tr class="table_row">
@@ -137,21 +138,18 @@
                                    </td>
                               </tr>
                               <tr class="table_row">
-                                   <td><h2>Image</h2></td>
+                                   <td><h2>Upload an image</h2></td>
                                    <td>
-                                        <input type="file" name="file" class="file" id="file" value="upload" />
+                                        <input type="file" name="file"/>
                                    </td>
                               </tr>
                          </table>
                          <div class="modal_btn">
-                         <input type="submit" class="form_btn" required name="input-product-submit" value="submit" class="input-product-submit" id="input-product-submit">
+                              <input type="submit" class="form_btn" required name="input-product-submit" value="submit" class="input-product-submit" id="input-product-submit">
                               <!-- <input type="submit" class="form_btn" required name="input-product-submit" value="submit" class="input-product-submit" id="but_upload"> -->
                               <input type="reset" class="form_btn"/>
                          </div>
                     </form>
-                    <div class="preview">
-                              <img src="" id="img" alt="">
-                    </div>
                </div>
           </div>
      </div>

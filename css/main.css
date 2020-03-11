@@ -820,9 +820,16 @@ a {
 
 .badge-popular {
   display: inline;
-  height: 1.1rem;
   padding: 0.25rem 0.75rem;
   background-color: #f4c150;
+}
+
+.badge-out-of-stock {
+  display: inline;
+  padding: 0.25rem 0.75rem;
+  background-color: #f08a3a;
+  font-size: 0.95rem;
+  font-weight: 600;
 }
 
 .check-rate {
@@ -966,7 +973,7 @@ a {
   background-size: cover;
   min-height: 40rem;
   position: relative;
-  z-index: -10;
+  z-index: 0;
 }
 
 .header .board {
@@ -980,6 +987,42 @@ a {
   top: 6.4rem;
   padding: 2.4rem;
   line-height: 1.15;
+  z-index: 9999;
+}
+
+.header_form {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header_input {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 70%;
+          flex: 0 0 70%;
+  outline: none;
+  font-size: 1.45rem;
+  padding: 1.2rem 1rem;
+  font-family: inherit;
+  color: var(--font-color-secondary-sub);
+}
+
+.header_btn {
+  outline: none;
+  width: 5rem !important;
+  height: auto;
+  padding: 1rem 1.35rem;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  border-radius: 0;
+}
+
+.header_btn:hover {
+  cursor: pointer;
 }
 
 .section-product {
@@ -990,7 +1033,7 @@ a {
 .section-footer {
   width: 100%;
   border-top: 1px solid #dcdacb;
-  margin-top: 20rem;
+  margin-top: 25rem;
 }
 
 .footer-container {
