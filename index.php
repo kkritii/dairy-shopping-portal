@@ -1,55 +1,9 @@
 <?php
     session_start();
     require_once('./backend/includes/db_connect.php');
-    
-    //For adding item to cart
-    if(isset($_POST['add'])) {
-        if(isset($_SESSION['cart'])){
-            print_r($_SESSION['cart']);
-            $item_array_id = array_column($_SESSION['cart'],"product_id");
-            if(in_array($_POST['product_id'],$item_array_id)){
-                echo "<script>alert('Item already exists')</script>";
-                echo "<script>window.location = 'index.php'</script>";
-                
-            }  else{
-                $count = count($_SESSION['cart']);
-                $item_array = array(
-                    'product_id' => $_POST['product_id']
-                );
-                $_SESSION['cart'][$count] = $item_array;
-                $count_cart_items = $count;
-            echo "<script>window.location='index.php'</script>";
+    include('./includes/cart.php');
 
-            }
-        } else{
-            print_r($_POST['product_id']);
-            echo "Bitch ass nigga";
-            $item_array = array(
-                'product_id' => $_POST['product_id']
-            );
-            $_SESSION['cart'][0] =  $item_array;
-        }
-    }
-    $count_cart_items =  count($_SESSION['cart']);    
-
-    //for removing item from cart
-    if(isset($_POST['remove'])){
-        $_POST['product_id'];
-        foreach($_SESSION['cart'] as $key => $value){
-            if($value['product_id'] == $_POST['product_id']){
-                unset($_SESSION['cart'][$key]);
-                echo "<script>window.location='index.php'</script>";
-            }
-        }
-    }
-
-    //for emptying cart
-    if(isset($_POST['empty-cart'])){
-        unset($_SESSION['cart']);
-        $_SESSION['cart'] = array();
-        echo "<script>window.location='index.php'</script>";
-
-    }
+   
 
     //for userlogin
     if(isset($_POST['submit'])){
@@ -142,7 +96,7 @@
         <nav class="section-nav">
             <div class="nav-wrapper">
                 <div class="logo">
-                    <a href="index.html">LOGO</a>
+                    <a href="index.php">LOGO</a>
                 </div>
                 
                 <div class="search">
@@ -348,8 +302,6 @@
                                             <input type="hidden" name="product_id" value="<?=$row['product_id']?>">
                                             <button type="submit" name="add">Add to Cart</button>
                                         </form>
-                                       
-
                                 </div>
                                 <!-- <div class="slick-row ">
                                     <span class="slider-details--price">Rs.<?=$row['unit_price'];?></span>
@@ -439,9 +391,17 @@
                                 
                                 <div>
                                     <span class="slider-details--price">Rs.<?=$row['unit_price'];?></span>
-                                    <span>
+                                    <div class="slider-icon-box">
+                                        <!-- <svg class="slider-icon">
+                                            <use xlink:href="./imgs/icons/sprite.svg#icon-cart-arrow-down"></use>
+                                        </svg> -->
+                                        <form action="" method="POST">
+                                            <input type="hidden" name="product_id" value="<?=$row['product_id']?>">
+                                            <button type="submit" name="add">Add to Cart</button>
+                                        </form>
+                                       
 
-                                    </span>
+                                </div>
                                 </div>
                                 
                                 </div>
@@ -476,7 +436,18 @@
                                 <span class="slider-details--name"><?=$row['product_name'];?></span>
                                 <span class="slider-details--discription">Lorem ipsum dolor sit </span>
                                 <span class="slider-details--price">Rs.<?=$row['unit_price'];?></span>
+                                <div class="slider-icon-box">
+                                        <!-- <svg class="slider-icon">
+                                            <use xlink:href="./imgs/icons/sprite.svg#icon-cart-arrow-down"></use>
+                                        </svg> -->
+                                        <form action="" method="POST">
+                                            <input type="hidden" name="product_id" value="<?=$row['product_id']?>">
+                                            <button type="submit" name="add">Add to Cart</button>
+                                        </form>
+                                       
+
                                 </div>
+                            </div>
                         </div>
                     
                     </div>
@@ -742,27 +713,27 @@
                     </svg>
                 </div>
                 <div class="signup">
-                    <form action="" class="signup-form">
+                    <form action="" class="signup-form" method="POST">
                         <span class="heading__secondary--main">SIGN up to you Account</span>
                         <!-- <span class="heading__secondary--sub-sub">Join us to get exclusive offers.</span> -->
                         <div class="form__group">
-                            <input type="text" placeholder="" class="form__input u-margin-top-small" required>
+                            <input type="text" name="full_name"  placeholder="" class="form__input u-margin-top-small" required>
                             <label for="text" class="form__label">Full name</label>
                         </div>
                         <div class="form__group">
-                            <input type="email" placeholder="" class="form__input u-margin-top-small" required>
+                            <input type="email" name="email" placeholder="" class="form__input u-margin-top-small" required>
                             <label for="email" class="form__label">Email</label>
                         </div>
                         <div class="form__group">
-                            <input type="email" placeholder="" class="form__input u-margin-top-small" required>
-                            <label for="email" class="form__label">Contact No.</label>
+                            <input type="text" name="contact" placeholder="" class="form__input u-margin-top-small" required>
+                            <label for="text" class="form__label">Contact No.</label>
                         </div>
                         <div class="form__group">
-                            <input type="email" placeholder="" class="form__input u-margin-top-small" required>
-                            <label for="email" class="form__label">Address</label>
+                            <input type="text" name="address" placeholder="" class="form__input u-margin-top-small" required>
+                            <label for="text" class="form__label">Address</label>
                         </div>
                         <div class="form__group">
-                            <input type="password" placeholder="" class="form__input u-margin-top-small" required>
+                            <input type="password" name="password" placeholder="" class="form__input u-margin-top-small" required>
                             <label for="password" class="form__label">Password</label>
                         </div>
                         <div class="form__group">
