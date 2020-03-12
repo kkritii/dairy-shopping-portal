@@ -1,7 +1,15 @@
 (function() {
-     $("#cart").on("click", function() {
-          $(".shopping-cart").fadeToggle("fast");
-     });
+     // $("#cart").on("mouseover", function() {
+     //      $(".shopping-cart").fadeToggle("fast");
+     // });
+     $("#cart").hover(
+          function() {
+               $(".shopping-cart").fadeToggle("fast");
+          },
+          function() {
+               $(".shopping-cart").fadeToggle("fast");
+          }
+     );
 
      $("#checkRate").on("click", function() {
           $(".modal-checkrate").fadeToggle("fast");
@@ -36,3 +44,11 @@
           $(".modal-signup").fadeToggle("fast");
      });
 })();
+// $("#cart").on({
+//      mouseenter: function() {
+//           $(".shopping-cart").fadeIn("fast");
+//      },
+//      mouseleave: function() {
+//           $(".shopping-cart").fadeOut("fast");
+//      }
+// });

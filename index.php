@@ -1,5 +1,57 @@
 <?php
+    session_start();
     require_once('./backend/includes/db_connect.php');
+    
+    //For adding item to cart
+    if(isset($_POST['add'])) {
+        if(isset($_SESSION['cart'])){
+            print_r($_SESSION['cart']);
+            $item_array_id = array_column($_SESSION['cart'],"product_id");
+            if(in_array($_POST['product_id'],$item_array_id)){
+                echo "<script>alert('Item already exists')</script>";
+                echo "<script>window.location = 'index.php'</script>";
+                
+            }  else{
+                $count = count($_SESSION['cart']);
+                $item_array = array(
+                    'product_id' => $_POST['product_id']
+                );
+                $_SESSION['cart'][$count] = $item_array;
+                $count_cart_items = $count;
+            echo "<script>window.location='index.php'</script>";
+
+            }
+        } else{
+            print_r($_POST['product_id']);
+            echo "Bitch ass nigga";
+            $item_array = array(
+                'product_id' => $_POST['product_id']
+            );
+            $_SESSION['cart'][0] =  $item_array;
+        }
+    }
+    $count_cart_items =  count($_SESSION['cart']);    
+
+    //for removing item from cart
+    if(isset($_POST['remove'])){
+        $_POST['product_id'];
+        foreach($_SESSION['cart'] as $key => $value){
+            if($value['product_id'] == $_POST['product_id']){
+                unset($_SESSION['cart'][$key]);
+                echo "<script>window.location='index.php'</script>";
+            }
+        }
+    }
+
+    //for emptying cart
+    if(isset($_POST['empty-cart'])){
+        unset($_SESSION['cart']);
+        $_SESSION['cart'] = array();
+        echo "<script>window.location='index.php'</script>";
+
+    }
+
+    //for userlogin
     if(isset($_POST['submit'])){
         $u = $_POST['email'];
      $p = $_POST['password'];
@@ -130,48 +182,87 @@
                         <li class="nav__list-items" id="checkRate">
                             <a href="#" class="nav__links">Check rate</a>
                         </li>
-                        <li class="nav__list-items" id="cart">
-                            <a href="#" class="nav__links ">
+
+                        <li class="nav__list-items nav__links--cart"  id="cart">
+                            <a href="#" class="nav__links nav__links--cart">
                                 <svg class="nav__icon-cart">
                                     <use xlink:href="./imgs/icons/sprite.svg#icon-cart"></use>
                                 </svg>
+                                <span class="nav__icon-cart--data"><?=$count_cart_items?></span>
                             </a>
                             <div class="shopping-cart">
+                               
                                 <div class="shopping-cart-header">
-                                    <i class="cart-icon"></i><span class="badge">3</span>
+                                    <i class="cart-icon"></i><span class="badge"><?=$count_cart_items?></span>
                                     <div class="shopping-cart-total">
                                         <span class="lighter-text">Total:</span>
-                                        <span class="main-color-text">$2,229.97</span>
+
+                                <?php
+                                    $total = 0;
+                                    if(count($_SESSION['cart']) != 0){
+                                        $sql = "SELECT `product_id`,`unit_price` FROM product";
+                                        $result = mysqli_query($conn,$sql);
+                                        $product_id = array_column($_SESSION['cart'],'product_id');
+                                        while($row = mysqli_fetch_assoc($result)){
+                                            foreach($product_id as $id){
+                                                if($row['product_id'] == $id){
+                                                    $total = $total + $row['unit_price'];
+                                                }
+                                            }
+                                        }       
+                                    }
+                                ?>
+                                        <span class="main-color-text"> Rs.<?=$total?></span>
                                     </div>
                                 </div>
-                                <!--end shopping-cart-header -->
-
+                                <a href="#" class="button">Checkout</a>
+                                <!-- end of header -->
                                 <ul class="shopping-cart-items">
-                                    <li class="clearfix">
-                                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item1.jpg"
-                                            alt="item1" />
-                                        <span class="item-name">Sony DSC-RX100M III</span>
-                                        <span class="item-price">$849.99</span>
-                                        <span class="item-quantity">Quantity: 01</span>
-                                    </li>
-                                    <ul class="shopping-cart-items">
-                                        <li class="clearfix">
-                                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item1.jpg"
-                                                alt="item1" />
-                                            <span class="item-name">Sony DSC-RX100M III</span>
-                                            <span class="item-price">$849.99</span>
-                                            <span class="item-quantity">Quantity: 01</span>
-                                        </li>
-                                        <ul class="shopping-cart-items">
-                                            <li class="clearfix">
-                                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/cart-item1.jpg"
-                                                    alt="item1" />
-                                                <span class="item-name">Sony DSC-RX100M III</span>
-                                                <span class="item-price">$849.99</span>
-                                                <span class="item-quantity">Quantity: 01</span>
-                                            </li>
-                                        </ul>
-                                        <a href="#" class="button">Checkout</a>
+                                <?php
+                                    $total = 0;
+                                    if(count($_SESSION['cart']) != 0){
+
+                                        
+                                        $sql = "SELECT `product_id`,`product_name`,`category`,`unit_price`,`image_source` FROM product";
+                                        $result = mysqli_query($conn,$sql);
+                                        $product_id = array_column($_SESSION['cart'],'product_id');
+                                        while($row = mysqli_fetch_assoc($result)){
+                                            foreach($product_id as $id){
+                                                if($row['product_id'] == $id){
+                                                    $total = $total + $row['unit_price'];
+                                ?>
+                                                    <li class="clearfix">
+                                                        <img class="item-img" src="./backend/uploads/<?=$row['image_source']?>"
+                                                            alt="item1" />
+                                                        <span class="item-name"><?=$row['product_name'];?></span>
+                                                        <span class="item-price">Rs.<?=$row['unit_price'];?></span>
+                                                        <span class="item-quantity"><?=$row['category']?></span>
+                                                        <span>
+                                                            <form action="" method="POST">
+                                                                <input type="hidden" name="product_id" value="<?=$row['product_id']?>">
+                                                                <button type="submit" class="remove" name="remove">Remove</button>
+                                                            </form>
+                                                        </span>
+                                                    </li>
+                                <?php
+                                                }
+                                            }
+                                        }                            
+                                    } else{
+                                ?>
+                                                <li class="clearfix">
+                                                        <span class="item-name">Wow such empty</span>
+                                                </li>
+                                <?php
+                                    }
+                                ?>
+                       
+                                <!--end shopping-cart-header -->
+                                </ul>
+                                <form action="" method="POST">
+                                    <button type="submit" name="empty-cart"  class="button-empty">Empty Cart</button>                                                                
+                                </form>
+                                <!-- // <a href="#" class="button-empty">Empty Cart</a> -->
                             </div>
                             <!--end shopping-cart -->
                         </li>
@@ -191,7 +282,7 @@
             <div class="board">
                 <h1 class="heading__primary--main">We serve you best dairy in town.</h1>
                 <h3 class="heading__secondary--sub u-margin-top-small">
-                    " Take a taste. Come join us. Life is so endlessly delicious.”
+                    "Take a taste. Come join us. Life is so endlessly delicious.”
                 </h3>
                 <form action="" class="u-margin-top-small header_form">
                     <input type="email" placeholder="Enter your Email" class="header_input">
@@ -249,6 +340,35 @@
                                     } 
                                 ?>
                                 <span class="slider-details--price">Rs.<?=$row['unit_price'];?></span>
+                                <div class="slider-icon-box">
+                                        <!-- <svg class="slider-icon">
+                                            <use xlink:href="./imgs/icons/sprite.svg#icon-cart-arrow-down"></use>
+                                        </svg> -->
+                                        <form action="" method="POST">
+                                            <input type="hidden" name="product_id" value="<?=$row['product_id']?>">
+                                            <button type="submit" name="add">Add to Cart</button>
+                                        </form>
+                                       
+
+                                </div>
+                                <!-- <div class="slick-row ">
+                                    <span class="slider-details--price">Rs.<?=$row['unit_price'];?></span>
+                                    <span class="slider-icon-box u-margin-top-v-small">
+                                        <svg class="slider-icon">
+                                            <use xlink:href="./imgs/icons/sprite.svg#icon-cart-arrow-down"></use>
+                                        </svg>
+                                        Add to cart
+                                    </span>
+                                </div> -->
+                                <!-- <div class="slider-price-icon">
+                                     <div class="slider-details--price">Rs.<?=$row['unit_price'];?></div>
+                                    <div class="slider-icon-box">
+                                        <svg class="slider-icon">
+                                            <use xlink:href="./imgs/icons/sprite.svg#icon-cart-arrow-down"></use>
+                                        </svg>
+                                        Add to cart
+                                    </div>
+                                </div> -->
                                 </div>
                         </div>
                     </div>
@@ -317,9 +437,17 @@
                                     }
                                 ?>
                                 
-                                <span class="slider-details--price">Rs.<?=$row['unit_price'];?></span>
+                                <div>
+                                    <span class="slider-details--price">Rs.<?=$row['unit_price'];?></span>
+                                    <span>
+
+                                    </span>
                                 </div>
+                                
+                                </div>
+                                
                         </div>
+                       
                     </div>
                     <?php
                             }
@@ -350,6 +478,7 @@
                                 <span class="slider-details--price">Rs.<?=$row['unit_price'];?></span>
                                 </div>
                         </div>
+                    
                     </div>
                     <?php
                             }
@@ -358,11 +487,11 @@
                         }
                     ?>
                     </div>
-                    
                 </div>
-                
+                <!-- end of tab content -->
             </div> 
             <!-- end of tab -->
+         
         </div>
         <!-- end of section others product -->
 
@@ -503,7 +632,7 @@
                             <div class="u-margin-top-small">
                                 <span class="heading__secondary--sub">From</span>
                                 <input type="text" class="rate__form--source form__input"
-                                    placeholder="Select the starting location" required>
+                                     value="Kamalbinayak-10,Bhaktapur" readonly>
                             </div>
                             <div class="u-margin-top-small">
                                 <span class="heading__secondary--sub">To</span>
@@ -652,6 +781,7 @@
 
     </div>
 </body>
+
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
     <script src="./js/script.js"></script>
