@@ -2,28 +2,8 @@
     session_start();
     require_once('./backend/includes/db_connect.php');
     include('./includes/cart.php');
-
-   
-
     //for userlogin
-    if(isset($_POST['submit'])){
-        $u = $_POST['email'];
-     $p = $_POST['password'];
-          
-     $sql = "SELECT * FROM `customer` WHERE `email`='$u' AND `password`='$p' AND `is_active` = 1 AND `email_activation` = 1";
-     $result = mysqli_query($conn, $sql);
-     if (mysqli_num_rows($result) > 0) {
-         session_start();
-         $_SESSION['email'] = $u;
-         $row = mysqli_fetch_assoc($result);
-         echo "<script>alert('thanks for signing ');</script>";
-         echo "<script>window.location='index.php';</script>";
-     }else{
-         // echo "error";
-         echo "<script>alert('Email or Password Incorrect!');</script>";
-       echo "<script>window.location='index.php';</script>";
-     }
-     }
+   
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -232,6 +212,7 @@
             </div>
 
         </nav>
+
         <div class="header">
             <div class="board">
                 <h1 class="heading__primary--main">We serve you best dairy in town.</h1>
@@ -713,33 +694,36 @@
                     </svg>
                 </div>
                 <div class="signup">
-                    <form action="" class="signup-form" method="POST">
+                    <form id="signup_form" action="./includes/signup.php" class="signup-form" method="POST">
                         <span class="heading__secondary--main">SIGN up to you Account</span>
                         <!-- <span class="heading__secondary--sub-sub">Join us to get exclusive offers.</span> -->
                         <div class="form__group">
-                            <input type="text" name="full_name"  placeholder="" class="form__input u-margin-top-small" required>
+                            <input type="text" name="full_name" id="signup_name"  placeholder="" class="form__input u-margin-top-small" required>
                             <label for="text" class="form__label">Full name</label>
                         </div>
                         <div class="form__group">
-                            <input type="email" name="email" placeholder="" class="form__input u-margin-top-small" required>
+                            <input type="email" name="email" id="signup_email" placeholder="" class="form__input u-margin-top-small" required>
                             <label for="email" class="form__label">Email</label>
                         </div>
                         <div class="form__group">
-                            <input type="text" name="contact" placeholder="" class="form__input u-margin-top-small" required>
-                            <label for="text" class="form__label">Contact No.</label>
+                            <input type="text" name="contact" id="signup_123" placeholder="" class="form__input u-margin-top-small" required>
+                            <label for="signup_123" class="form__label">Contact no.</label>
                         </div>
                         <div class="form__group">
-                            <input type="text" name="address" placeholder="" class="form__input u-margin-top-small" required>
-                            <label for="text" class="form__label">Address</label>
+                            <input type="text" name="address" id="signup_address" placeholder="" class="form__input u-margin-top-small" required>
+                            <label for="signup_address" class="form__label">Address</label>
                         </div>
                         <div class="form__group">
-                            <input type="password" name="password" placeholder="" class="form__input u-margin-top-small" required>
+                            <input type="password" name="password" id="signup_password" placeholder="" class="form__input u-margin-top-small" required>
                             <label for="password" class="form__label">Password</label>
                         </div>
                         <div class="form__group">
-                            <input type="submit" placeholder="" class=" form-btn u-margin-top-mid" value="Sign Up">
+                            <span class="form__message" id="signup_message"></span>
                         </div>
-
+                        <div class="form__group">
+                            <input type="submit" name="submit_signup" id="signup_submit" placeholder="" class=" form-btn u-margin-top-mid" value="Sign Up">
+                        </div>
+                        
                         <div class="form__group">
                             <span>Already have an Account?</span>
                             <a href="#" id="temp">Sign in</a>
@@ -756,7 +740,30 @@
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
     <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
     <script src="./js/script.js"></script>
-
+    
+    <script>
+        $(document).ready(function(){
+            $('#signup_form').submit(function(event){
+                event.preventDefault();
+                var name = $("#signup_name").val();
+                var email = $("#signup_email").val();
+                var contact = $('#signup_123').val();
+                var address = $("#signup_address").val();
+                var password = $("#signup_password").val();
+                var submit = $("#signup_submit").val();
+                $('#signup_message').load('./includes/signup.php',{
+                    name: name,
+                    email: email,
+                    address: address,
+                    contact: contact,
+                    password: password,
+                    submit: submit
+                });
+            });
+        });
+    </script>
+    
+    <!-- Slick slider script -->
      <script>
         $(document).ready(function() {
              $(".slick-slider").slick({
@@ -792,6 +799,8 @@
              });
         });
    </script>
+   <!-- end of slick slider script -->
+
 
     <script>
         document.getElementById('checkRate').addEventListener('click',
