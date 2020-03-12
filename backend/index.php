@@ -75,7 +75,7 @@
 								<svg class="nav__icon">
 									<use xlink:href="./img/SVG1/sprite.svg#icon-home"></use>
 								</svg>
-								<span class="nav__text">dahboard</span>
+								<span class="nav__text">dashboard</span>
 							</a>
 						</li>
 						<li class="nav__item">
@@ -88,7 +88,7 @@
 						</li>
 						
 						<li class="nav__item">
-							<a href="manage	" class="nav__links">
+							<a href="manage" class="nav__links">
 								<svg class="nav__icon">
 									<use xlink:href="./img/SVG1/sprite.svg#icon-aircraft-take-off"></use>
 								</svg>
