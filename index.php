@@ -10,11 +10,13 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./css/main.css">
+    <!-- <img src="./imgs/title-cow.png" alt=""> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./slick/slick.css">
     <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css">
+    <link rel="icon" href="./imgs/title-cow.png" type="img/png">
     <title>Dairy Store</title>
 </head>
 
@@ -76,7 +78,9 @@
         <nav class="section-nav">
             <div class="nav-wrapper">
                 <div class="logo">
-                    <a href="index.php">LOGO</a>
+                    <a href="index.php">
+                        <img class="nav__icon" src="./imgs/logo-cow.svg" alt="">
+                    </a>
                 </div>
                 
                 <div class="search">
