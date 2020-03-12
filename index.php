@@ -1,9 +1,6 @@
 <?php
     session_start();
     require_once('./backend/includes/db_connect.php');
-    
-   
-    //for userlogin
     if(isset($_POST['submit'])){
         $u = $_POST['email'];
      $p = $_POST['password'];
