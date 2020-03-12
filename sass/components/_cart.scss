@@ -1,105 +1,121 @@
 .badge {
-  background-color: rgb(99, 148, 248);
-  border-radius: 15px;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
-  color: rgb(255, 255, 255);
-  display: inline-block;
-  font-size: 12px;
-  height: 25px;
-  line-height: 1;
-  padding: 6px 7px;
-  text-align: center;
-  vertical-align: middle;
-  white-space: nowrap;
-  width: 25px;
+     background-color: rgb(99, 148, 248);
+     border-radius: 15px;
+     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+     color: rgb(255, 255, 255);
+     display: inline-block;
+     font-size: 12px;
+     height: 25px;
+     line-height: 1;
+     padding: 6px 7px;
+     text-align: center;
+     vertical-align: middle;
+     white-space: nowrap;
+     width: 25px;
+}
+.item-img {
+     width: 6.85rem;
+     height: 6.85rem;
 }
 .shopping-cart {
-  background: #efefef none repeat scroll 0 0;
-  border-radius: 3px;
-  float: right;
-  margin: 20px 0;
-  padding: 20px;
-  position: absolute;
-  top: 20px;
-  right: -25px;
-  display: none;
-  // overflow-y:  scroll;
-  /* left: 5px; */
-  /* position: relative; */
-  width: 320px;
+     background: #efefef none repeat scroll 0 0;
+     border: solid 1px #dcdacb;
+     box-shadow: 7px 7px 30px rgba(0, 0, 0, 0.7);
+
+     border-radius: 3px;
+     float: right;
+     margin: 20px 0;
+     padding: 20px;
+     position: absolute;
+     top: 20px;
+     right: -25px;
+     display: none;
+     max-height: 45rem;
+     overflow-y: scroll;
+     /* left: 5px; */
+     /* position: relative; */
+     width: 320px;
 }
 .shopping-cart .shopping-cart-header {
-  border-bottom: 1px solid rgb(232, 232, 232);
-  padding-bottom: 15px;
+     border-bottom: 1px solid rgb(232, 232, 232);
+     padding-bottom: 15px;
 }
 .shopping-cart .shopping-cart-header .shopping-cart-total {
-  float: right;
+     float: right;
 }
 .shopping-cart .shopping-cart-items {
-  padding-top: 20px;
+     padding-top: 20px;
 }
 .shopping-cart .shopping-cart-items li {
-  margin-bottom: 18px;
+     margin-bottom: 18px;
 }
 .shopping-cart .shopping-cart-items img {
-  float: left;
-  margin-right: 12px;
+     float: left;
+     margin-right: 12px;
 }
 .shopping-cart .shopping-cart-items .item-name {
-  display: block;
-  font-size: 16px;
-  padding-top: 10px;
+     display: block;
+     font-size: 16px;
+     padding-top: 10px;
 }
 .shopping-cart .shopping-cart-items .item-price {
-  color: rgb(99, 148, 248);
-  font-size: 12px;
-  margin-right: 8px;
+     color: rgb(99, 148, 248);
+     font-size: 12px;
+     margin-right: 8px;
 }
 .shopping-cart .shopping-cart-items .item-quantity {
-  color: rgb(171, 176, 190);
-  font-size: 13px;
+     color: rgb(171, 176, 190);
+     font-size: 13px;
 }
 .shopping-cart::after {
-  -moz-border-bottom-colors: none;
-  -moz-border-left-colors: none;
-  -moz-border-right-colors: none;
-  -moz-border-top-colors: none;
-  border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #eee;
-  border-image: none;
-  border-style: solid;
-  border-width: 8px;
-  bottom: 100%;
-  content: " ";
-  height: 0;
-  left: 89%;
-  margin-left: -8px;
-  pointer-events: none;
-  position: absolute;
-  width: 0;
+     -moz-border-bottom-colors: none;
+     -moz-border-left-colors: none;
+     -moz-border-right-colors: none;
+     -moz-border-top-colors: none;
+     border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #eee;
+     border-image: none;
+     border-style: solid;
+     border-width: 8px;
+     bottom: 100%;
+     content: " ";
+     height: 0;
+     left: 89%;
+     margin-left: -8px;
+     pointer-events: none;
+     position: absolute;
+     width: 0;
 }
 .cart-icon {
-  color: rgb(81, 87, 131);
-  float: left;
-  font-size: 24px;
-  margin-right: 7px;
+     color: rgb(81, 87, 131);
+     float: left;
+     font-size: 24px;
+     margin-right: 7px;
 }
 .button {
-  background: rgb(99, 148, 248) none repeat scroll 0 0;
-  border-radius: 30px;
-  box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.15);
-  color: rgb(255, 255, 255);
-  display: block;
-  font-size: 16px;
-  margin: 25px 0 15px;
-  padding: 12px;
-  text-align: center;
-  text-decoration: none;
+     background: rgb(99, 148, 248) none repeat scroll 0 0;
+     border-radius: 30px;
+     box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.15);
+     color: rgb(255, 255, 255);
+     display: block;
+     font-size: 16px;
+     margin: 7px 0 7px;
+     padding: 12px;
+     text-align: center;
+     &-empty {
+          background: rgb(240, 138, 58);
+          box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.15);
+          text-align: center;
+          display: block;
+          font-size: 13px;
+          color: #ffffff;
+          padding: 7px 12px;
+     }
 }
 .button:hover {
-  background: rgb(114, 158, 249) none repeat scroll 0 0;
+     background: rgb(114, 158, 249) none repeat scroll 0 0;
 }
 .clearfix::after {
-  clear: both;
-  content: "";
-  display: table;
+     clear: both;
+     content: "";
+     display: table;
 }
