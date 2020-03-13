@@ -35,10 +35,16 @@
      /* left: 5px; */
      /* position: relative; */
      width: 320px;
+     &:hover {
+          cursor: default;
+     }
 }
 .shopping-cart .shopping-cart-header {
      border-bottom: 1px solid rgb(232, 232, 232);
      padding-bottom: 15px;
+     &:hover {
+          cursor: default;
+     }
 }
 .shopping-cart .shopping-cart-header .shopping-cart-total {
      float: right;
@@ -109,10 +115,14 @@
           font-size: 13px;
           color: #ffffff;
           padding: 7px 12px;
+          &:hover {
+               cursor: pointer;
+          }
      }
 }
 .button:hover {
      background: rgb(114, 158, 249) none repeat scroll 0 0;
+     cursor: pointer;
 }
 .clearfix::after {
      clear: both;

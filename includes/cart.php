@@ -1,9 +1,9 @@
 <?php
 //  require_once('./backend/includes/db_connect.php');
 //For adding item to cart
+error_reporting(0);
     if(isset($_POST['add'])) {
         if(isset($_SESSION['cart'])){
-            print_r($_SESSION['cart']);
             $item_array_id = array_column($_SESSION['cart'],"product_id");
             if(in_array($_POST['product_id'],$item_array_id)){
                 echo "<script>alert('Item already exists')</script>";
@@ -21,7 +21,6 @@
             }
         } else{
             print_r($_POST['product_id']);
-            echo "Bitch ass nigga";
             $item_array = array(
                 'product_id' => $_POST['product_id']
             );
@@ -46,6 +45,7 @@
         unset($_SESSION['cart']);
         $_SESSION['cart'] = array();
         echo "<script>window.location='index.php'</script>";
+        error_reporting(1);
 
     }
     ?>

@@ -68,6 +68,10 @@ a {
      text-decoration: none;
      color: var(--font-color-primary);
 }
-.red {
-     color: red;
+
+.icon {
+     &-remove {
+          height: 3rem;
+          width: 3rem;
+     }
 }

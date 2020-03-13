@@ -1,0 +1,17 @@
+.btn {
+     &-remove {
+          border: none;
+          background-color: #efefef;
+          float: right;
+          position: absolute;
+          top: 20%;
+          right: 0%;
+          outline: none;
+          &:hover {
+               cursor: pointer;
+               & > * {
+                    transform: scale(1.2);
+               }
+          }
+     }
+}

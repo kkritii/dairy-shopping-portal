@@ -3,14 +3,12 @@
     require_once('./backend/includes/db_connect.php');
     include('./includes/cart.php');
     //for userlogin
-   
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./css/main.css">
-    <!-- <img src="./imgs/title-cow.png" alt=""> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
@@ -50,6 +48,7 @@
             </span>
         </section>
 
+        <!-- notification script -->
         <script>
             let countDownTime = new Date("April 12, 2020 10:00:00").getTime();
             let now = new Date().getTime();
@@ -73,7 +72,7 @@
                 }
             },1000);
         </script>
-        
+        <!-- end of notification script  -->
         <!-- Navigation -->
         <nav class="section-nav">
             <div class="nav-wrapper">
@@ -105,7 +104,7 @@
                                         <li class="">
                                             <a href="" class="category__link">Yogurt (Dahi)</a>
                                         </li>
-                                        <li class=""><a href="" class="category__link">Cream</a></li>
+                                        <li class=""><a href="" class="category__link">Cake</a></li>
                                         <li class=""><a href="" class="category__link">Butter</a></li>
                                         <li class=""><a href="" class="category__link">Cheese</a></li>
                                     </ul>
@@ -153,7 +152,7 @@
                                         <span class="main-color-text"> Rs.<?=$total?></span>
                                     </div>
                                 </div>
-                                <a href="#" class="button">Checkout</a>
+                                <a href="#" class="button">Go to Cart</a>
                                 <!-- end of header -->
                                 <ul class="shopping-cart-items">
                                 <?php
@@ -169,16 +168,20 @@
                                                 if($row['product_id'] == $id){
                                                     $total = $total + $row['unit_price'];
                                 ?>
-                                                    <li class="clearfix">
+                                                    <li class="clearfix rel-pos">
                                                         <img class="item-img" src="./backend/uploads/<?=$row['image_source']?>"
                                                             alt="item1" />
                                                         <span class="item-name"><?=$row['product_name'];?></span>
                                                         <span class="item-price">Rs.<?=$row['unit_price'];?></span>
                                                         <span class="item-quantity"><?=$row['category']?></span>
-                                                        <span>
+                                                        <span class="">
                                                             <form action="" method="POST">
                                                                 <input type="hidden" name="product_id" value="<?=$row['product_id']?>">
-                                                                <button type="submit" class="remove" name="remove">Remove</button>
+                                                                <button type="submit" class="remove btn-remove" name="remove">
+                                                                    <svg class="icon-remove">
+                                                                        <use xlink:href="./imgs/icons/sprite.svg#icon-cross"></use>
+                                                                    </svg>
+                                                                </button>
                                                             </form>
                                                         </span>
                                                     </li>
@@ -217,7 +220,7 @@
 
         </nav>
 
-        <div class="header">
+        <div class="header" id="snap-after-cart">
             <div class="board">
                 <h1 class="heading__primary--main">We serve you best dairy in town.</h1>
                 <h3 class="heading__secondary--sub u-margin-top-small">
@@ -232,7 +235,7 @@
         </div>
         
         <!-- Section yogurt -->
-        <div class="section-yogurt section-product">
+        <div class="section-yogurt section-product" id="section-yogurt">
            <div class="container-1">
                 <div class="headline">
                     <h1 class="heading__primary--sub headling__main">The Best dairy product in our collection.</h1>
@@ -285,27 +288,10 @@
                                         </svg> -->
                                         <form action="" method="POST">
                                             <input type="hidden" name="product_id" value="<?=$row['product_id']?>">
-                                            <button type="submit" name="add">Add to Cart</button>
+                                            <button type="submit" name="add" id="add">Add to Cart</button>
                                         </form>
                                 </div>
-                                <!-- <div class="slick-row ">
-                                    <span class="slider-details--price">Rs.<?=$row['unit_price'];?></span>
-                                    <span class="slider-icon-box u-margin-top-v-small">
-                                        <svg class="slider-icon">
-                                            <use xlink:href="./imgs/icons/sprite.svg#icon-cart-arrow-down"></use>
-                                        </svg>
-                                        Add to cart
-                                    </span>
-                                </div> -->
-                                <!-- <div class="slider-price-icon">
-                                     <div class="slider-details--price">Rs.<?=$row['unit_price'];?></div>
-                                    <div class="slider-icon-box">
-                                        <svg class="slider-icon">
-                                            <use xlink:href="./imgs/icons/sprite.svg#icon-cart-arrow-down"></use>
-                                        </svg>
-                                        Add to cart
-                                    </div>
-                                </div> -->
+                              
                                 </div>
                         </div>
                     </div>
@@ -681,7 +667,7 @@
                         </div>   
                         <div class="form__group">
                             <span>Dont have an Account?</span>
-                            <a href="#" id="signup">Sign up</a>
+                            <a href="#" id="signup" class="badge-blue">Sign up</a>
                         </div>                        
                     </form>
                 </div>
@@ -699,8 +685,8 @@
                 </div>
                 <div class="signup">
                     <form id="signup_form" action="./includes/signup.php" class="signup-form" method="POST">
-                        <span class="heading__secondary--main">SIGN up to you Account</span>
-                        <!-- <span class="heading__secondary--sub-sub">Join us to get exclusive offers.</span> -->
+                        <span class="heading__secondary--main">SIGN UP</span>
+                        <span class="heading__secondary--sub-sub">Join us to get exclusive offers.</span>
                         <div class="form__group">
                             <input type="text" name="full_name" id="signup_name"  placeholder="" class="form__input u-margin-top-small" required>
                             <label for="text" class="form__label">Full name</label>
@@ -745,6 +731,7 @@
     <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
     <script src="./js/script.js"></script>
     
+    <!-- Validate Email jquery -->
     <script>
         $(document).ready(function(){
             $('#signup_form').submit(function(event){
@@ -766,6 +753,7 @@
             });
         });
     </script>
+    <!--end of Validate Email jquery -->
     
     <!-- Slick slider script -->
      <script>
