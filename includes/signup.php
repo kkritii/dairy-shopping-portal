@@ -1,6 +1,7 @@
 <?php
 
     require_once('../backend/includes/db_connect.php');
+    // session_start();
     if(isset($_POST['submit'])){
        $name =  $_POST['name'];
        $email =  $_POST['email'];
@@ -11,9 +12,9 @@
        $uppercase = preg_match('@[A-Z]@', $password);
        $lowercase = preg_match('@[a-z]@', $password);
        $number    = preg_match('@[0-9]@', $password);
-    
+        $default_name = "default-man.svg";
 
-       echo "<script>alert('".$contact."')</script>";
+    //    echo "<script>alert('".$contact."')</script>";
 
         if(empty($name) || empty($email)|| empty($address) || empty($contact) ||empty($password) ){
             $isempty = true;
@@ -35,16 +36,26 @@
                 echo "<span class='notice-warning'>Email Already Exists</span>";
 
             }else{
-                $sql = "INSERT INTO `customer` (`fullname`,`email`,`password`,`contact_number`,`address`) VALUES ('$name','$email',md5('$password'),'$contact','$address')";
+                $sql = "INSERT INTO `customer` (`fullname`,`email`,`password`,`contact_number`,`address`,`profile_pic`) VALUES ('$name','$email',md5('$password'),'$contact','$address','$default_name')";
                 if(mysqli_query($conn,$sql)){
-                    echo "<script>window.location = 'index.php'</script>";
+                    // echo "<script>window.location = 'index.php'</script>";
                 }else{
                     echo "<script>alert('".mysqli_error($conn)."')</script>";
                     mysqli_error($conn);
                     // echo "<script>alert('not Inserted')</script>";    
                 }
-            
             }
+        }
+
+        $pass = md5($password);
+        // $sql = "SELECT customer_id from customer WHERE email = '$email' AND password = '$pass'";
+        $sql = "SELECT customer_id FROM `customer` WHERE `email`='$email' AND `password`='$pass'";
+        $result = mysqli_query($conn,$sql);
+        if(mysqli_num_rows($result) > 0){
+            session_start();
+            $row = mysqli_fetch_assoc($result);
+            $_SESSION['user_id'] = $row['customer_id'];
+                echo "<script>window.location = 'index.php'</script>";
         }
         }
 ?>

@@ -13,7 +13,7 @@ session_start();
             echo "<script>window.location='../index.php?userId=$id';</script>";
     }else{
      echo "<script>alert('Email or Password Incorrect!');</script>";
-     echo "<script>window.location='./index.php';</script>";
+     echo "<script>window.location='../index.php';</script>";
  }
  }
 ?>

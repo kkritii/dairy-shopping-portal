@@ -1,0 +1,130 @@
+.section-account{
+    // min-height: 10vh;
+    margin:2rem 0 2rem 0;
+    .account-container{
+        max-width: 100rem;
+        margin: auto;
+        border: 1px solid #dcdacb;
+        max-height: 70vh;
+        // height: 100%;
+        padding: 2rem;
+        display: flex;
+        flex-direction: row;
+        .col-1{
+            flex: 0 0  20%;
+            margin-right: 2rem;
+            padding: 1rem;
+            // border: 1px solid #dcdacb;
+        }
+        .col-2{
+            flex:1 ;
+        }
+    }
+}
+.col-2{
+    overflow-y: auto;
+}
+
+.profile{
+    &-box{
+        position: relative;
+    }
+    &-btn{
+        position: absolute;
+        bottom : 1.3rem;
+        right: 1rem;
+    }
+    &-pic{
+        width:25rem;
+        height: auto;
+        border-radius: 3px;
+    }
+    &-tabs{
+        // padding: 2rem;
+        font-size: 1.4rem;
+       
+
+        & > *{
+            padding: 0.65rem;
+            // background-color: green;
+            width: 100%;
+           
+            // color: ;
+        }
+       
+        a{
+            color:#007791;
+            &:hover{
+                font-weight: 600;
+            }
+        }
+        // font-size: 1rem;
+    }
+}
+
+.overview{
+    &-container{
+        width: 100%;
+        border: 1px solid #dcdacb;
+        border-radius: 3px;
+        padding: 1rem 2rem;
+    }
+}
+.profile-form{
+    .form__group{
+        padding: 1rem;
+    }
+    .profile_label{
+        
+        // text-align: left;
+    }
+    .profile-btn{
+
+    }
+    &-input{
+        padding: 0.5rem 1rem;
+        outline: none;
+        color: var(--font-color-secondary-sub);
+        font-size: 1.3rem;
+        width: 25rem;
+        &::-webkit-input-placeholder {
+            color: var(--font-color-secondary-sub);
+            letter-spacing: 1px;
+            // background-color: #eeeeee;
+       }
+    }
+    
+
+}
+th{
+    text-align: left !important;
+    color: #333;
+    padding-right: 3rem;
+    // margin-top: 3rem;
+    font-size:1.4rem;
+}
+td{
+    // margin-left: 2rem;
+    padding: 0.5rem;
+}
+.heading-name{
+    font-size:1.4rem;
+    color: #333;
+}
+.heading-email{
+    font-size:1rem;
+    color:var(--font-color-secondary-sub);
+}
+
+.account-message{
+    color:var(--font-color-secondary-sub);
+    font-size:1.2rem;
+    font-weight: 600;
+}
+.heading-bold{
+    font-weight: 700 !important;
+}
+.upload-avatar-form{
+    // display: flex;
+    // width: 90%;
+}

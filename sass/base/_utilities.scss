@@ -1,5 +1,9 @@
 .u-margin {
      &-top {
+          &-large{
+               margin-top: 25rem;
+     
+          }
           &-mid {
                margin-top: 4rem;
           }
@@ -10,12 +14,24 @@
           &-v-small {
                margin-top: 0.85rem;
           }
+          &-2{
+               margin-top:2rem
+          }
      }
      &-left {
           &-small {
                margin-left: 0.75rem;
           }
      }
+     &-btm{
+          &-large{
+               margin-bottom: 25rem;
+          }
+     }
+     // u-margin-btm-large
+}
+.ml-1{
+     margin-left: 1rem;
 }
 .bold {
      font-weight: 700;
@@ -23,3 +39,22 @@
 .rel-pos {
      position: relative;
 }
+.p{
+     &-2{
+          padding: 2rem;
+     }
+}
+.pl{
+     &-2{
+          padding-left: 2rem;
+     }
+}
+.pr{
+     &-2{
+          padding-right: 2rem;
+     }
+}
+// .hide-btn{
+//      height:0px;
+//      opacity:0;
+// }
