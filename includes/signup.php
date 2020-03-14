@@ -1,4 +1,5 @@
 <?php
+
     require_once('../backend/includes/db_connect.php');
     if(isset($_POST['submit'])){
        $name =  $_POST['name'];

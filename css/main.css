@@ -644,7 +644,7 @@ a {
   padding: 0 1.6rem;
 }
 
-.category .menu-lv-1 {
+.category .menu-lv-1, .category .account-menu-lv-1 {
   display: none;
   background-color: #fff;
   padding: 1.6rem 0;
@@ -653,7 +653,7 @@ a {
   border: 1px solid #dcdacb;
 }
 
-.category .menu-lv-1 ul li {
+.category .menu-lv-1 ul li, .category .account-menu-lv-1 ul li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -665,7 +665,7 @@ a {
           justify-content: space-between;
 }
 
-.category .menu-lv-1 ul li:hover {
+.category .menu-lv-1 ul li:hover, .category .account-menu-lv-1 ul li:hover {
   background-color: #efefef;
 }
 
@@ -675,6 +675,17 @@ a {
   position: absolute;
   top: 7.1rem;
   height: 20rem;
+  overflow: auto;
+  color: inherit;
+}
+
+.category:hover > .account-menu-lv-1 {
+  display: block;
+  width: 17rem;
+  position: absolute;
+  top: 7.1rem;
+  right: 0;
+  height: auto;
   overflow: auto;
   color: inherit;
 }

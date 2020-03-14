@@ -31,7 +31,6 @@
         if(empty($product[0]) || empty($product[1]) || empty($product[2]) || empty($product[3]) || empty($product[4]) || empty($product[6])){
             $message =  "All field must be filled";
             $error = true;
-             echo "arun cahoar";
         } else{
             $sql_check = "SELECT * FROM product WHERE product_name = '$product[0]'";
             if ($result = mysqli_query($conn,$sql_check)) 
