@@ -28,8 +28,4 @@
         <?php include('./contents/modals.php');?>
     </div>
 </body>
-
-   
-
-
 </html>

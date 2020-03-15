@@ -78,21 +78,19 @@
                                         <span class="main-color-text"> Rs.<?=$total?></span>
                                     </div>
                                 </div>
-                                <a href="#" class="button">Go to Cart</a>
+                                <a href="./checkout.php?action=checkout" class="button">Go to Cart</a>
                                 <!-- end of header -->
                                 <ul class="shopping-cart-items">
                                 <?php
-                                    $total = 0;
+                                  
                                     if(count($_SESSION['cart']) != 0){
-
-                                        
                                         $sql = "SELECT `product_id`,`product_name`,`category`,`unit_price`,`image_source` FROM product";
                                         $result = mysqli_query($conn,$sql);
                                         $product_id = array_column($_SESSION['cart'],'product_id');
                                         while($row = mysqli_fetch_assoc($result)){
                                             foreach($product_id as $id){
                                                 if($row['product_id'] == $id){
-                                                    $total = $total + $row['unit_price'];
+                                                    
                                 ?>
                                                     <li class="clearfix rel-pos">
                                                         <img class="item-img" src="./backend/uploads/<?=$row['image_source']?>"

@@ -41,12 +41,12 @@
                             <input type="file" class="u-margin-top-v-small" name="file" id="fileinput" >
                             <input type="submit" class="btn-sm btn-file u-margin-top-v-small" value="submit" name="submit" id="upload-avatar-submit">
                         </form>
-                        
+<!--                         
                         <script>
                             function chooseFile(){
                                 document.getElementById('fileinput').click();
                             }
-                        </script>
+                        </script> -->
                     </div>
                     <div class="">
                       
@@ -167,9 +167,7 @@
                 </div>
 
             </div>
-        </div>
-
-        
+       </div>        
         <?php include('./contents/footer.php');?>
         <?php include('./contents/modals.php');?>
     </div>

@@ -17,6 +17,22 @@
 }
 // Visit this page for reference https://necolas.github.io/css3-github-buttons/
 
+.btn-cart{
+     background-color:#ed7562;
+     display: block;
+     padding:1.2rem 3.2rem;
+     margin:3rem 0.3rem 0.3rem 0;
+     border-radius:4px;
+     color: #ffffff;
+     font-weight: 600;
+     font-size: 1.4rem;
+     box-shadow: inset  0 -0.6em 1em -0.35em rgba(0,0,0,0.17),inset 0 0.6em 2em -0.3em rgba(255,255,255,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);;
+     text-align: center;
+     &:active{
+          box-shadow:inset 0 0.6em 2em -0.3em rgba(0,0,0,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
+     }
+}
+
 .btn-sm {
      padding: 3px 10px;
      font-size: 12px;

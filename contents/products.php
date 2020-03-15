@@ -1,5 +1,8 @@
   
         <!-- Section yogurt -->
+        <?php 
+            $_SESSION['cart'] = array();
+        ?>
         <div class="section-yogurt section-product" id="section-yogurt">
            <div class="container-1">
                 <div class="headline">
@@ -24,56 +27,61 @@
                         $result = mysqli_query($conn, $sql);
                         if (mysqli_num_rows($result) > 0) {
                             $temp = 0;
+                            $product = array_column($_SESSION['cart'],'product_id');
                             while($row = mysqli_fetch_assoc($result)) {
+                                $product_id = $row['product_id'];
+                                
                     ?>
                     <div class="slick-list">
-                        <div class="slick-list-container">
-                            <img class="slider-img" src="./backend/uploads/<?=$row['image_source']?>" alt="" />
-                            <div class="slider-details">
-                                <span class="slider-details--name"><?=$row['product_name'];?></span>
-                                <span class="slider-details--discription">Lorem ipsum dolor sit </span>
-                                <?php
-                                    if($row['stock'] == 0){
-                                        ?>
-                                           <span class="u-margin-top-v-small badge-out-of-stock">Out of stock</span>                  
-                                        <?php
-                                    } 
-                                ?>
-                                <?php
-                                    if($row['quantity_sold'] == $max){
-                                        ?>       
-                                           <span class="u-margin-top-v-small badge-popular">Most popular</span>            
-                                        <?php
-                                    } 
-                                ?>
-                                <span class="slider-details--price">Rs.<?=$row['unit_price'];?></span>
-                                <div class="slider-icon-box">
-                                        <!-- <svg class="slider-icon">
-                                            <use xlink:href="./imgs/icons/sprite.svg#icon-cart-arrow-down"></use>
-                                        </svg> -->
-                                        <form action="" method="POST">
-                                            <input type="hidden" name="product_id" value="<?=$row['product_id']?>">
+                        <a href="./product-detail.php?action=viewProduct&productId=<?=$product_id?>">
+                            <div class="slick-list-container">
+                                <img class="slider-img" src="./backend/uploads/<?=$row['image_source']?>" alt="" />
+                                <div class="slider-details">
+                                    <span class="slider-details--name"><?=$row['product_name'];?></span>
+                                    <span class="slider-details--discription">Lorem ipsum dolor sit </span>
+                                    <?php
+                                        if($row['stock'] == 0){
+                                            ?>
+                                            <span class="u-margin-top-v-small badge-out-of-stock">Out of stock</span>                  
                                             <?php
-                                                            if(in_array($row['product_id'],$product_id)){
-                                                        ?>
-                                                                <p>Added</p>
-                                                        <?php
-                                                            } else{
-                                                        ?>
-                                                                <button type="submit" name="add">
-                                                                <!-- <svg class="slider-icon">
-                                                                    <use xlink:href="./imgs/icons/sprite.svg#icon-cart-arrow-down"></use>
-                                                                </svg> -->
-                                                                Add to Cart
-                                                                </button>
-                                                        <?php
-                                                            }
-                                                        ?>
-                                        </form>
-                                </div>
-                              
-                                </div>
-                        </div>
+                                        } 
+                                    ?>
+                                    <?php
+                                        if($row['quantity_sold'] == $max){
+                                            ?>       
+                                            <span class="u-margin-top-v-small badge-popular">Most popular</span>            
+                                            <?php
+                                        } 
+                                    ?>
+                                    <span class="slider-details--price">Rs.<?=$row['unit_price'];?></span>
+                                    <div class="slider-icon-box">
+                                            <!-- <svg class="slider-icon">
+                                                <use xlink:href="./imgs/icons/sprite.svg#icon-cart-arrow-down"></use>
+                                            </svg> -->
+                                            <form action="" method="POST">
+                                                <input type="hidden" name="product_id" value="<?=$row['product_id']?>">
+                                                <?php
+                                                                if(in_array($row['product_id'],$product)){
+                                                            ?>
+                                                                    <p>Added to Cart</p>
+                                                            <?php
+                                                                } else{
+                                                            ?>
+                                                                    <button type="submit" name="add">
+                                                                    <!-- <svg class="slider-icon">
+                                                                        <use xlink:href="./imgs/icons/sprite.svg#icon-cart-arrow-down"></use>
+                                                                    </svg> -->
+                                                                    Add to Cart
+                                                                    </button>
+                                                            <?php
+                                                                }
+                                                            ?>
+                                            </form>
+                                    </div>
+                                
+                                    </div>
+                            </div>
+                        </a>
                     </div>
                     <?php
                             }
@@ -117,8 +125,10 @@
                         if (mysqli_num_rows($result) > 0) {
                  
                         $product_id = array_column($_SESSION['cart'],'product_id');
-
+                        
+                        $product = array_column($_SESSION['cart'],'product_id');
                             while($row = mysqli_fetch_assoc($result)) {
+                                $product_id = $row['product_id'];
                     ?>
                                 <div class="slick-list">
                                     <div class="slick-list-container">
@@ -147,9 +157,9 @@
                                                     <form action="" method="POST">
                                                         <input type="hidden" name="product_id" value="<?=$row['product_id']?>">
                                                         <?php
-                                                            if(in_array($row['product_id'],$product_id)){
+                                                            if(in_array($row['product_id'],$product)){
                                                         ?>
-                                                                 <p>Added</p>
+                                                                 <p>Added to Cart</p>
                                                         <?php
                                                             } else{
                                                         ?>

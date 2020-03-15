@@ -4,7 +4,7 @@
     .account-container{
         max-width: 100rem;
         margin: auto;
-        border: 1px solid #dcdacb;
+        
         max-height: 70vh;
         // height: 100%;
         padding: 2rem;
@@ -18,12 +18,11 @@
         }
         .col-2{
             flex:1 ;
+            overflow-y: auto;
         }
     }
 }
-.col-2{
-    overflow-y: auto;
-}
+
 
 .profile{
     &-box{
