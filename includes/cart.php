@@ -8,43 +8,57 @@ if(!isset($_SESSION)){
 }
 
 if(isset($_POST['remove'])){
-    echo $_POST['product_id'];
-    echo $_SESSION['cart'];
-    echo naku;
-
-    $loc ="index.php";
-  
+    // echo $_POST['product_id'];
     $action ="removeFromCheckout";
     foreach($_SESSION['cart'] as $key => $value){
         if($value['product_id'] == $_POST['product_id']){
             unset($_SESSION['cart'][$key]);
-    echo "naku";
-
-            if($_GET['action'] == $action){
-                echo "<script>window.location='../checkout.php'</script>";
-            }else{
-                echo "<script>window.location='index.php'</script>";
-            }
+            // if($_GET['action'] == $action){
+            //     echo "checkout";
+            //     echo "<script>window.location='../checkout.php'</script>";
+            // }else{
+            //     echo "index";
+            //     echo "<script>window.location='index.php'</script>";
+            // }
         }
     }
 }
+
     if(isset($_POST['add'])) {
-        // $action = $_GET['action'];
-        // echo "$action";
+        if(!isset($_SESSION)){
+            session_start();
+        }
+       
+        $action = "addFromDetail";
+        if($_GET['action']==$action){
+            $prod_id = $_GET['productId'];
+        }
         if(isset($_SESSION['cart'])){
-            $item_array_id = array_column($_SESSION['cart'],"product_id");
+            
+           
             if(in_array($_POST['product_id'],$item_array_id)){
-                echo "<script>alert('Item already exists')</script>";
-                echo "<script>window.location = 'index.php'</script>";
-                
+                $item_array_id = array_column($_SESSION['cart'],"product_id");
+               
+                if($_GET['action']==$action){
+                    echo "<script>alert('Item already exists')</script>";
+                    echo "<script>window.location = '../product-detail.php?productId=".$prod_id."'</script>";
+                } else{
+                    echo "<script>alert('Item already exists')</script>";
+                    echo "<script>window.location = './index.php'</script>";
+                }
             }  else{
                 $count = count($_SESSION['cart']);
                 $item_array = array(
-                    'product_id' => $_POST['product_id']
+                    'product_id' => $_POST['product_id'],
+                    'quantity'=>$_POST['quantity']
                 );
                 $_SESSION['cart'][$count] = $item_array;
                 $count_cart_items = $count;
-            echo "<script>window.location='index.php'</script>";
+                if($_GET['action']==$action){
+                    echo "<script>window.location = '../product-detail.php?productId=".$prod_id."'</script>";
+                } else{
+                    echo "<script>window.location = './index.php'</script>";
+                }
 
             }
         } else{
@@ -64,7 +78,6 @@ if(isset($_POST['remove'])){
     if(isset($_POST['empty-cart'])){
         unset($_SESSION['cart']);
         $_SESSION['cart'] = array();
-        echo "<script>window.location='index.php'</script>";
     }
     error_reporting(-1);
     ?>

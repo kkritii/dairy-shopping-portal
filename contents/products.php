@@ -1,7 +1,8 @@
   
         <!-- Section yogurt -->
         <?php 
-            $_SESSION['cart'] = array();
+            // $_SESSION['cart'] = array();
+            error_reporting(0);
         ?>
         <div class="section-yogurt section-product" id="section-yogurt">
            <div class="container-1">
@@ -67,12 +68,13 @@
                                                             <?php
                                                                 } else{
                                                             ?>
-                                                                    <button type="submit" name="add">
+                                                                    <input type="submit" name="add" value="Add to cart" class="class="btn-cart"> 
+                                                                     <input type="hidden" name="quantity"  value="1">
+                                                                   
                                                                     <!-- <svg class="slider-icon">
-                                                                        <use xlink:href="./imgs/icons/sprite.svg#icon-cart-arrow-down"></use>
+                                                                        <use xlink:href="../imgs/icons/sprite.svg#icon-cart-arrow-down"></use>
                                                                     </svg> -->
-                                                                    Add to Cart
-                                                                    </button>
+                                                                    </input>
                                                             <?php
                                                                 }
                                                             ?>
@@ -156,6 +158,7 @@
                                                     
                                                     <form action="" method="POST">
                                                         <input type="hidden" name="product_id" value="<?=$row['product_id']?>">
+                                                        <input type="hidden" name="quantity"  value="1">
                                                         <?php
                                                             if(in_array($row['product_id'],$product)){
                                                         ?>
@@ -212,7 +215,25 @@
                                         </svg> -->
                                         <form action="" method="POST">
                                             <input type="hidden" name="product_id" value="<?=$row['product_id']?>">
-                                          
+                                            <form action="" method="POST">
+                                                        <input type="hidden" name="product_id" value="<?=$row['product_id']?>">
+                                                        <?php
+                                                            if(in_array($row['product_id'],$product)){
+                                                        ?>
+                                                                 <p>Added to Cart</p>
+                                                        <?php
+                                                            } else{
+                                                        ?>
+                                                                <button type="submit" name="add">
+                                                                <!-- <svg class="slider-icon">
+                                                                    <use xlink:href="./imgs/icons/sprite.svg#icon-cart-arrow-down"></use>
+                                                                </svg> -->
+                                                                Add to Cart
+                                                                </button>
+                                                        <?php
+                                                            }
+                                                        ?>
+                                            </form>
                                         </form>
                                        
 

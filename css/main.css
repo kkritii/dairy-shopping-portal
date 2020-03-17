@@ -676,7 +676,7 @@ a {
 .category .menu-lv-1, .category .account-menu-lv-1 {
   display: none;
   background-color: #fff;
-  padding: 1.6rem 0;
+  padding: 1rem 0;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.08);
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.08);
   border: 1px solid #dcdacb;
@@ -703,7 +703,7 @@ a {
   width: 24rem;
   position: absolute;
   top: 7.1rem;
-  height: 20rem;
+  height: auto;
   overflow: auto;
   color: inherit;
 }
@@ -985,6 +985,8 @@ a {
 .btn-cart {
   background-color: #ed7562;
   display: block;
+  min-width: 13.5rem;
+  max-width: 15rem;
   padding: 1.2rem 3.2rem;
   margin: 3rem 0.3rem 0.3rem 0;
   border-radius: 4px;
@@ -1056,6 +1058,70 @@ a {
   border: 1px solid rgba(27, 31, 35, 0.2);
   border-radius: .25em;
   cursor: pointer;
+}
+
+.swappy-radios label {
+  display: block;
+  position: relative;
+  padding-left: 4rem;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: #333;
+}
+
+.swappy-radios label:hover input ~ .radio {
+  opacity: 0.8;
+}
+
+.swappy-radios .radio-input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.swappy-radios .radio-input:checked ~ span {
+  color: #007791;
+  -webkit-transition: color .5s;
+  transition: color .5s;
+}
+
+.swappy-radios .radio-input:checked ~ .radio {
+  background-color: #007791;
+  opacity: 1 !important;
+}
+
+.swappy-radios .radio-input:checked ~ .radio::after {
+  opacity: 1;
+}
+
+.swappy-radios .radio {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2.5rem;
+  width: 2.5rem;
+  background: #c9ded6;
+  border-radius: 50%;
+}
+
+.swappy-radios .radio::after {
+  display: block;
+  content: '';
+  position: absolute;
+  opacity: 0;
+  top: .5rem;
+  left: .5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: #fff;
 }
 
 .check-rate {
@@ -1550,6 +1616,7 @@ td {
   max-width: 120rem;
   margin: auto;
   border: 1px solid #dcdacb;
+  border-radius: 3px;
   padding: 5rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1667,31 +1734,28 @@ input[type="number"] {
 
 .section-checkout {
   margin: 2rem 0 2rem 0;
+  min-height: 50vh;
 }
 
 .checkout-container {
   max-width: 120rem;
   margin: auto;
-  height: 70vh;
-}
-
-.checkout-container .row-2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
 .checkout-container .col-1 {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 60%;
-          flex: 1 1 60%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 60%;
+          flex: 0 1 60%;
 }
 
 .checkout-container .col-2 {
-  min-width: 30%;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
+  min-width: 40%;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
   border: 1px solid #dcdacb;
   -webkit-box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.1), 0 3px 1px 0 rgba(20, 23, 28, 0.1);
           box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.1), 0 3px 1px 0 rgba(20, 23, 28, 0.1);

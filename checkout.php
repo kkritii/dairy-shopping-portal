@@ -2,6 +2,9 @@
     session_start();
     require_once('./backend/includes/db_connect.php');
     include('./includes/cart.php');
+    include('./includes/esewa-setting.php');
+    // print_r($_SESSION);
+    // exit;
     //for userlogin
 ?>
 <!DOCTYPE html>
@@ -19,23 +22,31 @@
     <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css">  -->
 
 </head>
-
 <body>
     <div class="container">
-        <?php include('./contents/nav.php');?>    
-      
-
+        <?php include('./contents/nav.php');?>   
         <div class="section-checkout">
             <div class="checkout-container">
-                <div class="row-1">
-                    <p class="heading__primary--main">Checkout</p>
+                <div class="col-1">
+                        <p class="heading__primary--main">Checkout</p>
+                        <div class="swappy-radios  u-margin-top-small" role="radiogroup" aria-labelledby="swappy-radios-label">
+                            <!-- <h3 id="swappy-radios-label">Select an option</h3> -->
+                          
+                            <label>
+                                <input type="radio" name="options" class="radio-input" checked />
+                                <span class="radio"></span>
+                                <span>Cash on Delivery</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="options" class="radio-input"/>
+                                <span class="radio"></span>
+                                <span>Pay with esewa</span>
+                            </label>
+                        </div>  
                 </div>
-                <div class="row-2">
-                    <div class="col-1">
-                        Hello world
-                    </div>
-                    <div class="col-2">
-                        <p class="heading-summary">Summary</p>
+                <!-- end of col-1 -->
+                <div class="col-2">
+                <p class="heading-summary">Summary</p>
                         <table>
                             <ul>
                             <?php
@@ -43,10 +54,19 @@
                                   if(count($_SESSION['cart']) != 0){
                                       $sql = "SELECT `product_id`,`product_name`,`category`,`unit_price`,`image_source` FROM product";
                                       $result = mysqli_query($conn,$sql);
-                                      $product_id = array_column($_SESSION['cart'],'product_id');
+                                      $product_id = array_column($_SESSION['cart'],'quantity','product_id');
+                                    //   echo "<pre>";
+                                    //   print_r($product_id);
+                                    //   exit;
+                                      $quantity = array_column($_SESSION['cart'],'quantity');
                                       while($row = mysqli_fetch_assoc($result)){
-                                          foreach($product_id as $id){
-                                              if($row['product_id'] == $id){
+                                          foreach($product_id as $key =>$value){
+
+                                    //   echo "<pre>";
+
+                                            //   echo $key ." and".$value;
+                                            //   if($row['product_id'] == $product_id[$key]){
+                                            if($row['product_id'] == $key){
                                                   
                               ?>
                                                 <li class="item-wrap">
@@ -59,13 +79,20 @@
                                                             <span class="item-product-price">Rs.<?=$row['unit_price'];?></span>
                                                             <span class="item-product-category"><?=$row['category']?></span>
                                                             
-                                                                <form action="./includes/cart.php?action=removeFromCheckout" method="POST">
-                                                                    <input type="hidden" name="product_id" value="<?=$row['product_id']?>">
-                                                                    <button type="submit" class="" name="remove">
-                                                                        <svg class="item-icon-remove">
-                                                                            <use xlink:href="./imgs/icons/sprite.svg#icon-cross"></use>
-                                                                        </svg>
-                                                                    </button>
+                                                                <!-- <form action="./includes/cart.php?action=removeFromCheckout" method="POST"> -->
+                                                                <form action="" method="POST">
+                                                                    <div class="input-group">
+                                                                        <input type="hidden" name="product_id" value="<?=$row['product_id']?>">
+                                                                        <input type="button" value="-" class="button-minus" data-field="quantity">
+                                                                        <input type="number" step="1" max="" value="<?=$value?>" name="quantity" class="quantity-field">
+                                                                        <input type="button" value="+" class="button-plus" data-field="quantity">
+                                                                        <button type="submit" class="" name="remove">
+                                                                            <svg class="item-icon-remove">
+                                                                                <use xlink:href="./imgs/icons/sprite.svg#icon-cross"></use>
+                                                                            </svg>
+                                                                        </button>
+                                                                    </div>
+                                                                    
                                                                 </form>
                                                   </div>
                                                 </li> 
@@ -92,15 +119,30 @@
                               ?>
                             </ul>
                         </table>
-                    </div>
-                </div>
-            </div>
-           
-        </div>
 
+                        <div class="section-proceed">
+                            <form action="<?=$epayURL?>" method="POST">
+                                <input value="100" name="tAmt" type="hidden">
+                                <input value="90" name="amt" type="hidden">
+                                <input value="5" name="txAmt" type="hidden">
+                                <input value="2" name="psc" type="hidden">
+                                <input value="3" name="pdc" type="hidden">
+                                <input value="epay_payment" name="scd" type="hidden">
+                                <input value="<?=$pid?>" name="pid" type="hidden">
+                                <input value="<?=$success_url?>" type="hidden" name="su">
+                                <input value="<?=$failure_url?>" type="hidden" name="fu">
+                                <input value="Submit" class="btn-cart" type="submit">
+                            </form>
+                        </div>
+                </div>
+        
+            </div>
+            <!-- end of checkout container -->
+        </div>
+        <!-- end of section-checkout -->
         <?php include('./contents/footer.php');?>
         <?php include('./contents/modals.php');?>
     </div>
+    <!-- end of container    -->
 </body>
-
-</html>
+<script src="./js/quantity.js"></script>

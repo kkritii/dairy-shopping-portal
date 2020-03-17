@@ -17,7 +17,7 @@
   .menu-lv-1,.account-menu-lv-1 {
     display: none;
     background-color: #fff;
-    padding: 1.6rem 0;
+    padding: 1rem 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.08);
     border: 1px solid #dcdacb;
     & ul li {
@@ -35,8 +35,8 @@
     width: 24rem;
     position: absolute;
     top: 7.1rem;
-
-    height: 20rem;
+    height: auto;
+    // height: 20rem;
     overflow: auto;
     color: inherit;
   }
@@ -50,4 +50,29 @@
     overflow: auto;
     color: inherit;
   }
+  // &:hover > .arrow-top,&:hover > .account-menu-lv-1 {
+  //   display: block;
+    
+  //   // clip-path: polygon(50% 0%, 37% 23%, 65% 24%);
+
+  //   // outline:1px solid #dcdacb;
+  //   border-left: 12.5px solid transparent;
+  //   border-right: 12.5px solid transparent;
+  //   border-bottom: 12.5px solid #dcdacb;
+  // }
 }
+// .arrow-top{
+//      position: absolute;
+//      display: none;
+//      bottom:0;
+//      left: 15%;
+// }
+// .arrow-top:before{
+//   content: '';
+//   position: absolute;
+//   left: -11.9px;
+//   top: 3px;
+//   border-left: 12px solid transparent;
+//   border-right: 12px solid transparent;
+//   border-bottom: 12px solid #ffffff;
+// }

@@ -28,6 +28,7 @@
             // echo $product_id;
             $sql = "SELECT * FROM product WHERE product_id = '$product_id'";
             $result = mysqli_query($conn,$sql);
+            $product = array_column($_SESSION['cart'],'product_id');
             $row = mysqli_fetch_assoc($result);
             //  echo $row['fullname'];
         ?>
@@ -44,22 +45,27 @@
                         <p class="product-price">Rs. <?=$row['unit_price']?> 
                             <span class="product-per">/ cup</span>
                         </p>
-                        <form action="" method="POST">
+                        <form action="./includes/cart.php?action=addFromDetail&productId=<?=$product_id?>" method="POST">
                             <div class="input-group">
+                                <input type="hidden" name="product_id" id="" value="<?=$product_id?>" >
                                 <input type="button" value="-" class="button-minus" data-field="quantity">
                                 <input type="number" step="1" max="" value="1" name="quantity" class="quantity-field">
                                 <input type="button" value="+" class="button-plus" data-field="quantity">
-                                <input type="submit" class="btn-cart" value="Add to cart">
+                                <?php
+                                    if(in_array($row['product_id'],$product)){
+                                ?>
+                                        <a href="./checkout.php" class="btn-cart">Go to Cart</a>
+                                <?php
+                                    } else{
+                                ?>
+                                        <input type="submit" name="add" value="Add to cart" class="btn-cart"> </input>
+                                <?php
+                                    }
+                                ?>
+                                <!-- <input type="submit" name="add" class="btn-cart" value="Add to cart"> -->
                                 <!-- <a href="something" class="button7" style="background-color:#2979FF">Login</a> -->
                             </div>
                         </form>
-                        <div class="input-group">
-                            <input type="button" value="-" class="button-minus" data-field="quantity">
-                            <input type="number" step="1" max="" value="1" name="quantity" class="quantity-field">
-                            <input type="button" value="+" class="button-plus" data-field="quantity">
-                            <input type="submit" name="add" class="btn-cart" value="Add to cart">
-                            <!-- <a href="something" class="button7" style="background-color:#2979FF">Login</a> -->
-                        </div>
                     </div>
                 </div>
             </section>
@@ -82,6 +88,7 @@
                             $max = $roww['max_sold'];
                         } 
                         $result = mysqli_query($conn, $sql);
+                        $product = array_column($_SESSION['cart'],'product_id');
                         if (mysqli_num_rows($result) > 0) {
                             $temp = 0;
                             while($row = mysqli_fetch_assoc($result)) {
@@ -116,16 +123,13 @@
                                             <form action="" method="POST">
                                                 <input type="hidden" name="product_id" value="<?=$row['product_id']?>">
                                                 <?php
-                                                                if(in_array($row['product_id'],$product_id)){
-                                                            ?>
+                                                                if(in_array($row['product_id'],$product)){
+                                                            ?>  
                                                                     <p>Added</p>
                                                             <?php
                                                                 } else{
                                                             ?>
                                                                     <button type="submit" name="add">
-                                                                    <!-- <svg class="slider-icon">
-                                                                        <use xlink:href="./imgs/icons/sprite.svg#icon-cart-arrow-down"></use>
-                                                                    </svg> -->
                                                                     Add to Cart
                                                                     </button>
                                                             <?php
@@ -191,41 +195,5 @@
         });
    </script>
    <!-- end of slick slider script -->
-<script>
-function incrementValue(e) {
-  e.preventDefault();
-  var fieldName = $(e.target).data('field');
-  var parent = $(e.target).closest('div');
-  var currentVal = parseInt(parent.find('input[name=' + fieldName + ']').val(), 10);
-
-  if (!isNaN(currentVal)) {
-    parent.find('input[name=' + fieldName + ']').val(currentVal + 1);
-  } else {
-    parent.find('input[name=' + fieldName + ']').val(0);
-  }
-}
-
-function decrementValue(e) {
-  e.preventDefault();
-  var fieldName = $(e.target).data('field');
-  var parent = $(e.target).closest('div');
-  var currentVal = parseInt(parent.find('input[name=' + fieldName + ']').val(), 10);
-
-  if (!isNaN(currentVal) && currentVal > 0) {
-    parent.find('input[name=' + fieldName + ']').val(currentVal - 1);
-  } else {
-    parent.find('input[name=' + fieldName + ']').val(0);
-  }
-}
-
-$('.input-group').on('click', '.button-plus', function(e) {
-  incrementValue(e);
-});
-
-$('.input-group').on('click', '.button-minus', function(e) {
-  decrementValue(e);
-});
-
-</script>
-
+   <script src="./js/quantity.js"></script>
 </html>
