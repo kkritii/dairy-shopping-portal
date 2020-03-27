@@ -5,6 +5,7 @@
           //   height: 1.1rem;
           padding: 0.25rem 0.75rem;
           background-color: #f4c150;
+          font-weight: 600;
      }
      &-out-of-stock {
           display: inline;
@@ -18,6 +19,21 @@
      &-blue {
           background-color: rgb(99, 148, 248);
           color: #fff;
+          display: inline;
           padding: 0.25rem 0.75rem;
+          // margin-bottom: 0.5rem;
+
+          font-size: 0.95rem;
+          font-weight: 600;
+     }
+     &-green {
+          display: inline;
+          padding: 0.25rem 0.75rem;
+          color: #fff;
+          // margin-bottom: 0.5rem;
+          background-color: #28a745;
+          // background-image: linear-gradient(-180deg,#34d058,#28a745 90%);
+          font-size: 0.95rem;
+          font-weight: 600;
      }
 }

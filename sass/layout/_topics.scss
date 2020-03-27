@@ -1,51 +1,55 @@
-.topics-container{
-    max-width: 120rem;
-    margin: auto;
-    // border: 1px solid #dcdacb;
-    // font-weight: 600;
-
-
+.topics-container {
+     max-width: 120rem;
+     // margin: auto;
+     margin: 4rem auto;
+     // border: 1px solid #dcdacb;
+     // font-weight: 600;
 }
-.topics{
-    display: flex;
-//    width: 60%;
-    justify-content: space-between;
-    align-items: center;
-    margin: 1.5rem 0 4rem 0 ;
+.topics {
+     display: flex;
+     //    width: 60%;
+     justify-content: space-between;
+     align-items: center;
+     margin: 1.5rem 0 4rem 0;
 }
-.topic-box{
-    padding: 1.5rem;
-    // border: 1px solid #dcdacb;
-    box-shadow: 0 0 1px 1px rgba(20,23,28,.1), 0 3px 1px 0 rgba(20,23,28,.1);
-    color: #505763;
-    // width: calc(100% - 15px);
-    font-size: 1.4rem;
-    height: 5.4rem;
-    display: flex;
-    align-items: center;
-    border-radius: 1px;
-    &:not(:last-child){
-        margin-right: 4rem;
+.topic-box {
+     padding: 1.5rem;
+     // border: 1px solid #dcdacb;
+     box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.1), 0 3px 1px 0 rgba(20, 23, 28, 0.1);
+     color: #505763;
+     // width: calc(100% - 15px);
+     font-size: 1.4rem;
+     height: 5.4rem;
+     display: flex;
+     align-items: center;
+     border-radius: 1px;
+     &:not(:last-child) {
+          margin-right: 4rem;
+     }
 
-    }
-   
-    &:hover{
-        cursor: pointer;
-        transition: 0.2s ease;
-        box-shadow: 0 0 10px 2px rgba(20,23,28,.2), 0 3px 1px 0 rgba(20,23,28,.2);
-    }
-    &-img{
-      
-        width: 3rem;
-        height: 3rem;
-        border-radius: 200px;
-        opacity: 0.75;
-        margin-right: 1.5rem;
-    }
+     &:hover {
+          cursor: pointer;
+          transition: 0.2s ease;
+          box-shadow: 0 0 10px 2px rgba(20, 23, 28, 0.2), 0 3px 1px 0 rgba(20, 23, 28, 0.2);
+     }
+     &-img {
+          width: 3rem;
+          height: 3rem;
+          border-radius: 200px;
+          opacity: 0.75;
+          margin-right: 1.5rem;
+     }
 
+     &-text {
+          &-sm {
+               font-size: 1.1rem;
+               margin-left: 1.5rem;
+               color: var(--font-color-secondary-sub-sub);
+          }
+     }
 }
-@media (min-width: 768px){
-    .topic-box {
-        flex-basis: calc(100%/5 - 10px);
-    }
+@media (min-width: 768px) {
+     .topic-box {
+          flex-basis: calc(100% / 5 - 10px);
+     }
 }

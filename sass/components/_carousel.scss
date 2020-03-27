@@ -2,7 +2,7 @@
      // border: 1px solid red;
      position: relative;
      &-container {
-          width: 22rem;
+          width: 22.9rem;
           z-index: -999;
 
           // background-color: red;
@@ -13,13 +13,13 @@
           border-radius: 3px;
           &:hover {
                cursor: pointer;
-               margin-top: -2px;
+               // margin-top: -2px;
+               transform: scale(1.5);
                transform: scale3d(1, 1, 1);
                box-shadow: 0 15px 15px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.08);
                transition: all 0.3s ease;
           }
      }
-
      // width: 25rem;
 }
 .slider-details {
@@ -29,7 +29,11 @@
      // box-shadow: 0.5px 5px 10px 1px #dcdacb;
 
      & > * {
-          margin-top: 0.55rem;
+          margin-top: 0.5rem;
+          // display: block;
+     }
+     &:nth-child(3),
+     &:nth-child(4) {
           display: block;
      }
      &--name {
@@ -51,31 +55,56 @@
           color: #007791;
      }
 }
+.slider-details-wrap {
+     display: flex;
+     // flex-direction: row;
+     justify-content: space-between;
+     align-items: center;
+}
+.slider-icon-wrap {
+     display: inline-flex;
+     border-radius: 50%;
+     border: none;
+     padding: 1rem;
+     &:hover {
+          background-color: #efefef;
+     }
+}
+.slider-icon-cart {
+     height: 2rem;
+     width: 2rem;
+     fill: #007791;
+}
 .carousel {
-     border: 1px solid #dcdacb;
-     padding: 2rem;
+     margin-top: 1rem;
      display: block;
 
-     // display: flex;
-     // justify-content: center;
-     // text-align: center;
      .slider-img {
           width: 100%;
           height: 18rem;
      }
+     &-flex {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          flex: 1;
+          flex-wrap: wrap;
+          // grid-gap: 1rem;
+     }
 }
+
 .slick-list {
      padding: 2rem;
      // border-radius: 15px;
 }
 
-.icon-right {
-     position: absolute;
-     top: 59%;
-     left: 89%;
-     height: 2rem;
-     z-index: 0;
-}
+// .icon-right {
+//      position: absolute;
+//      top: 59%;
+//      left: 89%;
+//      height: 2rem;
+//      z-index: 0;
+// }
 //Cart CSS
 
 // .slick-row {

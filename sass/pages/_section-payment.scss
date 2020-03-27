@@ -1,0 +1,58 @@
+.section-payment {
+     background-color: #fafafa;
+     border-top: 1px solid #dcdacb;
+     min-height: 60vh;
+}
+.payment-container {
+     max-width: 60rem;
+     margin: 2rem auto;
+     min-height: 30rem;
+     background-color: #fff;
+     border: 1px solid #dcdacb;
+     padding: 0 3rem 3rem 3rem;
+     //  text-align: center;
+}
+.payment-header {
+     width: 100%;
+     border-bottom: 1px solid #dcdacb;
+     padding: 2rem 0rem;
+     display: flex;
+     align-items: center;
+}
+.payment-heading {
+     &-main {
+          font-size: 3rem;
+          color: rgb(42, 156, 96);
+          //   color: red;
+     }
+     &-sub {
+          font-weight: 300;
+          font-size: 1.15rem;
+          color: var(--font-color-secondary-sub);
+     }
+     &-box {
+          margin-left: 1rem;
+     }
+}
+.bill-table-box {
+     padding: 2rem 0rem;
+     width: 60%;
+     font-size: 1.15rem;
+     &-2 {
+          padding: 2rem 0;
+          width: 100%;
+     }
+     //  text-align: center;
+}
+.bill-table-th {
+     font-size: 1.15rem;
+     letter-spacing: 0;
+     //  text-align: center;
+     //  padding: 0;
+     width: 1px;
+     color: var(--font-color-secondary-main);
+}
+.br {
+     border-top: 1px solid #dcdacb;
+     width: 100%;
+}

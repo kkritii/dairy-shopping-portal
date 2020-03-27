@@ -31,6 +31,12 @@
      $("#signin").on("click", function () {
           $(".modal-signin").fadeToggle("fast");
      });
+     $("#checkout-signin").on("click", function () {
+          $(".modal-signin").fadeToggle("fast");
+     });
+     $("#checkout-signup").on("click", function () {
+          $(".modal-signup").fadeToggle("fast");
+     });
      $("#signup").on("click", function () {
           $(".modal-signup").fadeToggle("fast");
           $(".modal-signin").fadeToggle("fast");

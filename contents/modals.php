@@ -141,12 +141,12 @@
                             <label for="email" class="form__label">Email</label>
                         </div>
                         <div class="form__group">
-                            <input type="text" name="contact" id="signup_123" placeholder="" class="form__input u-margin-top-small" required>
+                            <input type="text" name="contact" id="signup_123"  class="form__input u-margin-top-small" required>
                             <label for="signup_123" class="form__label">Contact no.</label>
                         </div>
                         <div class="form__group">
-                            <input type="text" name="address" id="signup_address" placeholder="" class="form__input u-margin-top-small" required>
-                            <label for="signup_address" class="form__label">Address</label>
+                            <input type="text" name="address" id="signup_address" class="form__input u-margin-top-small" required>
+                            <label for="signup_address" class="form__label" placeholder="eg: Kamalbinayak,10-Bhaktapur" >Full Address</label>
                         </div>
                         <div class="form__group">
                             <input type="password" name="password" id="signup_password" placeholder="" class="form__input u-margin-top-small" required>
@@ -239,7 +239,11 @@
             function () {
                 document.querySelector('.modal-checkrate').style.display = 'flex';
             })
-        document.getElementById('contactus').addEventListener('click',
+            document.getElementById('signup').addEventListener('click',
+            function () {
+                document.querySelector('.modal-signup').style.display = 'flex';
+            })
+            document.getElementById('contactus').addEventListener('click',
             function () {
                 document.querySelector('.modal-contactus').style.display = 'flex';
             })
@@ -247,10 +251,19 @@
             function () {
                 document.querySelector('.modal-signin').style.display = 'flex';
             })
-            document.getElementById('signup').addEventListener('click',
+            document.getElementById('checkout-signin').addEventListener('click',
             function () {
-                document.querySelector('.modal-signup').style.display = 'flex';
+                document.querySelector('.modal-signin').style.display = 'flex';
             })
+        document.getElementById('contactus').addEventListener('click',
+            function () {
+                document.querySelector('.modal-contactus').style.display = 'flex';
+            })
+            document.getElementById('checkout-signup').addEventListener('click',
+            function () {
+                document.querySelector('.modal-signin').style.display = 'flex';
+            })
+      
             // document.getElementById('temp').addEventListener('click',
             // function () {
             //     document.querySelector('.modal-signin').style.display = 'flex';

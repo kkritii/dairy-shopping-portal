@@ -1,8 +1,7 @@
 .u-margin {
      &-top {
-          &-large{
+          &-large {
                margin-top: 25rem;
-     
           }
           &-mid {
                margin-top: 4rem;
@@ -14,8 +13,8 @@
           &-v-small {
                margin-top: 0.85rem;
           }
-          &-2{
-               margin-top:2rem
+          &-2 {
+               margin-top: 2rem;
           }
      }
      &-left {
@@ -23,15 +22,37 @@
                margin-left: 0.75rem;
           }
      }
-     &-btm{
-          &-large{
+     &-btm {
+          &-large {
                margin-bottom: 25rem;
           }
      }
      // u-margin-btm-large
 }
-.ml-1{
+.m-top-btm-2 {
+     margin: 2rem 0;
+}
+.ml-1 {
      margin-left: 1rem;
+}
+.mr-1 {
+     margin-right: 1rem;
+}
+.mr-2 {
+     margin-right: 2rem;
+}
+.mb-1 {
+     margin-bottom: 1rem;
+}
+.border {
+     border: solid 1px #dcdacb;
+     border-radius: 3px;
+     &-btm {
+          border-bottom: solid 1px #dcdacb;
+     }
+     &-top {
+          border-top: solid 1px #dcdacb;
+     }
 }
 .bold {
      font-weight: 700;
@@ -39,23 +60,69 @@
 .rel-pos {
      position: relative;
 }
-.p{
-     &-2{
+.p {
+     &-1 {
+          padding: 2rem;
+     }
+     &-2 {
           padding: 2rem;
      }
 }
-.pl{
-     &-2{
+.ptb {
+     padding: 1rem 2rem;
+}
+.pl {
+     &-1 {
+          padding-left: 1rem;
+     }
+     &-2 {
           padding-left: 2rem;
      }
 }
-.pr{
-     &-2{
+.pb {
+     &-1 {
+          padding-bottom: 1rem;
+     }
+     &-2 {
+          padding-bottom: 2rem;
+     }
+}
+.pr {
+     &-2 {
           padding-right: 2rem;
      }
 }
+.a {
+     color: #007791;
+     font-family: "Poppins", sans-serif;
+     &:hover {
+          cursor: pointer;
+     }
+}
+// .slider-icon-box {
+//      // float: right;
+//      position: absolute;
+//      right: 3rem;
+//      bottom: 1rem;
+//      &:hover {
+//           position: absolute;
+//           right: 3rem;
+//           bottom: 1rem;
+//      }
+// }
 
 // .hide-btn{
 //      height:0px;
 //      opacity:0;
-// }
+.offer_name {
+     font-size: 1rem;
+}
+.price {
+     color: #007791 !important;
+}
+.green {
+     color: #2cb978 !important;
+}
+.warning {
+     color: #ff304f !important;
+}

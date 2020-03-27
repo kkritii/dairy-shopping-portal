@@ -1,0 +1,23 @@
+.breadcrumb {
+     display: flex;
+     font-size: 1.2rem;
+     padding: 1rem 0 1rem 1rem;
+     max-width: 120rem;
+     margin: auto;
+     //  justify-content: cnter;
+     align-items: center;
+     width: 100%;
+     border-bottom: solid 1px #dcdacb;
+     &:hover {
+          color: #007791;
+     }
+     &-icon {
+          height: 1.78rem;
+          width: 1.78rem;
+          fill: #007791;
+     }
+     &--links {
+          padding: 0.1rem 0.75rem;
+          color: #007791;
+     }
+}

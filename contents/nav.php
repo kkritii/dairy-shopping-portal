@@ -40,10 +40,10 @@
                         
 
 
-                        <li class="nav__list-items" id="contactus">
+                        <li class="nav__list-items" id="contactus" class="contactus">
                             <a href="#" class="nav__links">Contact Us</a>
                         </li>
-                        <li class="nav__list-items" id="checkRate">
+                        <li class="nav__list-items" id="checkRate" class="checkrate">
                             <a href="#" class="nav__links">Check rate</a>
                         </li>
 
@@ -52,12 +52,16 @@
                                 <svg class="nav__icon-cart">
                                     <use xlink:href="./imgs/icons/sprite.svg#icon-cart"></use>
                                 </svg>
+                                <?php
+                                 $count_cart_items =  count($_SESSION['cart']);  
+                                // echo "<script>alert('".$count_cart_items."')</script>";
+                            ?>
                                 <span class="nav__icon-cart--data"><?=$count_cart_items?></span>
                             </a>
                             <div class="shopping-cart">
-                               
+                           
                                 <div class="shopping-cart-header">
-                                    <i class="cart-icon"></i><span class="badge"><?=$count_cart_items?></span>
+                                    <i class="cart-icon"></i><span class="badge"> <?=$count_cart_items?> </span>
                                     <div class="shopping-cart-total">
                                         <span class="lighter-text">Total:</span>
 

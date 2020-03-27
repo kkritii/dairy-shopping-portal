@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <title>Address Locator</title>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css" />
+          <link rel="stylesheet" href="css/main.css" />
+          <style>
+               .container {
+                    width: 50%;
+                    max-width: 800px;
+               }
+
+               #map {
+                    height: 50vh;
+                    margin-bottom: 10px;
+                    display: none;
+               }
+
+               #locationList .card {
+                    padding: 10px;
+               }
+
+               #toast-container {
+                    top: 50%;
+                    bottom: unset;
+               }
+
+               .toast {
+                    background-color: rgba(0, 0, 0, 0.8);
+               }
+
+               @media only screen and (max-width: 768px) {
+                    .container {
+                         width: 80%;
+                    }
+               }
+          </style>
+     </head>
+     <body>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+          <div class="container">
+               <h3>Shipping Address</h3>
+               <p>You can click the button below to use your current location as your shipping address</p>
+               <div id="map"></div>
+               <button id="showMe" class="btn">Use My Location</button>
+               <form id="shippingAddress">
+                    <div id="locationList"></div>
+                    <br />
+                    <div class="input-field">
+                         <textarea class="input_fields materialize-textarea" id="address" type="text"></textarea>
+                         <label class="active" for="address">Address (Area and Street)</label>
+                    </div>
+                    <div class="input-field">
+                         <input class="input_fields" id="locality" type="text" />
+                         <label class="active" for="locality">Locality</label>
+                    </div>
+                    <div class="input-field">
+                         <input class="input_fields" id="city" type="text" />
+                         <label class="active" for="city">City/District/Town</label>
+                    </div>
+                    <div class="input-field">
+                         <input class="input_fields" id="postal_code" type="text" />
+                         <label class="active" for="pin_code">Pin Code</label>
+                    </div>
+                    <div class="input-field">
+                         <input class="input_fields" id="landmark" type="text" />
+                         <label class="active" for="landmark">Landmark</label>
+                    </div>
+                    <div class="input-field">
+                         <input class="input_fields" id="state" type="text" />
+                         <label class="active" for="State">State</label>
+                    </div>
+               </form>
+               <!-- You could add a fallback address gathering form here -->
+          </div>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOVXfy4lufj3LQtqzW-xlosQCaNiOKzZY"></script>
+          <script src="./main.js"></script>
+     </body>
+</html>

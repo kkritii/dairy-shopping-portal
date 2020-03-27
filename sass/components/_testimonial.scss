@@ -1,0 +1,122 @@
+.section-testimonial {
+     width: 100vw;
+     // background-color: #FAFAFA;
+     min-height: 35rem;
+     // border-top: 1px solid #dcdacb;
+}
+
+.testimonials {
+     //  padding-bottom: 2.2em;
+     text-align: center;
+     color: #666;
+     max-width: 120rem;
+     padding: 5rem 0;
+
+     border-top: 1px solid #dcdacb;
+     margin: 7rem auto 0 auto;
+}
+.test-body {
+     display: flex;
+     justify-content: space-between;
+     .item {
+          max-width: 35rem;
+
+          p {
+               text-align: justify;
+               font-size: 1.3rem;
+          }
+     }
+}
+// .testimonials h1{
+//     color: #222;
+//     font-size: 1.3em;
+// }
+.testimonials .test-body {
+     padding: 1em;
+}
+.testimonials .item {
+     text-align: center;
+     padding: 1em 0;
+}
+.testimonials img {
+     width: 4.8em;
+     height: 4.8em;
+     border-radius: 50%;
+     opacity: 0.75;
+}
+.testimonials .name {
+     color: #007791;
+     font-weight: 700;
+     font-size: 1.3rem;
+}
+.testimonials .desig {
+     font-size: 0.7em;
+     font-weight: 300;
+     // padding: 0.5em 0;
+     font-size: 1.3rem;
+
+     color: #007791;
+}
+.testimonials .share {
+     margin: 0 auto;
+     width: 5em;
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: flex;
+     -webkit-box-pack: justify;
+     -ms-flex-pack: justify;
+     justify-content: space-between;
+}
+.testimonials i {
+     color: #bfbfbf;
+     padding: 0.5em 0;
+     -webkit-transition: all 0.5s;
+     -o-transition: all 0.5s;
+     transition: all 0.5s;
+     cursor: pointer;
+}
+.testimonials i:hover {
+     color: blue;
+}
+.testimonials p {
+     // max-width: 27em;
+     // margin: 0 auto;
+     font-size: 0.8em;
+}
+.testimonials button {
+     font-size: 1em;
+     border: none;
+
+     border-bottom: 3px solid #007791;
+     //  background-color: #fafafa;
+     color: #333;
+     padding: 0.8em 2em;
+     cursor: pointer;
+     -webkit-transition: all 0.2s;
+     -o-transition: all 0.2s;
+     transition: all 0.2s;
+}
+.testimonials button:hover {
+     background-color: #fafafa;
+     transform: scale(1.05);
+}
+.testimonial__icon {
+     height: 2rem;
+     width: 2rem;
+     fill: #ed7562;
+}
+
+@media (min-width: 38.4rem) {
+     .testimonials {
+          font-size: 1.2em;
+     }
+     .testimonials .test-body {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+     }
+     .testimonials p {
+          text-align: left;
+          padding: 1em;
+     }
+}

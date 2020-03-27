@@ -16,8 +16,9 @@
 
         $allowed_ext = array('jpg','jpeg','png','gif','svg'); 
         if(in_array($file_actual_ext,$allowed_ext)){
-            if($file_size < 1000000){
+            if($file_size < 10000000){
                 move_uploaded_file($file_tmp_name,$file_store);
+                $sql = "UPDATE customer SET profile_pic='$file_name' WHERE customer_id = '$user_id'";
             } else{
                 $message = "Your file size is too big";
                 echo "Your size is too big"; 
@@ -26,7 +27,6 @@
             $message = "Extension not supported";
             echo "You cannot upload file of ".$file_actual_ext ." extension";
         }
-        $sql = "UPDATE customer SET profile_pic='$file_name' WHERE customer_id = '$user_id'";
         if(mysqli_query($conn,$sql)){
             echo "Successfull";
         } else{

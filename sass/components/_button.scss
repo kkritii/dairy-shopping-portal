@@ -17,21 +17,25 @@
 }
 // Visit this page for reference https://necolas.github.io/css3-github-buttons/
 
-.btn-cart{
-     background-color:#ed7562;
+.btn-cart {
+     background-color: #ed7562;
      display: block;
-     min-width: 13.5rem;
-     max-width: 15rem;
-     padding:1.2rem 3.2rem;
-     margin:3rem 0.3rem 0.3rem 0;
-     border-radius:4px;
+     flex-grow: 1;
+     width: 100%;
+     padding: 1.2rem 3.2rem;
+     margin: 0rem 0.3rem 0.3rem 0;
+     border-radius: 4px;
      color: #ffffff;
      font-weight: 600;
      font-size: 1.4rem;
-     box-shadow: inset  0 -0.6em 1em -0.35em rgba(0,0,0,0.17),inset 0 0.6em 2em -0.3em rgba(255,255,255,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);;
+     letter-spacing: 1px;
+     box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17), inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15), inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
      text-align: center;
-     &:active{
-          box-shadow:inset 0 0.6em 2em -0.3em rgba(0,0,0,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
+     &:active {
+          box-shadow: inset 0 0.6em 2em -0.3em rgba(0, 0, 0, 0.15), inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
+     }
+     &-small {
+          width: 15rem;
      }
 }
 
@@ -40,41 +44,45 @@
      font-size: 12px;
      line-height: 20px;
      cursor: pointer;
- }
- .btn-primary {
+}
+.btn-v-sm {
+     padding: 1px 5px;
+     font-size: 11px;
+     line-height: 15px;
+     cursor: pointer;
+}
+.btn-primary {
      color: #fff;
      background-color: #28a745;
-     background-image: linear-gradient(-180deg,#34d058,#28a745 90%);
+     background-image: linear-gradient(-180deg, #34d058, #28a745 90%);
      user-select: none;
-    background-repeat: repeat-x;
-    background-position: -1px -1px;
-    background-size: 110% 110%;
-    border: 1px solid rgba(27,31,35,.2);
-    border-radius: .25em;  
-    
- }
- .btn-danger {
+     background-repeat: repeat-x;
+     background-position: -1px -1px;
+     background-size: 110% 110%;
+     border: 1px solid rgba(27, 31, 35, 0.2);
+     border-radius: 0.25em;
+}
+.btn-danger {
      color: #fff;
      background-color: #a0302a;
-     background-image: linear-gradient(-180deg,#b33630,#dc5f59 90%);
+     background-image: linear-gradient(-180deg, #b33630, #dc5f59 90%);
      user-select: none;
-    background-repeat: repeat-x;
-    background-position: -1px -1px;
-    background-size: 110% 110%;
-    border: 1px solid rgba(27,31,35,.2);
-    border-radius: .25em;  
-    cursor: pointer;
- }
- .btn-file {
+     background-repeat: repeat-x;
+     background-position: -1px -1px;
+     background-size: 110% 110%;
+     border: 1px solid rgba(27, 31, 35, 0.2);
+     border-radius: 0.25em;
+     cursor: pointer;
+}
+.btn-file {
      color: #333333;
      background-color: #b8b8b8;
-     background-image: linear-gradient(-180deg,#ffffff,#b8b8b8 90%);
+     background-image: linear-gradient(-180deg, #ffffff, #b8b8b8 90%);
      user-select: none;
-    background-repeat: repeat-x;
-    background-position: -1px -1px;
-    background-size: 110% 110%;
-    border: 1px solid rgba(27,31,35,.2);
-    border-radius: .25em;  
-    cursor: pointer;
- }
- 
+     background-repeat: repeat-x;
+     background-position: -1px -1px;
+     background-size: 110% 110%;
+     border: 1px solid rgba(27, 31, 35, 0.2);
+     border-radius: 0.25em;
+     cursor: pointer;
+}

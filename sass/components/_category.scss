@@ -1,65 +1,66 @@
 .category {
-  position: relative;
-  font-size: 1.2rem;
-  font-weight: 300;
-  height: 7.2rem;
-  display: flex;
-  align-items: center;
-  line-height: 1.4;
-  //   width: 100%;
+     position: relative;
+     font-size: 1.2rem;
+     font-weight: 300;
+     height: 7.2rem;
+     display: flex;
+     align-items: center;
+     line-height: 1.4;
+     //   width: 100%;
 
-  &__link {
-    display: block;
-    line-height: 32px;
-    padding: 0 1.6rem;
-    width: 100%;
-  }
-  .menu-lv-1,.account-menu-lv-1 {
-    display: none;
-    background-color: #fff;
-    padding: 1rem 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.08);
-    border: 1px solid #dcdacb;
-    & ul li {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      &:hover {
-        background-color: #efefef;
-      }
-    }
-  }
+     &__link {
+          display: block;
+          line-height: 32px;
+          padding: 0 1.6rem;
+          width: 100%;
+     }
+     .menu-lv-1,
+     .account-menu-lv-1 {
+          display: none;
+          background-color: #fff;
+          padding: 1rem 0;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.08);
+          border: 1px solid #dcdacb;
+          & ul li {
+               display: flex;
+               align-items: center;
+               justify-content: space-between;
+               &:hover {
+                    background-color: #efefef;
+               }
+          }
+     }
 
-  &:hover > .menu-lv-1 {
-    display: block;
-    width: 24rem;
-    position: absolute;
-    top: 7.1rem;
-    height: auto;
-    // height: 20rem;
-    overflow: auto;
-    color: inherit;
-  }
-  &:hover > .account-menu-lv-1 {
-    display: block;
-    width: 17rem;
-    position: absolute;
-    top: 7.1rem;
-    right: 0;
-    height: auto;
-    overflow: auto;
-    color: inherit;
-  }
-  // &:hover > .arrow-top,&:hover > .account-menu-lv-1 {
-  //   display: block;
-    
-  //   // clip-path: polygon(50% 0%, 37% 23%, 65% 24%);
+     &:hover > .menu-lv-1 {
+          display: block;
+          width: 24rem;
+          position: absolute;
+          top: 7.1rem;
+          height: auto;
+          // height: 20rem;
+          overflow: auto;
+          color: inherit;
+     }
+     &:hover > .account-menu-lv-1 {
+          display: block;
+          width: 17rem;
+          position: absolute;
+          top: 7.1rem;
+          right: 0;
+          height: auto;
+          overflow: auto;
+          color: inherit;
+     }
+     // &:hover > .arrow-top,&:hover > .account-menu-lv-1 {
+     //   display: block;
 
-  //   // outline:1px solid #dcdacb;
-  //   border-left: 12.5px solid transparent;
-  //   border-right: 12.5px solid transparent;
-  //   border-bottom: 12.5px solid #dcdacb;
-  // }
+     //   // clip-path: polygon(50% 0%, 37% 23%, 65% 24%);
+
+     //   // outline:1px solid #dcdacb;
+     //   border-left: 12.5px solid transparent;
+     //   border-right: 12.5px solid transparent;
+     //   border-bottom: 12.5px solid #dcdacb;
+     // }
 }
 // .arrow-top{
 //      position: absolute;

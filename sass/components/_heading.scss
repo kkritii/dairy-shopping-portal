@@ -46,4 +46,14 @@
       color: var(--font-color-secondary-sub-sub);
     }
   }
+  &_main{
+    font-size: 2.4rem;
+    color: #29303b;
+    font-weight: 600;
+  }
+  &_sub{
+    font-size: 1.7rem;
+    font-weight: 400;
+    color: #505763;
+  }
 }
