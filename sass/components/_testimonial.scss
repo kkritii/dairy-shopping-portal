@@ -1,8 +1,7 @@
 .section-testimonial {
      width: 100vw;
-     // background-color: #FAFAFA;
      min-height: 35rem;
-     // border-top: 1px solid #dcdacb;
+     background-color: #f7f7f7;
 }
 
 .testimonials {
@@ -17,10 +16,14 @@
 }
 .test-body {
      display: flex;
-     justify-content: space-between;
+     justify-content: space-around;
      .item {
-          max-width: 35rem;
-
+          max-width: 30rem;
+          border: 1px solid #dcdacb;
+          border-radius: 3px;
+          background-color: #fff;
+          box-shadow: 0 0 5px 1px rgba(20, 23, 28, 0.1), 0 3px 1px 0 rgba(20, 23, 28, 0.1);
+          padding: 3rem 1rem;
           p {
                text-align: justify;
                font-size: 1.3rem;
@@ -36,7 +39,7 @@
 }
 .testimonials .item {
      text-align: center;
-     padding: 1em 0;
+     // padding: 1em 0;
 }
 .testimonials img {
      width: 4.8em;

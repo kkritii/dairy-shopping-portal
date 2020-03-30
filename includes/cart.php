@@ -37,9 +37,7 @@ if(isset($_POST['remove'])){
         if(!isset($_SESSION)){
             session_start();
         }
-        
         $action = "addFromDetail";
-        
         if($_GET['action']==$action){
             $prod_id = $_GET['productId'];
         }
@@ -64,10 +62,10 @@ if(isset($_POST['remove'])){
             if(in_array($_POST['product_id'],$item_array_id)){
                 $item_array_id = array_column($_SESSION['cart'],"product_id");
                
-                if($_GET['action']==$action){
+               
                     echo "<script>alert('Item already exists')</script>";
                     echo "<script>window.location = '../product-detail.php?productId=".$prod_id."'</script>";
-                }// } else{
+                // } else{
                 //     echo "<script>alert('Item already exists')</script>";
                 //     echo "<script>window.location = './collection.php'</script>";
                 // }

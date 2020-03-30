@@ -65,11 +65,99 @@
                 </i>
                  </span>
         </div> -->
-       
+        <section class="section-best_products">
+            <h1 class="heading_main">Best Selling Products</h1>
+            <div class="slick-slider slider carousel">
+            <!-- <h2 class="heading_sub">Choose from one of the category below.</h2> -->
+                <?php
+                $cake = "SELECT * FROM product ORDER BY quantity_sold DESC Limit 5";
+                $result = mysqli_query($conn,$cake);
+                // echo "<pre>" ;
+                // print_r($result);
+                // echo "</pre>" ;
+                while($row = mysqli_fetch_assoc($result)){
+                ##################################################################
+                ### Copy these three lines below ###
+                    $product_id = $row['product_id'];
+                    $product_category = $row['category'];
+                    $product = array_column($_SESSION['cart'],'product_id');
+                ?>
+                    <div class="slick-list">
+                        <a href="./product-detail.php?page=<?=$product_category?>&action=viewProduct&productId=<?=$product_id?>">
+                            <div class="slick-list-container">
+                            <img class="slider-img" src="./backend/uploads/<?=$row['image_source']?>" alt="" />
+                            <div class="slider-details">
+                                <span class="slider-details--name"><?=$row['product_name'];?></span>
+                                <span class="slider-details--discription">Lorem ipsum dolor sit </span>
+                                <?php
+                                    if($row['quantity_sold'] == $max){
+                                        ?>
+                                <span class="u-margin-top-v-small badge-popular">Most popular</span>
+                                <?php
+                                    } 
+                                ?>
+                                <?php
+                                    if($row['stock'] == 0){
+                                        ?>
+                                <span class="u-margin-top-v-small badge-out-of-stock">Out of stock</span>
+                                <?php
+                                    } 
+                                    
+                                ?>
+                                <?php
+                                    if($row['stock'] < 20 && $row['stock'] != 0){
+                                        ?>
+                                <span class="u-margin-top-v-small badge-out-of-stock">Limited Stock</span>
+                                <?php
+                                    } 
+                                    
+                                ?>
+                            
+                                <div class="slider-details-wrap">
+                                    <span class="slider-details--price">Rs.<?=$row['unit_price'];?></span>
+                                    <div class="slider-icon-box">
+                                        <form action="" method="POST">
+                                            <input type="hidden" name="product_id" value="<?=$row['product_id']?>">
+                                            <?php
+                                                if($row['stock'] == 0){
+                                                } else{   
+                                            ?>
+                                            <?php
+                                                if(in_array($row['product_id'],$product)){
+                                            ?>
+                                                    <p>Added to Cart</p>
+                                            <?php
+                                                } else{
+                                            ?>
+                                            <input type="hidden" name="quantity" value="1">
+                                            <button type="submit" name="add" value="Add to cart" class="slider-icon-wrap" >
+                                                    <svg  class="slider-icon-cart" >
+                                                        <use xlink:href="./imgs/icons/sprite.svg#icon-cart-arrow-down"></use>
+                                                    </svg>
+                                            </button>
+                                    
+                                            </input>
+                                            <?php
+                                                }
+                                                }
+                                            ?>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </a>
+                    </div>
+                <?php
+                }
+            
+                ?>          
+            </div>
+        </section>
 
         <section class="section-testimonial">
             <div class="testimonials">
-                <h1 class="heading__primary--sub">WHAT OUR CUSTOMER SAYS</h1>
+                <h1 class="heading__primary--sub">WHAT OUR CUSTOMERS SAY</h1>
                 <div class="test-body">
                     <div class="item">
                         <img src="./imgs/rosan.png">
@@ -87,7 +175,7 @@
                                     </svg>
                                 </i>
                             </div> -->
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia omnis earum quae cupiditate
+                        <p class="u-margin-top-small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia omnis earum quae cupiditate
                             fuga sequi.</p>
 
                     </div>
@@ -107,7 +195,7 @@
                                     </svg>
                                 </i>
                             </div> -->
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium nisi ipsam laborum
+                        <p class="u-margin-top-small">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium nisi ipsam laborum
                             laudantium sint mollitia.</p>
 
                     </div>
@@ -127,7 +215,7 @@
                                     </svg>
                                 </i>
                             </div> -->
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis eos voluptates, nulla
+                        <p class="u-margin-top-small">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis eos voluptates, nulla
                             dolor facilis saepe.</p>
 
                     </div>
@@ -136,7 +224,8 @@
             </div>
         </section>
 
-        <?php //include('./contents/products.php');?>
+        <?php #include('./contents/products.php');?>
+       
         <?php include('./contents/footer.php');?>
         <?php include('./contents/modals.php');?>
     </div>

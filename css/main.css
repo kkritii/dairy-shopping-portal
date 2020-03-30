@@ -1443,6 +1443,7 @@ fieldset {
 .section-testimonial {
   width: 100vw;
   min-height: 35rem;
+  background-color: #f7f7f7;
 }
 
 .testimonials {
@@ -1458,13 +1459,18 @@ fieldset {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .test-body .item {
-  max-width: 35rem;
+  max-width: 30rem;
+  border: 1px solid #dcdacb;
+  border-radius: 3px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 5px 1px rgba(20, 23, 28, 0.1), 0 3px 1px 0 rgba(20, 23, 28, 0.1);
+          box-shadow: 0 0 5px 1px rgba(20, 23, 28, 0.1), 0 3px 1px 0 rgba(20, 23, 28, 0.1);
+  padding: 3rem 1rem;
 }
 
 .test-body .item p {
@@ -1478,7 +1484,6 @@ fieldset {
 
 .testimonials .item {
   text-align: center;
-  padding: 1em 0;
 }
 
 .testimonials img {
@@ -2702,4 +2707,9 @@ input[type="number"] {
   max-width: 50rem;
   margin: 2rem auto;
   padding: 0 3rem 3rem 3rem;
+}
+
+.section-best_products {
+  max-width: 120rem;
+  margin: auto;
 }

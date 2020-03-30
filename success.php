@@ -84,20 +84,6 @@ require_once('./includes/cart.php');
                                     <?php
                                         }
                                     ?>
-                                  
-                                   
-                                    <!-- <tr>
-                                        <td class="bill-table-th">Rala</td>
-                                        <td class="bill-table-th">6</td>
-                                        <td class="bill-table-th">5</td>
-                                        <td class="price bold bill-table-th">30</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="bill-table-th">Rala</td>
-                                        <td class="bill-table-th">6</td>
-                                        <td class="bill-table-th">5</td>
-                                        <td class="price bold bill-table-th">30</td>
-                                    </tr> -->
                                     <tr>
                                         <td class=""></td>
                                         <td class=""></td>
@@ -110,7 +96,7 @@ require_once('./includes/cart.php');
                                         <td class=""></td>
 
                                         <td class="bill-table-th bold  ">Total Amount</td>
-                                        <td class="bill-table-th bold price">Rs. <?=$roww['total_order_price']?></td>
+                                        <td class="bill-table-th bold price">Rs. <?=$roww['product&delivery_price']?></td>
                                     </tr>
                              </table>
                          </div>

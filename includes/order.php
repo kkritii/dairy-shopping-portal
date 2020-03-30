@@ -36,25 +36,37 @@
 
     } else{
 
-
+error_reporting(-1);
         $user_id = $_SESSION['user_id'];
         $product_id = array_column($_SESSION['cart'],'quantity','product_id');
-            $ids = Array();
+        
             $error = false;
             $json_ids =  json_encode($product_id);
-            $sql = "INSERT INTO `customer_order`(`product_ids`, `customer_id`, `payment_method`, `total_order_price`, `delivery_cost`, `total_order_quantity`)   VALUES ('$json_ids','$user_id','$checked_value','$order_price','$delivery_price ','$items_count')";
+            ####################### INSERT IN CUSTOMER ORDER #############################
+            $sql = "INSERT INTO `customer_order`(`product_ids`, `customer_id`, `payment_method`, `total_order_price`, `delivery_cost`, `total_order_quantity`,`product&delivery_price`)   VALUES ('$json_ids','$user_id','$checked_value','$order_price','$delivery_price ','$items_count','$total_price')";
+            if ($conn->query($sql) === TRUE) {
+                $last_id = $conn->insert_id;
+                $_SESSION['order_id'] = $last_id;
+            } else {
+                echo "Error: " . $sql . "<br>" . $conn->error;
+            }
+            ####################### UPDATE THE QUANTITY OF ORDERED ITEMS #############################
+            // $keys = [];
+            foreach($product_id as $key=>$value){
+                $sql_select  = "SELECT stock,product_id FROM product WHERE product_id = '$key'";
+                $res = mysqli_query($conn,$sql_select);
+                $row = mysqli_fetch_assoc($res);
+                $final_qty = $row['stock'] - $value;
+                echo $row["product_id"]." ".$final_qty."<br>";
+                $id =  $row["product_id"];
+                $sql_update = "UPDATE product SET stock = '$final_qty' WHERE product_id = '$id'";
+                if(mysqli_query($conn,$sql_update)){
 
-
-                if ($conn->query($sql) === TRUE) {
-                    $last_id = $conn->insert_id;
-                    $_SESSION['order_id'] = $last_id;
-                    // echo "New record created successfully. Last inserted ID is: " . $last_id;
-                } else {
-                    echo "Error: " . $sql . "<br>" . $conn->error;
+                }else{
+                    echo mysqli_error();
                 }
+            }
         unset($_SESSION['cart']);
-
         echo "<script>window.location = '../success.php'</script>";
-
     }
 ?>

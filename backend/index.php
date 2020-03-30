@@ -61,7 +61,6 @@
 						<span class="user-nav__user-name"></span>
 					</div>
 				</nav>
-
 			</header>
 
 			<div class="content">
@@ -119,10 +118,9 @@
 					</div>
 				</nav>
 				
-				
+			
+			
 				<main class="hotel-view" id="content"></main>
-			  
-
 			</div>
 		</div>
 

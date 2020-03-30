@@ -2,8 +2,36 @@
     session_start();
     require_once('./backend/includes/db_connect.php');
     include('./includes/cart.php');
-    if(isset($_GET['pending-cancel'])){
-         echo $_GET['order_id'];
+    if(isset($_POST['pending-cancel'])){
+
+     $order_id = $_POST['order_id'];
+     $select_json = "SELECT product_ids FROM  customer_order WHERE order_id = '$order_id'";
+     $result = mysqli_query($conn,$select_json);
+     $row = mysqli_fetch_assoc($result);
+     $id_arr = json_decode($row['product_ids']);
+
+     $id_arr = get_object_vars($id_arr);
+   
+
+     foreach($id_arr as $key=>$value){
+          $sql_select  = "SELECT product_id,stock FROM product WHERE product_id = '$key'";
+          $result = mysqli_query($conn,$sql_select);
+          $rows = mysqli_fetch_assoc($result);
+              
+               $final_qty = $rows['stock'] + $value;
+          
+               $sql_update = "UPDATE product SET stock = '$final_qty' WHERE product_id = $key";
+               if(mysqli_query($conn,$sql_update)){
+
+               }else{
+                    echo mysqli_error();
+               }
+               $sql_del = "DELETE FROM customer_order WHERE order_id = $order_id";
+               mysqli_query($conn,$sql_del);
+          
+   
+     }
+
     }
 ?>
 <!DOCTYPE html>
@@ -106,8 +134,8 @@
                                                                  <td><?=$rows['order_placed_date']?></td>
                                                                  <td class="numeric"> <span class="bold">Rs.</span> <?=$rows['total_order_price']?></td>
                                                                  <td>
-                                                                 <form action="" method="GET">
-                                                                      <input type="hidden" value="<?=$rows['order_id']?>" name="order_id">
+                                                                 <form action="" method="POST">
+                                                                      <input type="hidden" value="<?=$rows['order_id']?>"  name="order_id">
                                                                       <button type="submit" class="btn-danger btn-v-sm" onclick="return confirm('Are You Sure?')" name="pending-cancel">Cancel</button>
                                                                  </form>
                                                                  </td>
@@ -124,6 +152,7 @@
                                                                       <td colspan="numeric bold">Total</td>
                                                                       <!-- <td class="numeric green">£13,800.00</td> -->
                                                                       <td class="numeric green"> <span class="bold">Rs.</span><?=$tot?></td>
+                                                                      <td></td>
                                                                       <!-- <td colspan="3"></td> -->
                                                                  </tr>
                                                             

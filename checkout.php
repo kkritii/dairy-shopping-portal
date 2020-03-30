@@ -262,10 +262,10 @@
                                         <?php
                                             $offer_active  = 1;  
                                             if($sum >= 2000 && $row['offer_status'] == 1){
-                                                $deliver_price = "00.00";
+                                                $delivery_price = 0;
                                         ?>
                                                 Rs.
-                                                <span><?=$deliver_price?></span>&nbsp; 
+                                                <span><?=$delivery_price?>.00</span>&nbsp; 
                                                 <strike class="strike">&nbsp;80.00 &nbsp;</strike>
                                                 <!-- <span class="offer_name"><?=$row['offer_name']?></span> -->
                                             
@@ -273,10 +273,10 @@
                                                 
                                         <?php
                                             } else{
-                                                $deliver_price = "80.00";
+                                                $delivery_price = 80;
                                         ?>
                                                 Rs. 
-                                                <span><?=$deliver_price?></span>
+                                                <span><?=$delivery_price?>.00</span>
                                         <?php
                                             }
                                         ?>
@@ -300,7 +300,7 @@
                             <input type="hidden" name="order_price" value="<?=$sum?>">
                             <input type="hidden" name="delivery_price" value="<?=$delivery_price?>">
                             <input type="hidden" name="total_items" value="<?=count($_SESSION['cart'])?>">
-                            <input type="hidden" name="total_price" value="<?=$delivery_price+ $sum?>">
+                            <input type="hidden" name="total_price" value="<?=$delivery_price + $sum?>">
 
                         <?php
                             if(count($_SESSION['user_id']) != 0  &&  count($_SESSION['cart']) != 0) {
