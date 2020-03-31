@@ -143,9 +143,7 @@
                     <p class="heading-summary">Summary</p>
                     <table>
                         <ul class="col-2-ul">
-
                             <?php
-                                  
                                   if(count($_SESSION['cart']) != 0){
                                     $sum = 0;
                                     $i = 0;
