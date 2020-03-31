@@ -1,4 +1,4 @@
-.modal {
+.modal,.modal1 {
      display: none;
      position: fixed;
      z-index: 1;
@@ -9,7 +9,7 @@
      overflow: auto;
      background-color: rgba(0, 0, 0, 0.5);
 }
-.modal-content {
+.modal-content,.modal-content2 {
      background-color: #f4f4f4;
      margin: 15rem auto;
      padding: 16px;
@@ -21,7 +21,7 @@
      animation-name: modalopen;
      animation-duration: 1s;
 }
-.modal-content1 {
+/* .modal-content1 {
      background-color: #f4f4f4;
      margin: 10% auto;
      padding: 10px;
@@ -30,19 +30,20 @@
      box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
      animation-name: modalopen;
      animation-duration: 1s;
-}
-.closeBtn {
+} */
+.closeBtn,.closeBtn1 {
      color: black;
      float: right;
      font-size: 30px;
 }
 .closeBtn:hover,
-.closeBtn:focus {
+.closeBtn:focus,.closeBtn1:hover,
+.closeBtn1:focus {
      color: #0000;
      text-decoration: none;
      cursor: pointer;
 }
-@keyframes modalopen {
+@keyframes modalopen,@keyframes modalopen1 {
      from {
           opacity: 0;
      }

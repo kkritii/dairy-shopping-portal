@@ -201,12 +201,13 @@
                               <td><?=$row['quantity_sold']?></td>
                               <div>
                                    <td>
-                                        <a href=''>
+                                   <a href="src/edit_product.php?id=<?= $row['product_id'];?>">
                                              <svg class='icon table-icon table-icon-pencil'>
                                                   <use xlink:href='./img/SVG1/sprite.svg#icon-pencil'></use>
-                                             </svg>
-                                             <a href=''><img class='table-icon ' src='./icons/trash.png'></img></a>
-                                        </a>
+                                             </svg></a>
+                                             <a onclick="return confirm('Are you sure you want to delete this entry?')" href="src/delete_product.php?id=<?= $row['product_id'];?>"><img class='table-icon ' src='./icons/trash.png'></img></a>
+                                             <!-- <a href=''><img class='table-icon ' src='./icons/trash.png'></img></a> -->
+                                        
                                    </td>
                               </div>
                          </tr>
@@ -226,6 +227,8 @@
    
 </div>
 </div>
+
+          
 
 <script>	
 

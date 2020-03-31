@@ -507,17 +507,18 @@ body {
   margin: auto;
   margin: 3rem 0;
 }
-
-.customer-list {
+.customer-list{
+  
   max-width: 145rem;
-  margin: auto;
+  /* margin: auto; */
+  margin: -7rem 0;
 }
 
 .product_table tr:nth-child(odd) {
   background-color: var(--bg-color-card);
 }
 
-.product_table tr:nth-child(even) {
+.product_table tr:nth-child(even), {
   background-color: #293f57;
 }
 
@@ -529,7 +530,7 @@ body {
   font-size: 1.3rem;
 }
 
-.product_table th {
+.product_table th{
   padding: 1.3rem;
 }
 
@@ -736,4 +737,9 @@ body {
           justify-content: space-evenly;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+.booking_title,.customer_title{
+  color:white;
+  font-family: Arial, Helvetica, sans-serif;
+  size:20px;
 }

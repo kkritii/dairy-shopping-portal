@@ -61,6 +61,7 @@
 						<span class="user-nav__user-name"></span>
 					</div>
 				</nav>
+
 			</header>
 
 			<div class="content">
@@ -94,6 +95,14 @@
 								<span class="nav__text">Manage</span>
 							</a>
 						</li>
+						<li class="nav__item">
+							<a href="order" class="nav__links">
+								<svg class="nav__icon">
+									<use xlink:href="./img/SVG1/sprite.svg#icon-shopping_basket"></use>
+								</svg>
+								<span class="nav__text">Order</span>
+							</a>
+						</li>
 							
 						<li class="nav__item">
 							<a href="" class="nav__links">
@@ -118,9 +127,10 @@
 					</div>
 				</nav>
 				
-			
-			
+				
 				<main class="hotel-view" id="content"></main>
+			  
+
 			</div>
 		</div>
 
