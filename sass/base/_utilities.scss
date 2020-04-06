@@ -67,6 +67,9 @@
      &-2 {
           padding: 2rem;
      }
+     &-3 {
+          padding: 2rem;
+     }
 }
 .ptb {
      padding: 1rem 2rem;
@@ -125,4 +128,9 @@
 }
 .warning {
      color: #ff304f !important;
+}
+.display-flex-column {
+     display: flex;
+     flex-direction: column;
+     // padding: 3rem;
 }

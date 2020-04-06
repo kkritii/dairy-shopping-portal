@@ -208,16 +208,27 @@
                                   } else{
                               ?>
 
-                            <li class="item-wrap">
+                            <!-- <li class="item-wrap">
                                 <div>
 
                                 </div>
-                                <div class="item-details">
-                                    <span class="item-product-empty">Your Cart is Empty</span>
-
+                                <div class="item-details p-2 display-flex-column">
+                                   
+                                        <img src="./imgs/icons/empty-cart.svg" height="70" alt="">
+                                     
+                                        <span class="item-product-empty">Your Cart is Empty</span>
+                        
                                 </div>
-                            </li>
-
+                            </li> -->
+                                    <li>
+                                    <div class="item-details p-3 display-flex-column border">
+                                   
+                                        <img src="./imgs/icons/empty-cart.svg" height="100" alt="">
+                                     
+                                        <span class="item-product-empty u-margin-top-small">Your Cart is Empty</span>
+                        
+                                </div>
+                                    </li>
                             <?php
                                   }
                               ?>

@@ -47,8 +47,15 @@
           // align-self: center;
           width: 100%;
           display: flex;
+          // flex-direction: column;
+
           justify-content: space-around;
           align-items: center;
+          &-wrap {
+               padding: 3rem;
+               display: flex;
+               flex-direction: column;
+          }
      }
      .item {
           &-product {
@@ -71,7 +78,7 @@
                }
                &-empty {
                     color: var(--font-color-secondary-sub);
-                    font-size: 1.6rem;
+                    font-size: 1.4rem;
                     // font-size:1.2rem;
                     // font-weight: 600;
                     // margin-top: 0;
